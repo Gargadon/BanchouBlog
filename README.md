@@ -22,7 +22,7 @@ Instalación
 
 -Upload into your FTP
 
--Edit config.php
+-Edit base.php
 
 -Run index.php
 
