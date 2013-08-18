@@ -145,10 +145,10 @@ else
 echo '<tr>';
 }
   echo '<td><strong>'.$title.'</strong></td>
-  <td><button onClick="window.location.href=\'profile.php?id='.$row['id'].'\'"><img src="img/view.png" /></button></td>';
+  <td><button onClick="window.location.href=\'profile.php?id='.$row['id'].'\'"><img src="icons/Actions-document-preview-archive-icon.png" /></button></td>';
 if($usuarios['group']==1)
-echo ' <td><button onClick="window.location.href=\'edit_profile.php?id='.$row['id'].'\'"><img src="img/edit.png" /></button></td>
- <td><button onClick="window.location.href=\'admin.php?id=deleteuser&amp;u='.$row['id'].'\'"><img src="img/delete.png" /></button></td>';
+echo ' <td><button onClick="window.location.href=\'edit_profile.php?id='.$row['id'].'\'"><img src="icons/Actions-document-save-as-icon.png" /></button></td>
+ <td><button onClick="window.location.href=\'admin.php?id=deleteuser&amp;u='.$row['id'].'\'"><img src="icons/Actions-dialog-close-icon.png" /></button></td>';
 echo '</tr>';
   $count++;
   $contador++;
