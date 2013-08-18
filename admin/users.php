@@ -148,7 +148,7 @@ echo '<tr>';
   <td><button class="button secondary" onClick="window.location.href=\'profile.php?id='.$row['id'].'\'"><img src="icons/Actions-document-preview-archive-icon.png" /></button></td>';
 if($usuarios['group']==1)
 echo ' <td><button class="button secondary" onClick="window.location.href=\'edit_profile.php?id='.$row['id'].'\'"><img src="icons/Actions-document-save-as-icon.png" /></button></td>
- <td><button class="button secondary" onClick="window.location.href=\'admin.php?id=deleteuser&amp;u='.$row['id'].'\'"><img src="icons/Actions-dialog-close-icon.png" /></button></td>';
+ <td><button class="button secondary" onClick="window.location.href=\'admin.php?action=deleteuser&amp;u='.$row['id'].'\'"><img src="icons/Actions-dialog-close-icon.png" /></button></td>';
 echo '</tr>';
   $count++;
   $contador++;

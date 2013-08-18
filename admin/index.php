@@ -28,6 +28,10 @@ if ($usuarios['group']==1)
 			case 'newentry':
 			include('admin/newentry.php');
 			break;
+			
+			case 'deleteuser':
+			include('admin/deleteuser.php');
+			break;
 		
 		default:
 		echo 'Opción no válida';
