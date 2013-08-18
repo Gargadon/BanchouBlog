@@ -20,19 +20,7 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
 	$result = mysql_query('SELECT * FROM blog_usuarios WHERE usuario=\''.$usuario.'\'');
 	if($row = mysql_fetch_array($result)){
 		if($row['password'] == $password){
-			if($row['group'] == 99)
-			{
-			include("header.php");
-			echo '<p>Lo sentimos, usted ha sido expulsado del juego.<br />
-			El motivo de expulsión es el siguiente:</p>
-			<strong>'.$row['reasonban'].'</strong>
-			<p>Si cree que esto ha sido un error y desea obtener su derecho de réplica,
-			puede hacerlo dirigiéndose al <a href="http://www.gargadon.info/forum/index.php">foro</a>.
-			</p>
-			';
-			}
-			else
-			{
+
 				if($row['confirmed'] == 0)
 				{
 				include("header.php");
@@ -43,11 +31,10 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
 				else
 				{
            			 /* Cookie expires when browser closes */
-            			setcookie("gargauser", $row["usuario"], 0, "/", "www.gargadon.info");
-           			setcookie("gargapass", md5($row["password"]), 0, "/", "www.gargadon.info");
+            			setcookie("gargauser", $row["usuario"], time()+(10*365*24*60*60), $folder, $path);
+           			setcookie("gargapass", md5($row["password"]), time()+(10*365*24*60*60), $folder, $path);
             			header('Location: index.php');
             			}
-				}
 		}else{
 		include("header.php");
 			echo 'Password incorrecto';
