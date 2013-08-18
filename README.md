@@ -14,3 +14,20 @@ Este proyecto usa partes de los siguientes proyectos:
 -CKEditor (WYSIWYG Editor) - <https://raw.github.com/ckeditor/ckeditor-releases/stable/standard/LICENSE.md>
 
 GargaBlog está licenciado bajo GPLv2. Una copia de esta licencia se incluye en el repositorio.
+
+Instalación
+=========
+
+-Download
+
+-Upload into your FTP
+
+-Edit config.php
+
+-Run index.php
+
+-Install
+
+-Delete /install
+
+-Profit!!! <3
