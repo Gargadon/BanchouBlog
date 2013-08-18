@@ -13,16 +13,20 @@ $usuarios = mysql_fetch_array($usuarios1);
 $grupo1 = mysql_query('SELECT * FROM blog_grupo WHERE id=\''.$usuarios['group'].'\'');
 $grupo = mysql_fetch_array($grupo1);
 
-function getRealIP() {
-    if (!empty($_SERVER['HTTP_CLIENT_IP']))
-        return $_SERVER['HTTP_CLIENT_IP'];
-       
-    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-        return $_SERVER['HTTP_X_FORWARDED_FOR'];
-   
-    return $_SERVER['REMOTE_ADDR'];
-}
-$myip = getRealIP();
-mysql_query('UPDATE usuarios SET ip=\''.$myip.'\' where id=\''.$usuarios['id'].'\'');
+	if (!empty($_SERVER['HTTP_CLIENT_IP']))
+	{
+		$myip=$_SERVER['HTTP_CLIENT_IP'];
+	}
+	elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+	//to check ip is pass from proxy
+	{
+		$myip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+	}
+	else
+	{
+		$myip=$_SERVER['REMOTE_ADDR'];
+	}
+
+mysql_query('UPDATE blog_usuarios SET ip=\''.$myip.'\' where id=\''.$usuarios['id'].'\'');
 // echo $myip;
 ?>
