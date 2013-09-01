@@ -109,10 +109,7 @@ if ($islogged==1)
           </td>
         </tr>
         <tr>
-        <td>Apellidos:<br />
-        		<em><a href="confighelp.php?id=surname"
-		onclick="return popitup(\'confighelp.php?id=surname\')">Más información</a></em>
-          </td>
+        <td>Apellidos:</td>
           <td><input type="text" name="apellidos" value="'.$recprofile['surname'].'" />
           </td>
         </tr>
@@ -134,7 +131,7 @@ if ($islogged==1)
           <td><input type="text" name="email" value="'. $recprofile['email'] .'" />
           </td>
         </tr>';
-        if($usuarios['group']==1)
+        if(($usuarios['group']==1) && (recprofile['id']!=usuarios['id']))
          {
          echo '<tr>
           <td>Rol:
