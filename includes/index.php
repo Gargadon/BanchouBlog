@@ -25,8 +25,12 @@ else
  echo '
 
 <div data-alert class="alert-box alert">
-Esto está muy vacío. ¿Por qué no escribes tu primer entrada?
-  </div>
+Esto está muy vacío. ';
+if($usuarios['group']==1)
+echo '<a href="admin.php?action=newentry">¿Por qué no escribes tu primer entrada?</a>';
+else
+echo '¿Por qué no escribes tu primer entrada?';
+ echo ' </div>
 
 ';
  }
@@ -66,7 +70,7 @@ Esto está muy vacío. ¿Por qué no escribes tu primer entrada?
 		<table>
 		<tbody>
 		<tr><th>
-		<strong><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a></strong>
+		<h4><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a></h4>
 		</th>
 		</tr>
 		<tr>
@@ -82,7 +86,7 @@ Esto está muy vacío. ¿Por qué no escribes tu primer entrada?
 		</td>
 		<tr>
 		<td>
-		<a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">Leer más</a> | <a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'#comments">Leer comentarios /Escribir comentario</a>
+		<a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">Leer más</a> | <a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'#comments">Leer comentarios / Escribir comentario</a>
 		</td>
 		</tr>
 		</tbody>

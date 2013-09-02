@@ -15,7 +15,7 @@ echo '
 		echo '<tr><td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td style="vertical-align:top;">';
                 echo '<table><tbody><tr>
 		<th>
-		<strong>'.$blog['subject'].'</strong>
+		<h4>'.$blog['subject'].'</h4>
 		</th>
 		</tr>
 		<tr>

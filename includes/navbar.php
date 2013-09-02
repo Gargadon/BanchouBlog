@@ -23,6 +23,14 @@
           <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
           <li><a href="admin.php?action=users">Modificar usuarios</a></li>
           </ul>';
+echo '<li class="has-dropdown"><a href="#">Categorías</a>
+        <ul class="dropdown">';
+$cats1 = mysql_query('SELECT * FROM blog_cats ORDER BY \'id\' DESC');
+while($cats = mysql_fetch_array($cats1))
+{
+echo '<li><a href="index.php?cat='.$cats['id'].'">'.$cats['name'].'</a></li>';
+}
+    echo '</ul>';
     echo '<li><a href="profile.php?id='.$usuarios['id'].'"><img src="http://www.gravatar.com/avatar/'.$gravatar.'?s=30&amp;r=pg&amp;d=mm" alt="Avatar de '. $usuarios['usuario'] .'" title="Avatar de '. $usuarios['usuario'] .'" /> '.$usuarios['usuario'].'</a></li><li class="divider"></li>
     </ul>
 
