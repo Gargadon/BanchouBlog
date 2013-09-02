@@ -131,7 +131,7 @@ if ($islogged==1)
           <td><input type="text" name="email" value="'. $recprofile['email'] .'" />
           </td>
         </tr>';
-        if(($usuarios['group']==1) && (recprofile['id']!=usuarios['id']))
+        if(($usuarios['group']==1) && ($recprofile['id']!=$usuarios['id']))
          {
          echo '<tr>
           <td>Rol:
