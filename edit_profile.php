@@ -151,7 +151,7 @@ if ($islogged==1)
         echo '  <tr>
           <td>Rol:
           </td>
-          <td><input type="text" name="grupo" value="'. $grupo['nombre'] .'" disabled />
+          <td><input type="text" name="grupo" value="'. $grupo['nombre'] .'" disabled /><input type="hidden" name="grupo" value="'.$recprofile['group'].'">
           </td>
         </tr>';
 echo '        <tr>

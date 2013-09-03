@@ -25,7 +25,7 @@ if ($usuarios['group']==1)
 		</tr>
 		<tr>
 		<td>
-		<a href="/entry/'.$searchentry['id'].'.html">Ver entrada</a>
+		<a href="index.php?entryid='.$searchentry['id'].'">Ver entrada</a>
 		</td>
 		</tr>
 		<tr>
@@ -54,7 +54,22 @@ if (!(isset($_GET['page'])))
 
  $data = mysql_query("SELECT * FROM blog_entry") or die(mysql_error()); 
  $rows = mysql_num_rows($data); 
+ if($rows==0)
+ {
+ echo '
 
+<div data-alert class="alert-box alert">
+Esto está muy vacío. ';
+if($usuarios['group']==1)
+echo '<a href="admin.php?action=newentry">¿Por qué no escribes tu primer entrada?</a>';
+else
+echo '¿Por qué no escribes tu primer entrada?';
+ echo ' </div>
+
+';
+ }
+  else
+ {
  //This is the number of results displayed per page 
  $page_rows = 20; 
 
@@ -88,7 +103,7 @@ if (!(isset($_GET['page'])))
 		<table class="table table-bordered table-hover">
 		<tbody>
 		<tr><td>
-		<strong><a href="/entry/'.$blog['id'].'.html">'.$blog['subject'].'</a></strong>
+		<strong><a href="index.php?entry='.$blog['id'].'">'.$blog['subject'].'</a></strong>
 		</td>
 		</tr>
 		<tr>
@@ -129,6 +144,7 @@ echo '<tr><td colspan="2"><a href="admin.php?page=1"> <<-Primero</a>  | <a href=
  $next = $_GET['page']+1;
  echo '<tr><td colspan="2"> <a href="admin.php?page='.$next.'">Siguiente -></a> | <a href="admin.php?page='.$last.'">Último ->></a></td></tr>';
  } 
+ }
  echo '</tbody></table>
  ';
 
