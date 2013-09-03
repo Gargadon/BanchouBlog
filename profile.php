@@ -91,7 +91,7 @@ echo '        <tr>
     </table>';
     }
 	}
-	else
+	elseif($islogged==1)
 	{
    echo '<table class="table table-bordered table-hover">
       <tbody>
@@ -155,6 +155,9 @@ echo '        <tr>
       </tbody>
     </table>
 ';
+}
+else{
+	    echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">'; 
 }
 
 include("footer.php");
