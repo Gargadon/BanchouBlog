@@ -13,7 +13,7 @@ if ($usuarios['group']==1)
 	mysql_query('INSERT blog_entry (author, date, subject, entry) VALUES (\''.$author.'\',\''.$fecha.'\',\''.$subject.'\',\''.$entry.'\')');
 	$searchentry=mysql_fetch_array(mysql_query('SELECT id FROM blog_entry WHERE date=\''.$fecha.'\''));
                 echo '
-		<table class="table table-bordered table-hover">
+		<table  class="table small-12 large-12 columns">
 		<tbody>
 		<tr>
 		<th>Configuración del blog</th>
@@ -100,7 +100,7 @@ echo '¿Por qué no escribes tu primer entrada?';
 	$recprofile = mysql_fetch_array($recprofile1);
  echo '<tr>
 		<td width="80px"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&r=pg&d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
-		<table class="table table-bordered table-hover">
+		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><td>
 		<strong><a href="index.php?entry='.$blog['id'].'">'.$blog['subject'].'</a></strong>
