@@ -18,7 +18,7 @@
     if($usuarios['group']==1)
     echo '<li class="has-dropdown"><a href="#">Administración</a>
         <ul class="dropdown">
-        <li><a href="admin.php">Configurar blog</a></li>
+        <li><a href="admin.php?action=config2">Configurar blog</a></li>
           <li><a href="admin.php?action=config">Editar entradas</a></li>
           <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
           <li><a href="admin.php?action=users">Modificar usuarios</a></li>

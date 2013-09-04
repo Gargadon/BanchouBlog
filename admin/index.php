@@ -9,9 +9,13 @@ if ($usuarios['group']==1)
 	$adminid = $_GET['action'];
 	switch($adminid)
 	{
-		case 'config':
-		include('admin/config.php');
-		break;
+			case 'config':
+			include('admin/config.php');
+			break;
+			
+			case 'config2':
+			include('admin/config_main.php');
+			break;
 		
 			case 'editentry':
 			include('admin/editentry.php');
@@ -47,8 +51,26 @@ if ($usuarios['group']==1)
 		</tr>
 		<tr>
 		<td>
-		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config">Configuración general del CMS</a></h4>
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config2">Configuración general del CMS</a></h4>
 		Cambia partes importantes del CMS como estilos, etc.
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config">Editar entradas</a></h4>
+		Borra y edita entradas.
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=newentry">Nueva entrada</a></h4>
+		Añada una nueva entrada a su blog.
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=users">Modificar usuarios</a></h4>
+		Cree y modifique usuarios.
 		</td>
 		</tr>
 		</tbody>
