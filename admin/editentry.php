@@ -43,14 +43,9 @@ if(defined('dwogame'))
 		</tr>
 		<tr>
 		<td>
-		<textarea id="editor_v2" name="entrada" style="width:100%;height:150px;">'.$blog['entry'].'</textarea>
+		<textarea id="editor1" name="entrada" style="width:100%;height:150px;">'.$blog['entry'].'</textarea>
 		<script type="text/javascript">
-		//<![CDATA[
-		CKEDITOR.replace( \'editor_v2\',
-			{
-			skin : \'v2\'
-			});
-		//]]>
+			CKEDITOR.replace( \'editor1\' );
 		</script>
 		<input type="hidden" name="envia" value="yes" />
 		</form>

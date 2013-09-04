@@ -44,14 +44,9 @@ else {
 		</tr>
 		<tr>
 		<td colspan="2">
-		<textarea id="editor_v2" name="content" style="width:100%;height:150px;"></textarea>
+		<textarea id="editor1" name="content" style="width:100%;height:150px;"></textarea>
 		<script type="text/javascript">
-		//<![CDATA[
-		CKEDITOR.replace( \'editor_v2\',
-			{
-			skin : \'v2\'
-			});
-		//]]>
+			CKEDITOR.replace( \'editor1\' );
 		</script>
 		</td>
 		</tr>
