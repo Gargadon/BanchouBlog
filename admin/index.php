@@ -16,7 +16,15 @@ if ($usuarios['group']==1)
 			case 'config2':
 			include('admin/config_main.php');
 			break;
-		
+			
+			case 'cats':
+			include('includes/neko.php');
+			break;
+
+			case 'categories':
+			include('includes/categories.php');
+			break;
+
 			case 'editentry':
 			include('admin/editentry.php');
 			break;			

@@ -39,7 +39,7 @@ if ($usuarios['group']==1)
 	else
 	{
 
-	echo '		<table class="table table-bordered table-hover">
+	echo '		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><th colspan="2">Entradas más recientes</th></tr>
 ';
