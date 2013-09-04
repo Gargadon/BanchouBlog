@@ -8,7 +8,7 @@ if(defined('dwogame'))
 		</tr>';
 	if(isset($_POST['envia']))
 	{
-	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\' WHERE id=\''.$_GET['entryid'].'\'');
+	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\', category=\''.$_POST['category'].'\' WHERE id=\''.$_GET['entryid'].'\'');
 			echo '<tr>
 		<td>Los cambios se han realizado correctamente.</td>
 		</tr>
@@ -46,7 +46,18 @@ if(defined('dwogame'))
 		<textarea id="editor1" name="entrada" style="width:100%;height:150px;">'.$blog['entry'].'</textarea>
 		<script type="text/javascript">
 			CKEDITOR.replace( \'editor1\' );
-		</script>
+		</script>';
+		$blog_cats1 = mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
+		$blog_cats = mysql_fetch_array($blog_cats1);
+echo '		Categoría: <select name="category"><option value="'.$blog['cat_id'].'">No cambiar ('.$blog_cats['name'].')</option>';
+		unset($blog_cats1);
+		unset($blog_cats);
+		$blog_cats1 = mysql_query('SELECT * FROM blog_cats ORDER BY id ASC');
+		while($blog_cats = mysql_fetch_array($blog_cats1))
+		{
+		echo '<option value="'.$blog_cats['id'].'">'.$blog_cats['name'].'</option>';
+		}
+echo '</select>
 		<input type="hidden" name="envia" value="yes" />
 		</form>
 		</td>

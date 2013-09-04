@@ -11,7 +11,4 @@ CREATE TABLE IF NOT EXISTS `blog_cats` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 INSERT INTO `blog_cats` (`id`, `name`, `description`) VALUES
 (0, 'Sin categoría', 'No category entries');
-CREATE TABLE IF NOT EXISTS `blog_cats_and_entries` (
-  `cat_id` int(11) NOT NULL,
-  `entry_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+ALTER TABLE  `blog_entry` ADD  `cat_id` INT NOT NULL ;
