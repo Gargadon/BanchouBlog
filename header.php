@@ -32,7 +32,13 @@ echo '<!DOCTYPE html>
   <script src="'.$config['pathto'].'js/vendor/custom.modernizr.js"></script>
     <LINK REL="SHORTCUT ICON" HREF="'.$config['pathto'].'favicon.ico" />';
     echo '<link rel="alternate" type="application/rss+xml" title="'.$config['name'].'" href="'.$config['pathto'].'?action=rss" />';
-    echo '<title>'.$config['name'].' - Powered by '.$config['software'].' version '.$config['version'].'</title></head>
+if(isset($_GET['entryid']))
+    {$titulo = mysql_fetch_array(mysql_query('SELECT * FROM blog_entry WHERE `id`=\''.$_GET['entryid'].'\''));
+    echo '<title>'.$titulo['subject'].' - '.$config['name'].'</title>';
+    unset($titulo);}
+    else
+    echo '<title>'.$config['name'].' - Powered by '.$config['software'].' version '.$config['version'].'</title>';
+	echo '</head>
   <body>
  ';
 include('includes/navbar.php');
