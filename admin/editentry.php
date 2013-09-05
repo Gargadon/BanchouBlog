@@ -1,14 +1,14 @@
 <?php
 if(defined('dwogame'))
 {
-               echo '<table class="table table-bordered table-hover">
+               echo '<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
 		<th>Configuración del blog</th>
 		</tr>';
 	if(isset($_POST['envia']))
 	{
-	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\', category=\''.$_POST['category'].'\' WHERE id=\''.$_GET['entryid'].'\'');
+	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\', cat_id=\''.$_POST['category'].'\' WHERE id=\''.$_GET['entryid'].'\'');
 			echo '<tr>
 		<td>Los cambios se han realizado correctamente.</td>
 		</tr>

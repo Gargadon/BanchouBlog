@@ -1,10 +1,12 @@
 <?php
 echo '
-<table>
+<table class="table small-12 large-12 columns">
 <tbody>';
 	$entryid = $_GET['entryid'];
 	$blog1 = mysql_query('SELECT * FROM blog_entry WHERE id=\''.$entryid.'\'');
 	$blog = mysql_fetch_array($blog1);
+	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
+	$categories=mysql_fetch_array($categories1);
 	if(empty($blog['id']))
 	echo '<tr><td>La entrada no existe</td></tr>';
 	else
@@ -22,7 +24,7 @@ echo '
 		<td>
 		Por: <strong>';
 		echo '<a href="'.$config['pathto'].'profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a>';
-		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).'.
+		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).' en la categoría <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
 		</td>
 		</tr>
 		<tr>

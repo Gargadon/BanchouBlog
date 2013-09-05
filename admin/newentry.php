@@ -8,7 +8,7 @@ if(defined('dwogame'))
 	$subject = $_POST['subject'];
 	$entry = $_POST['content'];
 	$envia = $_POST['envia'];
-	mysql_query('INSERT blog_entry (author, date, subject, entry) VALUES (\''.$author.'\',\''.$fecha.'\',\''.$subject.'\',\''.$entry.'\')');
+	mysql_query('INSERT blog_entry (author, date, subject, entry, cat_id) VALUES (\''.$author.'\',\''.$fecha.'\',\''.$subject.'\',\''.$entry.'\',\''.$_POST['category'].'\')');
 	$searchentry=mysql_fetch_array(mysql_query('SELECT id FROM blog_entry WHERE date=\''.$fecha.'\''));
 			echo '<tr>
 		<td>Los cambios se han realizado correctamente.</td>
@@ -25,7 +25,7 @@ else {
                 
                 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
                 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css" />
-		<table>
+		<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
 		<th colspan="2">Nueva entrada</th>
@@ -48,6 +48,13 @@ else {
 		<script type="text/javascript">
 			CKEDITOR.replace( \'editor1\' );
 		</script>
+		Categoría: <select name="category">';
+		$blog_cats1 = mysql_query('SELECT * FROM blog_cats ORDER BY id ASC');
+		while($blog_cats = mysql_fetch_array($blog_cats1))
+		{
+		echo '<option value="'.$blog_cats['id'].'">'.$blog_cats['name'].'</option>';
+		}
+echo '</select>
 		</td>
 		</tr>
 		<tr>
