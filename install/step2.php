@@ -58,6 +58,14 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_cats` (
   `description` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT");
+mysql_query("CREATE TABLE IF NOT EXISTS `blog_pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `subject` text NOT NULL,
+  `page` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT");
 
 // Terminamos de instalar las tablas
 
