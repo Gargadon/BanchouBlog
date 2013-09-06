@@ -45,10 +45,12 @@ echo '<div class="small-12 large-12 columns">
 	else
 	{
 	mysql_query("INSERT INTO `blog_config` (`name`, `version`, `software`, `pathto`, `disqusname`, `footer`, `zona`) VALUES
-('".$blogname."', '0.2.0', 'GargaBlog', '".$path."', '".$disqusname."', '<p>GargaBlog is a simple blog written in PHP.</p>\r\n<p>&#169; Gargadon.info</p>', 'America/Merida')");
+('".$blogname."', '0.4.0', 'GargaBlog', '".$path."', '".$disqusname."', '<p>GargaBlog is a simple blog written in PHP.</p>\r\n<p>&#169; Gargadon.info</p>', 'America/Merida')");
 mysql_query("INSERT INTO `blog_grupo` (`id`, `nombre`) VALUES
 (0, 'Usuario'),
 (1, 'Administrador')");
+mysql_query("INSERT INTO `blog_cats` (`id`, `name`, `description`) VALUES
+(1, 'Sin categoría', 'No category entries')");
 echo '<div class="small-12 large-12 columns">
 <h3>Instalación de GargaBlog</h3>
 <p>Ahora sigue el paso 4... Un momento, ¿y el paso 4?</p>
