@@ -81,8 +81,23 @@ echo '<li><a href="pages.php?id='.$pages['id'].'">'.$pages['subject'].'</a></li>
 
   <section class="top-bar-section">
     <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="divider"></li>
+    <ul class="left">';
+    echo '<li class="has-dropdown"><a href="#">Categorías</a>
+        <ul class="dropdown">';
+$cats1 = mysql_query('SELECT * FROM blog_cats ORDER BY \'id\' DESC');
+while($cats = mysql_fetch_array($cats1))
+{
+echo '<li><a href="index.php?cat='.$cats['id'].'">'.$cats['name'].'</a></li>';
+}
+    echo '</ul></li>';
+echo '<li class="has-dropdown"><a href="#">Páginas</a>
+        <ul class="dropdown">';
+$pages1 = mysql_query('SELECT * FROM blog_pages ORDER BY \'id\' DESC');
+while($pages = mysql_fetch_array($pages1))
+{
+echo '<li><a href="pages.php?id='.$pages['id'].'">'.$pages['subject'].'</a></li>';
+}
+    echo '</ul></li><li class="divider"></li>
     </ul>
 
     <!-- Right Nav Section -->
