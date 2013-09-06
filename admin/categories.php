@@ -5,7 +5,7 @@ if ($usuarios['group']==1)
 {
 	if(isset($_POST['envia1']))
 	{
-	mysql_query('UPDATE blog_cats SET name=\''.$_POST['name'].'\', description=\''.$_POST['description'].'\'');
+	mysql_query('INSERT blog_cats (name,description) VALUES (\''.$_POST['name'].'\', \''.$_POST['description'].'\')');
 			echo '<table class="table small-12 large-12 columns">
 <tbody>
 <tr>
