@@ -16,8 +16,7 @@ if(isset($_GET['id']))
 	$comment1 = mysql_query('SELECT * FROM blog_comment WHERE id_entry=\''.$entryid.'\' ORDER BY `id` ASC');
 		echo '<tr><td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td style="vertical-align:top;">';
                 echo '<table class="table small-12 large-12 columns"><tbody><tr>
-		<th>
-		<h4>'.$blog['subject'].'</h4>
+		<th>'.$blog['subject'].'
 		</th>
 		</tr>
 		<tr>
@@ -51,8 +50,8 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 		echo '<a href="admin.php?action=editpage&id='.$blog['id'].'">Editar entrada</a> | ';
 		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
 		</table>
-		<br /><br /><div class="row">
-		<div class="large-12 columns"><a name="comments"></a><h5>Leer comentarios</h5></div>
+		<br /><br /></div>
+		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
 		    <div id="disqus_thread" class="large-12 columns"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

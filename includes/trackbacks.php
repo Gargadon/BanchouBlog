@@ -10,7 +10,7 @@ $trackback1 = mysql_query('SELECT * FROM blog_trackback WHERE post_id=\''.$entry
 		}
 	while($trackback=mysql_fetch_array($trackback1))
 	{
-	echo '<div class="large-12 columns"><table>
+	echo '<div class="large-12 columns"><table  class="large-12 columns">
 	<tbody>
 	<tr>
 	<td>Por:
