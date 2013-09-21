@@ -21,19 +21,18 @@ include("header.php");
    echo '<table class="table table-bordered table-hover">
       <tbody>
       <tr>
-      <th colspan=2">Perfil del usuario '.$recprofile['usuario'].'</th>
+      <th colspan="2">Perfil del usuario '.$recprofile['usuario'].'</th>
       </tr>
         <tr>
-          <td colspan="2"><div align="center">';
+          <td colspan="2">';
 	// Aquí va la API de Gravatar, a 150x150
-	echo '<img src="http://www.gravatar.com/avatar/'.$gravatar2.'?s=150&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" />';
-	echo '</div>
-          </td>
+	echo '<img style="display:block;margin-left:auto;margin-right:auto;" src="http://www.gravatar.com/avatar/'.$gravatar2.'?s=150&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" />';
+	echo '</td>
         </tr>
         <tr>
           <td>Nombre de usuario:
           </td>
-          <td style="width:70%;">'. $recprofile['usuario'] .'
+          <td>'. $recprofile['usuario'] .'
           </td>
         </tr>
         <tr>
@@ -88,7 +87,7 @@ echo '        <tr>
         }
         echo'
       </tbody>
-    </table>';
+    </table></div>';
     }
 	}
 	elseif($islogged==1)
@@ -96,14 +95,13 @@ echo '        <tr>
    echo '<table class="table table-bordered table-hover">
       <tbody>
       <tr>
-      <th colspan=2">Tu perfil</th>
+      <th colspan="2">Tu perfil</th>
       </tr>
         <tr>
-          <td colspan="2"><div align="center">';
+          <td colspan="2">';
 	// Aquí va la API de Gravatar, a 150x150
-	echo '<img src="http://www.gravatar.com/avatar/'.$gravatar.'?s=150&amp;r=pg&amp;d=mm" alt="Avatar de '. $usuarios['usuario'] .'" title="Avatar de '. $usuarios['usuario'] .'" />';
-	echo '</div>
-          </td>
+	echo '<img style="display:block;margin-left:auto;margin-right:auto;" src="http://www.gravatar.com/avatar/'.$gravatar.'?s=150&amp;r=pg&amp;d=mm" alt="Avatar de '. $usuarios['usuario'] .'" title="Avatar de '. $usuarios['usuario'] .'" />';
+	echo '</td>
         </tr>
         <tr>
           <td>Nombre de usuario:
@@ -142,18 +140,12 @@ echo '        <tr>
           </td>
         </tr>
         <tr>
-          <td>Ubicación actual:
-          </td>
-          <td>' . $ubicacion['alias'] .'
-          </td>
-        </tr>
-        <tr>
         <td colspan="2">
         <a href="edit_profile.php">Editar perfil</a>
         </td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 ';
 }
 else{

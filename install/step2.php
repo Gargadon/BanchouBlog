@@ -20,6 +20,8 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_entry` (
   `date` int(11) NOT NULL,
   `subject` text NOT NULL,
   `entry` text NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
 mysql_query("CREATE TABLE IF NOT EXISTS `blog_grupo` (
@@ -57,7 +59,15 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_cats` (
   `name` text NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT");
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
+mysql_query("CREATE TABLE IF NOT EXISTS `blog_pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `subject` text NOT NULL,
+  `page` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
 
 // Terminamos de instalar las tablas
 

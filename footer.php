@@ -1,7 +1,7 @@
 <?php
-echo '</div></div>
-<div class="row"><div class="large-12 columns"><small>
-'.$config['footer'].'</small></div></div>';
+echo '</div>
+<div class="row"><div class="large-12 columns">
+'.$config['footer'].'</div></div>';
 
 echo '<div id="loguear" class="reveal-modal">
  <form action="login.php" method="post">
