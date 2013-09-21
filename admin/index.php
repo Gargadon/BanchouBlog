@@ -22,15 +22,27 @@ if ($usuarios['group']==1)
 			break;
 
 			case 'categories':
-			include('includes/categories.php');
+			include('admin/categories.php');
+			break;
+			
+			case 'pages':
+			include('admin/new_pages.php');
 			break;
 
 			case 'editentry':
 			include('admin/editentry.php');
 			break;			
+			
+			case 'editpage':
+			include('admin/editpage.php');
+			break;		
 	
 			case 'deleteentry':
 			include('admin/deleteentry.php');
+			break;
+
+			case 'deletepage':
+			include('admin/deletepage.php');
 			break;
 			
 			case 'users':

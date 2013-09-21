@@ -1,14 +1,14 @@
 <?php
-echo '
+if(isset($_GET['id']))
+	{
+	echo '
 <table class="table small-12 large-12 columns">
 <tbody>';
-	$entryid = $_GET['entryid'];
-	$blog1 = mysql_query('SELECT * FROM blog_entry WHERE id=\''.$entryid.'\'');
+	$entryid = $_GET['id'];
+	$blog1 = mysql_query('SELECT * FROM blog_pages WHERE id=\''.$entryid.'\'');
 	$blog = mysql_fetch_array($blog1);
-	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
-	$categories=mysql_fetch_array($categories1);
 	if(empty($blog['id']))
-	echo '<tr><td>La entrada no existe</td></tr>';
+	echo '<tr><td>La página no existe</td></tr>';
 	else
 		{
 	$recprofile1 = mysql_query('SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
@@ -23,12 +23,12 @@ echo '
 		<td>
 		Por: <strong>';
 		echo '<a href="'.$config['pathto'].'profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a>';
-		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).' en la categoría <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
+		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).'.
 		</td>
 		</tr>
 		<tr>
 		<td>';
-		echo $blog['entry'];
+		echo $blog['page'];
 		echo '</td>
 		</tr>
                 </tbody>
@@ -47,16 +47,10 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
 		<a href="">Permalink</a> | ';
 		if($usuarios['group']==1)
-		echo '<a href="admin.php?id=blog&action=editentry&entryid='.$blog['id'].'">Editar entrada</a> | ';
-		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr>
-<tr><td colspan="2"><strong>Trackback:</strong><br /><div class="well well-small">'.$config['pathto'].'trackback.php?id='.$blog['id'].'</div>
-</td></tr>';
-		echo '</tbody>
+		echo '<a href="admin.php?action=editpage&id='.$blog['id'].'">Editar entrada</a> | ';
+		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
 		</table>
-		<br />';
-		include('includes/trackbacks.php');
-		
-		echo '<br /></div>
+		<br /><br /></div>
 		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
 		    <div id="disqus_thread" class="large-12 columns"></div>
     <script type="text/javascript">
@@ -76,4 +70,12 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 
 		echo '<br />';
 		}
+	}
+else
+	{
+	echo '
+<div data-alert class="alert-box alert">La página debe tener un ID válido.</div>
+
+';
+ }
 ?>

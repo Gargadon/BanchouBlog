@@ -72,8 +72,7 @@ echo '¿Por qué no escribes tu primer entrada?';
 		<td style="vertical-align:top;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
-		<tr><th>
-		<h4><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a></h4>
+		<tr><th><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a>
 		</th>
 		</tr>
 		<tr>
@@ -98,7 +97,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '<table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
+ echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -123,7 +122,7 @@ echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-Pr
  }
 
 }
- echo '</tbody></table>'; 
+ echo '</tbody></table></div>'; 
 }	
 	
 else
@@ -193,8 +192,7 @@ echo '¿Por qué no escribes tu primer entrada?';
 		<td style="vertical-align:top;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
-		<tr><th>
-		<h4><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a></h4>
+		<tr><th><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a>
 		</th>
 		</tr>
 		<tr>
@@ -219,7 +217,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '<table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
+ echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -244,6 +242,6 @@ echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-Pr
  }
 
 }
- echo '</tbody></table>'; 
+ echo '</tbody></table></div>'; 
  }
 ?>

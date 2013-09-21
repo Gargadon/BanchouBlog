@@ -1,19 +1,19 @@
 <?php
 if(defined('dwogame'))
 {
-               echo '<table class="table table-bordered table-hover">
+               echo '<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
 		<th>Configuración del blog</th>
 		</tr>';
 	if(isset($_POST['envia']))
 	{
-	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\' WHERE id=\''.$_GET['entryid'].'\'');
+	mysql_query('UPDATE blog_pages SET page=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\' WHERE id=\''.$_GET['id'].'\'');
 			echo '<tr>
 		<td>Los cambios se han realizado correctamente.</td>
 		</tr>
 		<tr>
-		<td><a href="index.php?entryid='.$_GET['entryid'].'">Ver tema</a></td>
+		<td><a href="pages.php?id='.$_GET['id'].'">Ver página</a></td>
 		</tr>
 		<tr>
 		<td><a href="admin.php">Regresar al índice</a></td>
@@ -21,7 +21,7 @@ if(defined('dwogame'))
 	}
 	else
 	{
-	$blog1 = mysql_query('SELECT * FROM blog_entry WHERE id=\''.$_GET['entryid'].'\'');
+	$blog1 = mysql_query('SELECT * FROM blog_pages WHERE id=\''.$_GET['id'].'\'');
 	$blog = mysql_fetch_array($blog1);
 	$recprofile1 = mysql_query('SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
 	$recprofile = mysql_fetch_array($recprofile1);	
@@ -29,8 +29,8 @@ if(defined('dwogame'))
 		<td>       
                 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
                 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css" />
-<form action="admin.php?action=editentry&entryid='.$_GET['entryid'].'" method="POST">
-		<strong>Editar entrada:
+<form action="admin.php?action=editpage&id='.$_GET['id'].'" method="POST">
+		<strong>Editar página:
 		</strong></td>
 		</tr>
 		<tr>
@@ -43,14 +43,9 @@ if(defined('dwogame'))
 		</tr>
 		<tr>
 		<td>
-		<textarea id="editor_v2" name="entrada" style="width:100%;height:150px;">'.$blog['entry'].'</textarea>
+		<textarea id="editor1" name="entrada" style="width:100%;height:150px;">'.$blog['page'].'</textarea>
 		<script type="text/javascript">
-		//<![CDATA[
-		CKEDITOR.replace( \'editor_v2\',
-			{
-			skin : \'v2\'
-			});
-		//]]>
+			CKEDITOR.replace( \'editor1\' );
 		</script>
 		<input type="hidden" name="envia" value="yes" />
 		</form>

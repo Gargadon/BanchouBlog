@@ -1,47 +1,69 @@
 <?php
-if(defined("dwogame"))
+if(defined('dwogame'))
 {
-if ($usuarios['group']==1)
-{
+	if($_POST['envia']==1)
+	{
 	$author = $usuarios['id'];
 	$fecha = time();
 	$subject = $_POST['subject'];
-	$entry = $_POST['content'];
+	$page = $_POST['content'];
 	$envia = $_POST['envia'];
-	if ($envia==1)
-	{
-	mysql_query('INSERT blog_entry (author, date, subject, entry) VALUES (\''.$author.'\',\''.$fecha.'\',\''.$subject.'\',\''.$entry.'\')');
-	$searchentry=mysql_fetch_array(mysql_query('SELECT id FROM blog_entry WHERE date=\''.$fecha.'\''));
-                echo '
-		<table  class="table small-12 large-12 columns">
+	mysql_query('INSERT blog_pages (author, date, subject, page) VALUES (\''.$author.'\',\''.$fecha.'\',\''.$subject.'\',\''.$page.'\')');
+	$searchentry=mysql_fetch_array(mysql_query('SELECT id FROM blog_pages WHERE date=\''.$fecha.'\''));
+			echo '<tr>
+		<td>Los cambios se han realizado correctamente.</td>
+		</tr>
+		<tr>
+		<td><a href="pages.php?id='.$searchentry['id'].'">Ver página</a></td>
+		</tr>
+		<tr>
+		<td><a href="admin.php">Regresar al índice</a></td>
+		</tr>';
+	}
+else {
+                echo '<form action="'.$_SERVER['PHP_SELF'].'?action=pages" method="POST">
+                
+                <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+                <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css" />
+		<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
-		<th>Configuración del blog</th>
+		<th colspan="2">Nueva página</th>
 		</tr>
 		<tr>
 		<td>
-		Los cambios se han realizado correctamente.
+		Tema:
+		</td>
+		<td>
+		<input type="text" name="subject" size="100" />
 		</td>
 		</tr>
 		<tr>
-		<td>
-		<a href="index.php?entryid='.$searchentry['id'].'">Ver entrada</a>
+		<td colspan="2">Contenido de la página:
 		</td>
 		</tr>
 		<tr>
-		<td>
-		<a href="'.$_SERVER['PHP_SELF'].'?id=blog">Regresar al menú</a>
+		<td colspan="2">
+		<textarea id="editor1" name="content" style="width:100%;height:150px;"></textarea>
+		<script type="text/javascript">
+			CKEDITOR.replace( \'editor1\' );
+		</script>
+		</td>
+		</tr>
+		<tr>
+		<td colspan="2" class="notes">
+		<a href="'.$_SERVER['PHP_SELF'].'">Regresar al menú</a>
 		</td>
 		</tr>
 		</tbody>
-		</table>';
-	}
-	else
-	{
-
-	echo '		<table class="table small-12 large-12 columns">
+		</table>
+		<input type="hidden" name="envia" value="1" />
+		</form>
+		';
+		
+}echo '		<table class="table small-12 large-12 columns">
 		<tbody>
-		<tr><th colspan="2">Entradas más recientes</th></tr>
+		<tr><th colspan="2">Páginas más recientes</th></tr>
 ';
 if (!(isset($_GET['page']))) 
 		{ 
@@ -52,21 +74,11 @@ if (!(isset($_GET['page'])))
 
  //Edit $data to be your query 
 
- $data = mysql_query("SELECT * FROM blog_entry") or die(mysql_error()); 
+ $data = mysql_query("SELECT * FROM blog_pages") or die(mysql_error()); 
  $rows = mysql_num_rows($data); 
  if($rows==0)
  {
- echo '
-
-<div data-alert class="alert-box alert">
-Esto está muy vacío. ';
-if($usuarios['group']==1)
-echo '<a href="admin.php?action=newentry">¿Por qué no escribes tu primer entrada?</a>';
-else
-echo '¿Por qué no escribes tu primer entrada?';
- echo ' </div>
-
-';
+ echo '<tr><td colspan="2">Esto está muy vacío. </td></tr>';
  }
   else
  {
@@ -91,7 +103,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  $max = 'ORDER by `id` DESC limit ' .($_GET['page'] - 1) * $page_rows .',' .$page_rows; 
  
   //This is your query again, the same one... the only difference is we add $max into it
- $data_p = mysql_query("SELECT * FROM blog_entry $max") or die(mysql_error()); 
+ $data_p = mysql_query("SELECT * FROM blog_pages $max") or die(mysql_error()); 
 
  //This is where you display your query results
  while($blog = mysql_fetch_array( $data_p )) 
@@ -103,7 +115,7 @@ echo '¿Por qué no escribes tu primer entrada?';
 		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><td>
-		<strong><a href="index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a></strong>
+		<strong><a href="pages.php?id='.$blog['id'].'">'.$blog['subject'].'</a></strong>
 		</td>
 		</tr>
 		<tr>
@@ -112,7 +124,7 @@ echo '¿Por qué no escribes tu primer entrada?';
 		</td>
 		</tr>
 		<td>
-		<a href="admin.php?action=editentry&entryid='.$blog['id'].'">Editar entrada</a> | <a href="admin.php?action=deleteentry&entryid='.$blog['id'].'" onclick="return confirm(\'¿Está seguro de querrer borrar esta entrada?\');">Borrar entrada</a>
+		<a href="admin.php?action=editpage&id='.$blog['id'].'">Editar página</a> | <a href="admin.php?action=deletepage&id='.$blog['id'].'" onclick="return confirm(\'¿Está seguro de querrer borrar esta página?\');">Borrar página</a>
 		</td>
 		</tr>
 		</tbody>
@@ -132,7 +144,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  else 
  {
 $previous = $_GET['page']-1;
-echo '<tr><td colspan="2"><a href="admin.php?page=1"> <<-Primero</a>  | <a href="admin.php?page='.$previous.'"> <-Anterior</a></td></tr>';
+echo '<tr><td colspan="2"><a href="admin.php?action=pages&amp;page=1"> <<-Primero</a>  | <a href="admin.php?action=pages&amp;page='.$previous.'"> <-Anterior</a></td></tr>';
  } 
 
  //This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
@@ -142,21 +154,12 @@ echo '<tr><td colspan="2"><a href="admin.php?page=1"> <<-Primero</a>  | <a href=
 
  else {
  $next = $_GET['page']+1;
- echo '<tr><td colspan="2"> <a href="admin.php?page='.$next.'">Siguiente -></a> | <a href="admin.php?page='.$last.'">Último ->></a></td></tr>';
+ echo '<tr><td colspan="2"> <a href="admin.php?action=pages&amp;page='.$next.'">Siguiente -></a> | <a href="admin.php?action=pages&amp;page='.$last.'">Último ->></a></td></tr>';
  } 
  }
  echo '</tbody></table>
  ';
-
-       	}
-}
-else
-{
-	echo 'Hacker?';
-	die();
-}
-}
-else
+}else
 {
 header("HTTP/1.0 403 Forbidden");
 }

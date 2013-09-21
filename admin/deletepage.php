@@ -5,11 +5,11 @@ echo '<table>
 		<tbody>
 		<tr>
 		<th>Configuración del blog</th></tr>';
-if(isset($_GET['entryid']))
+if(isset($_GET['id']))
 {
-mysql_query('DELETE FROM blog_entry WHERE id=\''.$_GET['entryid'].'\'');
+mysql_query('DELETE FROM blog_pages WHERE id=\''.$_GET['id'].'\'');
 echo '<tr>
-		<td>La entrada se ha borrado con éxito.</td>
+		<td>La página se ha borrado con éxito.</td>
 		</tr>
 		<tr>
 		<td><a href="admin.php">Regresar al índice</a></td>
