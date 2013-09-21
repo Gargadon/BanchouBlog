@@ -20,6 +20,8 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_entry` (
   `date` int(11) NOT NULL,
   `subject` text NOT NULL,
   `entry` text NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
 mysql_query("CREATE TABLE IF NOT EXISTS `blog_grupo` (
