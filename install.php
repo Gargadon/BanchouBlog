@@ -5,9 +5,9 @@ echo '<!DOCTYPE html>
 <html lang="es-mx">
   <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/foundation.css" />
-  <script src="js/vendor/custom.modernizr.js"></script>
+  <link rel="stylesheet" href="http://www.gargadon.info/gargablog/css/normalize.css" />
+  <link rel="stylesheet" href="http://www.gargadon.info/gargablog/css/foundation.css" />
+  <script src="http://www.gargadon.info/gargablog/js/vendor/custom.modernizr.js"></script>
  <title>GargaBlog Installer</title></head>
   <body>
  	<nav class="top-bar" data-options="is_hover:false">
@@ -40,7 +40,7 @@ mysql_connect($dwo_server,$dwo_user,$dwo_pass)or die(mysql_error().'<div class="
     + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
     + \'.js><\/script>\');
 </script>
-<script src="js/foundation.min.js"></script>
+<script src="http://www.gargadon.info/gargablog/js/foundation.min.js"></script>
 <script>
   $(document).foundation();
 </script>
@@ -52,7 +52,7 @@ mysql_select_db($dwo_base)or die(mysql_error().'<div class="small-12 large-12 co
     + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
     + \'.js><\/script>\');
 </script>
-<script src="js/foundation.min.js"></script>
+<script src="http://www.gargadon.info/gargablog/js/foundation.min.js"></script>
 <script>
   $(document).foundation();
 </script>
@@ -86,7 +86,7 @@ echo '</div></div><script>
     + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
     + \'.js><\/script>\');
 </script>
-<script src="js/foundation.min.js"></script>
+<script src="http://www.gargadon.info/gargablog/js/foundation.min.js"></script>
 <script>
   $(document).foundation();
 </script>
