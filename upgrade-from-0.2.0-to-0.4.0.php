@@ -10,7 +10,7 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_cats` (
   `name` text NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT");
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
 mysql_query("INSERT INTO `blog_cats` (`id`, `name`, `description`) VALUES
 (1, 'Sin categoría', 'No category entries')");
 mysql_query("UPDATE `blog_config` SET  `version` = '0.4.0'");
