@@ -12,8 +12,8 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_pages` (
   `subject` text NOT NULL,
   `page` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1");
-mysql_query("UPDATE `blog_config` SET  `version` = '0.4.7'");
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
+mysql_query("UPDATE `blog_config` SET  `version` = '0.4.8'");
 echo '<p>Se ha actualizado correctamente su base de datos. Por favor, borre este archivo antes de continuar.</p>
 </body></html>';
 ?>
