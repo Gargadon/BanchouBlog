@@ -49,13 +49,13 @@ echo '<li><a href="pages.php?id='.$pages['id'].'">'.$pages['subject'].'</a></li>
 
       <li class="divider"></li>
       <li class="has-form">
-        <form>
+        <form action="search.php" method="get">
           <div class="row collapse">
             <div class="small-8 columns">
-              <input type="text">
+              <input type="text" name="q">
             </div>
             <div class="small-4 columns">
-              <a href="#" class="alert button">Search</a>
+              <input type="submit" class="alert button" value="Buscar" />
             </div>
           </div>
         </form>
@@ -105,13 +105,13 @@ echo '<li><a href="pages.php?id='.$pages['id'].'">'.$pages['subject'].'</a></li>
 
       <li class="divider"></li>
       <li class="has-form">
-        <form>
+        <form action="search.php" method="get">
           <div class="row collapse">
             <div class="small-8 columns">
-              <input type="text">
+              <input type="text" name="q">
             </div>
             <div class="small-4 columns">
-              <a href="#" class="alert button">Search</a>
+              <input type="submit" class="alert button" value="Buscar" />
             </div>
           </div>
         </form>
