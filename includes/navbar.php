@@ -23,6 +23,7 @@
         <li><a href="admin.php?action=pages">Configurar páginas</a></li>
           <li><a href="admin.php?action=config">Editar entradas</a></li>
           <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
+	 <li><a href="admin.php?action=createuser">Crear usuarios</a></li>
           <li><a href="admin.php?action=users">Modificar usuarios</a></li>
           </ul>';
 echo '<li class="has-dropdown"><a href="#">Categorías</a>
