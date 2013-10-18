@@ -23,6 +23,7 @@
         <li><a href="admin.php?action=pages">Configurar páginas</a></li>
           <li><a href="admin.php?action=config">Editar entradas</a></li>
           <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
+	 <li><a href="admin.php?action=createuser">Crear usuarios</a></li>
           <li><a href="admin.php?action=users">Modificar usuarios</a></li>
           </ul>';
 echo '<li class="has-dropdown"><a href="#">Categorías</a>
@@ -49,13 +50,13 @@ echo '<li><a href="pages.php?id='.$pages['id'].'">'.$pages['subject'].'</a></li>
 
       <li class="divider"></li>
       <li class="has-form">
-        <form>
+        <form action="search.php" method="get">
           <div class="row collapse">
             <div class="small-8 columns">
-              <input type="text">
+              <input type="text" name="q">
             </div>
             <div class="small-4 columns">
-              <a href="#" class="alert button">Search</a>
+              <input type="submit" class="alert button" value="Buscar" />
             </div>
           </div>
         </form>
@@ -105,13 +106,13 @@ echo '<li><a href="pages.php?id='.$pages['id'].'">'.$pages['subject'].'</a></li>
 
       <li class="divider"></li>
       <li class="has-form">
-        <form>
+        <form action="search.php" method="get">
           <div class="row collapse">
             <div class="small-8 columns">
-              <input type="text">
+              <input type="text" name="q">
             </div>
             <div class="small-4 columns">
-              <a href="#" class="alert button">Search</a>
+              <input type="submit" class="alert button" value="Buscar" />
             </div>
           </div>
         </form>

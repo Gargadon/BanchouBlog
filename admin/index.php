@@ -56,6 +56,18 @@ if ($usuarios['group']==1)
 			case 'deleteuser':
 			include('admin/deleteuser.php');
 			break;
+			
+			case 'createuser':
+			include('admin/createuser.php');
+			break;
+			
+			case 'editcat':
+			include('admin/editcat.php');
+			break;
+			
+			case 'deletecat':
+			include('admin/deletecat.php');
+			break;
 		
 		default:
 		echo 'Opción no válida';
