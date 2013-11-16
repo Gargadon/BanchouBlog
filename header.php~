@@ -4,7 +4,7 @@ define('dwogame','1');
 $config1 = mysql_query('SELECT * FROM blog_config');
 $config = mysql_fetch_array($config1);
 date_default_timezone_set(''.$config['zona'].'');
-require('lang/es_la.php');
+require('lang/'.$config['lang'].'.php');
 // A continuación el login
 
 if (isset($_COOKIE['gargauser']) and isset($_COOKIE['gargapass']))

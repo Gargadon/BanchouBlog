@@ -27,11 +27,11 @@ echo '
  echo '
 
 <div data-alert class="alert-box alert">
-'.$texto['16'].' ';
+Esto está muy vacío. ';
 if($usuarios['group']==1)
-echo '<a href="admin.php?action=newentry">'.$texto['17'].'</a>';
+echo '<a href="admin.php?action=newentry">¿Por qué no escribes tu primer entrada?</a>';
 else
-echo ''.$texto['17'].'';
+echo '¿Por qué no escribes tu primer entrada?';
  echo ' </div>
 
 ';
@@ -97,7 +97,7 @@ echo ''.$texto['17'].'';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">'.$texto['14'].' '.$_GET['page'].' '.$texto['15'].' '.$last.'</td></tr>';
+ echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -108,7 +108,7 @@ echo ''.$texto['17'].'';
  else 
  {
 $previous = $_GET['page']-1;
-echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.$texto['20'].'</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-'.$texto['18'].'</a></td></tr>';
+echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-Primero</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-Anterior</a></td></tr>';
  } 
 
  //This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
@@ -118,7 +118,7 @@ echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.
 
  else {
  $next = $_GET['page']+1;
- echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$next.'">'.$texto['19'].' -></a> | <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$last.'">'.$texto['21'].' ->></a></td></tr>';
+ echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$next.'">Siguiente -></a> | <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$last.'">Último ->></a></td></tr>';
  }
 
 }
@@ -147,11 +147,11 @@ else
  echo '
 
 <div data-alert class="alert-box alert">
-'.$texto['16'].' ';
+Esto está muy vacío. ';
 if($usuarios['group']==1)
-echo '<a href="admin.php?action=newentry">'.$texto['17'].'</a>';
+echo '<a href="admin.php?action=newentry">¿Por qué no escribes tu primer entrada?</a>';
 else
-echo ''.$texto['17'].'';
+echo '¿Por qué no escribes tu primer entrada?';
  echo ' </div>
 
 ';
@@ -217,7 +217,7 @@ echo ''.$texto['17'].'';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">'.$texto['14'].' '.$_GET['page'].' '.$texto['15'].' '.$last.'</td></tr>';
+ echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -228,7 +228,7 @@ echo ''.$texto['17'].'';
  else 
  {
 $previous = $_GET['page']-1;
-echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.$texto['20'].'</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-'.$texto['18'].'</a></td></tr>';
+echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-Primero</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-Anterior</a></td></tr>';
  } 
 
  //This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
@@ -238,7 +238,7 @@ echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.
 
  else {
  $next = $_GET['page']+1;
- echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?page='.$next.'">'.$texto['19'].' -></a> | <a href="'.$config['pathto'].'index.php?page='.$last.'">'.$texto['21'].' ->></a></td></tr>';
+ echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?page='.$next.'">Siguiente -></a> | <a href="'.$config['pathto'].'index.php?page='.$last.'">Último ->></a></td></tr>';
  }
 
 }
