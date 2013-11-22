@@ -25,9 +25,10 @@ $islogged=0; // No somos usuarios registrados
 // Termina login
 
 echo '<!DOCTYPE html>
-<html lang="es-mx">
+<html class="no-js" lang="es-mx">
   <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <meta name="viewport" content="width=device-width" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="'.$config['pathto'].'css/normalize.css" />
   <link rel="stylesheet" href="'.$config['pathto'].'css/foundation.css" />
   <script src="'.$config['pathto'].'js/vendor/custom.modernizr.js"></script>
