@@ -3,7 +3,7 @@ echo '</div>
 <div class="row"><div class="large-12 columns">
 '.$config['footer'].'</div></div>';
 
-echo '<div id="loguear" class="reveal-modal">
+echo '<div id="loguear" class="reveal-modal" data-reveal>
  <form action="login.php" method="post">
   <fieldset>
     <legend>Ingresa</legend>
@@ -41,12 +41,8 @@ echo '<div id="loguear" class="reveal-modal">
   <a class="close-reveal-modal">&#215;</a>
 </div>';
 
-echo '<script>
-  document.write(\'<script src=js/vendor/\'
-    + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
-    + \'.js><\/script>\');
-</script>
-<script src="js/foundation.min.js"></script>
+echo '<script src="'.$config['pathto'].'js/vendor/jquery.js"></script>
+<script src="'.$config['pathto'].'js/all.js"></script>
 <script>
   $(document).foundation();
 </script>

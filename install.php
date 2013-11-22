@@ -2,15 +2,16 @@
 require('base.php');
 
 echo '<!DOCTYPE html>
-<html lang="es-mx">
+<html class="no-js" lang="es-mx">
   <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <meta name="viewport" content="width=device-width" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="http://www.gargadon.info/gargablog/css/normalize.css" />
   <link rel="stylesheet" href="http://www.gargadon.info/gargablog/css/foundation.css" />
   <script src="http://www.gargadon.info/gargablog/js/vendor/custom.modernizr.js"></script>
  <title>GargaBlog Installer</title></head>
   <body>
- 	<nav class="top-bar" data-options="is_hover:false">
+ 	<nav class="top-bar" data-topbar data-options="is_hover:false">
   <ul class="title-area">
     <!-- Title Area -->
     <li class="name">
@@ -35,24 +36,18 @@ echo '<!DOCTYPE html>
   </section>
 </nav><div class="row">';
 mysql_connect($dwo_server,$dwo_user,$dwo_pass)or die(mysql_error().'<div class="small-12 large-12 columns"><p>No se ha podido contactar a la base de datos.</p>
-<p>Revise el archivo base.php para verificar que los datos de conexión son correctos.</p></div></div><script>
-  document.write(\'<script src=js/vendor/\'
-    + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
-    + \'.js><\/script>\');
-</script>
-<script src="http://www.gargadon.info/gargablog/js/foundation.min.js"></script>
+<p>Revise el archivo base.php para verificar que los datos de conexión son correctos.</p></div></div>
+<script src="http://www.gargadon.info/gargablog/js/vendor/jquery.js"></script>
+<script src="http://www.gargadon.info/gargablog/js/all.js"></script>
 <script>
   $(document).foundation();
 </script>
 </body>
 </html>');
 mysql_select_db($dwo_base)or die(mysql_error().'<div class="small-12 large-12 columns"><p>No se ha podido contactar a la tabla especificada.</p>
-<p>Revise el archivo base.php para verificar que los datos de conexión son correctos.</p><script>
-  document.write(\'<script src=js/vendor/\'
-    + (\'__proto__\' in {} ? \'zepto\' : \'jquery\')
-    + \'.js><\/script>\');
-</script>
-<script src="http://www.gargadon.info/gargablog/js/foundation.min.js"></script>
+<p>Revise el archivo base.php para verificar que los datos de conexión son correctos.</p>
+<script src="http://www.gargadon.info/gargablog/js/vendor/jquery.js"></script>
+<script src="http://www.gargadon.info/gargablog/js/all.js"></script>
 <script>
   $(document).foundation();
 </script>
