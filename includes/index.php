@@ -69,7 +69,7 @@ echo ''.$texto['17'].'';
 	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
 	$categories=mysql_fetch_array($categories1);
  echo '<tr>
-		<td style="vertical-align:top;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
+		<td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><th><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a>
@@ -189,7 +189,7 @@ echo ''.$texto['17'].'';
 	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
 	$categories=mysql_fetch_array($categories1);
  echo '<tr>
-		<td style="vertical-align:top;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
+		<td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><th><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a>

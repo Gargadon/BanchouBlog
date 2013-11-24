@@ -5,7 +5,6 @@ echo '<!DOCTYPE html>
 <html class="no-js" lang="es-mx">
   <head><meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <meta name="viewport" content="width=device-width" />
-<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="http://www.gargadon.info/gargablog/css/normalize.css" />
   <link rel="stylesheet" href="http://www.gargadon.info/gargablog/css/foundation.css" />
   <script src="http://www.gargadon.info/gargablog/js/vendor/custom.modernizr.js"></script>
