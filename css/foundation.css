@@ -2935,12 +2935,12 @@ a {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
   p aside {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     line-height: 1.35;
     font-style: italic; }
 
@@ -3008,7 +3008,7 @@ code {
 ul,
 ol,
 dl {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
   list-style-position: outside;
@@ -4159,13 +4159,13 @@ table {
     table tfoot tr th,
     table tfoot tr td {
       padding: 0.5rem 0.625rem 0.625rem;
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       color: #222222;
       text-align: left; }
   table tr th,
   table tr td {
     padding: 0.5625rem 0.625rem;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: #222222; }
   table tr.even, table tr.alt, table tr:nth-of-type(even) {
     background: #f9f9f9; }
