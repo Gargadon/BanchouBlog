@@ -23,7 +23,7 @@ $texto['10']='Editar entradas';
 $texto['11']='Nueva entrada';
 $texto['12']='Crear usuarios';
 $texto['13']='Modificar usuarios';
-// Página principal
+//Página principal
 $texto['14']='Mostrando página';
 $texto['15']='de';
 $texto['16']='Esto está muy vacío.';
@@ -57,5 +57,7 @@ $texto['42']='No tienes permiso de editar esta entrada.';
 $texto['43']='Las contraseñas no coinciden.';
 $texto['44']='Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.';
 $texto['45']='Se ha realizado el cambio correctamente.';
-// Login
+$texto['46']='No cambiar';
+//Login
+
 ?>

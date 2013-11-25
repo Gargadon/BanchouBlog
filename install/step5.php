@@ -44,8 +44,8 @@ echo '<div class="small-12 large-12 columns">
 </form>';
 	else
 	{
-	mysql_query("INSERT INTO `blog_config` (`name`, `version`, `software`, `pathto`, `disqusname`, `footer`, `zona`) VALUES
-('".$blogname."', '0.5.1', 'GargaBlog', '".$path."', '".$disqusname."', '<p>GargaBlog is a simple blog written in PHP.</p>\r\n<p>&#169; Gargadon.info</p>', 'America/Merida')");
+	mysql_query("INSERT INTO `blog_config` (`name`, `version`, `software`, `pathto`, `disqusname`, `footer`, `zona`,`lang`) VALUES
+('".$blogname."', '0.6.0a1', 'GargaBlog', '".$path."', '".$disqusname."', '<p>GargaBlog is a simple blog written in PHP.</p>\r\n<p>&#169; Gargadon.info</p>', 'America/Merida', 'es_la')");
 mysql_query("INSERT INTO `blog_grupo` (`id`, `nombre`) VALUES
 (0, 'Usuario'),
 (1, 'Administrador')");

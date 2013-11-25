@@ -12,7 +12,8 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_config` (
   `pathto` text NOT NULL,
   `disqusname` text NOT NULL,
   `footer` text NOT NULL,
-    `zona` text NOT NULL
+    `zona` text NOT NULL,
+    `lang` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8");
 mysql_query("CREATE TABLE IF NOT EXISTS `blog_entry` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
