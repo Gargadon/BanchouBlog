@@ -48,15 +48,10 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 		<a href="">Permalink</a> | ';
 		if($usuarios['group']==1)
 		echo '<a href="admin.php?id=blog&action=editentry&entryid='.$blog['id'].'">Editar entrada</a> | ';
-		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr>
-<tr><td colspan="2"><strong>Trackback:</strong><br /><div class="well well-small">'.$config['pathto'].'trackback.php?id='.$blog['id'].'</div>
-</td></tr>';
+		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr>';
 		echo '</tbody>
 		</table>
-		<br />';
-		include('includes/trackbacks.php');
-		
-		echo '<br /></div>
+		<br /></div>
 		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
 		    <div id="disqus_thread" class="large-12 columns"></div>
     <script type="text/javascript">
