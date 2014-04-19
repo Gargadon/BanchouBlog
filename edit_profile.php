@@ -11,7 +11,7 @@ if ($islogged==1)
 	$recprofile = mysql_fetch_array($recprofile1);
 	if(empty($recprofile['usuario']))
 	{
-	echo 'El usuario no existe';
+	echo __('El usuario no existe');
 	}
 	elseif($recprofile['id']==$usuarios['id'] || $usuarios['group']==1)
 	{
@@ -23,7 +23,7 @@ if ($islogged==1)
       <tbody>
       	<tr>
       	<th colspan="2">
-      	Editar tu perfil
+      	'.__('Editar tu perfil').'
       	</th>
       	</tr>
               <tr>
@@ -42,7 +42,7 @@ if ($islogged==1)
 		if($passwordenmd5!=d41d8cd98f00b204e9800998ecf8427e)
 			{
 			if($password1!=$password2) {
-				echo 'Las contraseñas no coinciden.
+				echo ''.__('Las contraseñas no coinciden.').'
 					</td></tr></tbody>
 					</table>';
 				}
@@ -52,14 +52,14 @@ if ($islogged==1)
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\', usuario=\''.$username.'\', password=\''.$passwordenmd5.'\', descripcion=\''.$descripcion.'\', `group`=\''.$group.'\'  WHERE usuario=\''.$recprofile['usuario'].'\'');
 				session_destroy();
-				echo 'Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.
+				echo ''.__('Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.').'
 					</td></tr></tbody>
 					</table>';
 				}
 				else
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\', password=\''.$passwordenmd5.'\', descripcion=\''.$descripcion.'\', `group`=\''.$group.'\' WHERE usuario=\''.$recprofile['usuario'].'\'');
-				echo 'Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.
+				echo ''.__('Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.').'
 					</td></tr></tbody>
 					</table>';
 					}
@@ -71,14 +71,14 @@ if ($islogged==1)
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\', usuario=\''.$username.'\', descripcion=\''.$descripcion.'\', `group`=\''.$group.'\' WHERE usuario=\''.$recprofile['usuario'].'\'');
 				session_destroy();
-				echo 'Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.
+				echo ''.__('Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.').'
 					</td></tr></tbody>
 					</table>';
 				}
 				else
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\',descripcion=\''.$descripcion.'\', `group`=\''.$group.'\' WHERE usuario=\''.$recprofile['usuario'].'\'');
-				echo 'Se ha realizado el cambio correctamente.
+				echo ''.__('Se ha realizado el cambio correctamente.').'
 					</td></tr></tbody>
 					</table>';
 					}
@@ -86,47 +86,47 @@ if ($islogged==1)
 		}
 	else
 	{
-          echo '<div align="center">Los campos deshabilitados no pueden editarse.</div>
+          echo '<div align="center">'.__('Los campos deshabilitados no pueden editarse.').'</div>
                    <form METHOD="post" action="edit_profile.php?id='.$profid.'"> </td>
         </tr>
         <tr>
-          <td>Nombre de usuario:
+          <td>'.__('Nombre de usuario').':
           </td>
           <td><input type="text" name="usuario" value="'. $recprofile['usuario'] .'" />
           </td>
         </tr>
         <tr>
-          <td>Avatar:
+          <td>'.__('Avatar').':
           </td>
-          <td><p>El sistema usa Gravatar para mostrar tu avatar.</p>
-          <p>¿No usas Gravatar? Regístrate <a href="http://es.gravatar.com/site/signup/" target="_blank">aquí</a> con tu cuenta de correo.</p>
+          <td><p>'.__('El sistema usa Gravatar para mostrar tu avatar.').'</p>
+          <p>'.__('¿No usas Gravatar? Regístrate <a href="http://es.gravatar.com/site/signup/" target="_blank">aquí</a> con tu cuenta de correo.').'</p>
           </td>
         </tr>
         <tr>
-        <td>Nombre(s):
+        <td>'.__('Nombre(s)').':
           </td>
           <td><input type="text" name="nombre" value="'.$recprofile['name'].'" />
           </td>
         </tr>
         <tr>
-        <td>Apellidos:</td>
+        <td>'.__('Apellidos').':</td>
           <td><input type="text" name="apellidos" value="'.$recprofile['surname'].'" />
           </td>
         </tr>
         <tr>
-        <td>Contraseña (si no seas cambiarla deja este espacio en blanco):
+        <td>'.__('Contraseña (si no seas cambiarla deja este espacio en blanco)').':
           </td>
           <td><input type="password" name="password1" maxlength="10" />
           </td>
         </tr>
         <tr>
-          <td>Repetir contraseña (si deseas cambiar tu contraseña completa este campo):
+          <td>'.__('Repetir contraseña (si deseas cambiar tu contraseña completa este campo)').':
           </td>
           <td><input type="password" name="password2" maxlength="10" />
           </td>
         </tr>
 	 <tr>
-          <td>Correo electrónico:
+          <td>'.__('Correo electrónico').':
           </td>
           <td><input type="text" name="email" value="'. $recprofile['email'] .'" />
           </td>
@@ -134,10 +134,10 @@ if ($islogged==1)
         if(($usuarios['group']==1) && ($recprofile['id']!=$usuarios['id']))
          {
          echo '<tr>
-          <td>Rol:
+          <td>'.__('Rol').':
           </td>
           <td><select name="grupo">
-          <option value="'.$recprofile['group'].'" selected>No cambiar ('.$recgroup['nombre'].')</option>
+          <option value="'.$recprofile['group'].'" selected>'.__('No cambiar').' ('.$recgroup['nombre'].')</option>
           ';
 	while($cambiagrupo = mysql_fetch_array($cambiagrupo1))
 	{
@@ -149,29 +149,29 @@ if ($islogged==1)
         }
         else
         echo '  <tr>
-          <td>Rol:
+          <td>'.__('Rol').':
           </td>
           <td><input type="text" name="grupo" value="'. $grupo['nombre'] .'" disabled /><input type="hidden" name="grupo" value="'.$recprofile['group'].'">
           </td>
         </tr>';
 echo '        <tr>
-          <td>Fecha de registro:</td>
+          <td>'.__('Fecha de registro').':</td>
           <td><input type="text" name="fecha" value="'. $recprofile['fecha'] .'" disabled />
           </td>
         </tr>
         <tr>
-          <td>Acerca de mí:
+          <td>'.__('Acerca de mí').':
           </td>
           <td><textarea name="descripcion">'. $recprofile['descripcion'] .'</textarea>
           </td>
         </tr>
         <tr>
-          <td colspan="2"><input type="submit" value="Editar datos" />
+          <td colspan="2"><input type="submit" value="'.__('Editar datos').'" />
           </td>
         </tr>
         <tr>
          <td colspan="2">
-        <a href="profile.php">Regresar al perfil</a>
+        <a href="profile.php">'.__('Regresar al perfil').'</a>
          </td>
         </tr>
       </tbody>
@@ -182,7 +182,7 @@ echo '        <tr>
     }
     else
     {
-    echo '<p>No tienes permiso de editar esta entrada.</p>';
+    echo '<p>'.__('No tienes permiso de editar esta entrada.').'</p>';
     }
 }
 }

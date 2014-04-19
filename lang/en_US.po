@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GargaBlog 0.6.0\n"
-"POT-Creation-Date: 2014-04-19 14:17-0600\n"
-"PO-Revision-Date: 2014-04-19 14:18-0600\n"
+"POT-Creation-Date: 2014-04-19 14:30-0600\n"
+"PO-Revision-Date: 2014-04-19 14:32-0600\n"
 "Last-Translator: David Kantun <dkantun@gmail.com>\n"
 "Language-Team:  <dkantun@gmail.com>\n"
 "Language: en\n"
@@ -246,12 +246,14 @@ msgid "Crear usuario"
 msgstr "Create user"
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/admin/createuser.php:96
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:93
 #: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:33
 #: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:102
 msgid "Nombre de usuario"
 msgstr "Username"
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/admin/createuser.php:97
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:129
 #: C:\Users\Gargadon\Documents\compile\gargablog/install/step3.php:106
 #: C:\Users\Gargadon\Documents\compile\gargablog/install/step4.php:44
 msgid "Correo electrónico"
@@ -373,6 +375,7 @@ msgid "Categoría"
 msgstr "Category"
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/admin/editentry.php:52
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:140
 msgid "No cambiar"
 msgstr "Don't change"
 
@@ -541,6 +544,96 @@ msgstr ""
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/confirm.php:20
 msgid "Su cuenta de usuario ya ha sido confirmada con anterioridad."
+msgstr ""
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:14
+msgid "El usuario no existe"
+msgstr "The user doesn't exist."
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:26
+msgid "Editar tu perfil"
+msgstr "Edit your profile"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:45
+msgid "Las contraseñas no coinciden."
+msgstr ""
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:55
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:62
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:74
+msgid ""
+"Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo "
+"desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos "
+"datos."
+msgstr ""
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:81
+msgid "Se ha realizado el cambio correctamente."
+msgstr "Changes made successfully."
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:89
+msgid "Los campos deshabilitados no pueden editarse."
+msgstr ""
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:99
+msgid "Avatar"
+msgstr "Avatar"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:101
+msgid "El sistema usa Gravatar para mostrar tu avatar."
+msgstr ""
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:102
+msgid ""
+"¿No usas Gravatar? Regístrate <a href=\"http://es.gravatar.com/site/signup/"
+"\" target=\"_blank\">aquí</a> con tu cuenta de correo."
+msgstr ""
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:106
+msgid "Nombre(s)"
+msgstr "Name"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:112
+msgid "Apellidos"
+msgstr "Surname"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:117
+msgid "Contraseña (si no seas cambiarla deja este espacio en blanco)"
+msgstr "Password (if you don't want to change it, leave blank this field)"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:123
+msgid ""
+"Repetir contraseña (si deseas cambiar tu contraseña completa este campo)"
+msgstr ""
+"Repeat password (if you want to change your password, please fill this field)"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:137
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:152
+#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:39
+#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:108
+msgid "Rol"
+msgstr "Rank"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:158
+msgid "Fecha de registro"
+msgstr "Register date"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:163
+#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:69
+#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:127
+msgid "Acerca de mí"
+msgstr "About me"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:169
+msgid "Editar datos"
+msgstr "Edit profile"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:174
+msgid "Regresar al perfil"
+msgstr "Return to profile"
+
+#: C:\Users\Gargadon\Documents\compile\gargablog/edit_profile.php:185
+msgid "No tienes permiso de editar esta entrada."
 msgstr ""
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/footer.php:9
@@ -884,11 +977,6 @@ msgstr "The user doesn't exist."
 msgid "Perfil del usuario"
 msgstr "Profile of user"
 
-#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:39
-#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:108
-msgid "Rol"
-msgstr "Rank"
-
 #: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:47
 #: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:63
 msgid "IP"
@@ -898,11 +986,6 @@ msgstr "IP"
 #: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:121
 msgid "Nombre del servidor"
 msgstr "Server name"
-
-#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:69
-#: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:127
-msgid "Acerca de mí"
-msgstr "About me"
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/profile.php:93
 msgid "Tu perfil"
