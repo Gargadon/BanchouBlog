@@ -70,7 +70,7 @@ if ($usuarios['group']==1)
 			break;
 		
 		default:
-		echo 'Opción no válida';
+		echo __('Opción no válida');
 	}
 	}
 	else
@@ -79,30 +79,30 @@ if ($usuarios['group']==1)
 		<table>
 		<tbody>
 		<tr>
-		<th>Administración</th>
+		<th>'.__('Administración').'</th>
 		</tr>
 		<tr>
 		<td>
-		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config2">Configuración general del CMS</a></h4>
-		Cambia partes importantes del CMS como estilos, etc.
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config2">'.__('Configuración general del CMS').'</a></h4>
+		'.__('Cambia partes importantes del CMS como estilos, etc.').'
 		</td>
 		</tr>
 		<tr>
 		<td>
-		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config">Editar entradas</a></h4>
-		Borra y edita entradas.
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=config">'.__('Editar entradas').'</a></h4>
+		'.__('Borra y edita entradas.').'
 		</td>
 		</tr>
 		<tr>
 		<td>
-		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=newentry">Nueva entrada</a></h4>
-		Añada una nueva entrada a su blog.
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=newentry">'.__('Nueva entrada').'</a></h4>
+		'.__('Añada una nueva entrada a su blog.').'
 		</td>
 		</tr>
 		<tr>
 		<td>
-		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=users">Modificar usuarios</a></h4>
-		Cree y modifique usuarios.
+		<h4><a href="'.$_SERVER['PHP_SELF'].'?action=users">'.__('Modificar usuarios').'</a></h4>
+		'.__('Cree y modifique usuarios.').'
 		</td>
 		</tr>
 		</tbody>

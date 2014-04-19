@@ -11,13 +11,13 @@ if(defined('dwogame'))
 	mysql_query('INSERT blog_entry (author, date, subject, entry, cat_id) VALUES (\''.$author.'\',\''.$fecha.'\',\''.$subject.'\',\''.$entry.'\',\''.$_POST['category'].'\')');
 	$searchentry=mysql_fetch_array(mysql_query('SELECT id FROM blog_entry WHERE date=\''.$fecha.'\''));
 			echo '<tr>
-		<td>Los cambios se han realizado correctamente.</td>
+		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
 		<tr>
-		<td><a href="index.php?entryid='.$searchentry['id'].'">Ver tema</a></td>
+		<td><a href="index.php?entryid='.$searchentry['id'].'">'.__('Ver tema').'</a></td>
 		</tr>
 		<tr>
-		<td><a href="admin.php">Regresar al índice</a></td>
+		<td><a href="admin.php">'.__('Regresar al índice').'</a></td>
 		</tr>';
 	}
 else {
@@ -28,7 +28,7 @@ else {
 		<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
-		<th colspan="2">Nueva entrada</th>
+		<th colspan="2">'.__('Nueva entrada').'</th>
 		</tr>
 		<tr>
 		<td>
@@ -39,7 +39,7 @@ else {
 		</td>
 		</tr>
 		<tr>
-		<td colspan="2">Contenido de la entrada:
+		<td colspan="2">'.__('Contenido de la entrada').':
 		</td>
 		</tr>
 		<tr>
@@ -59,7 +59,7 @@ echo '</select>
 		</tr>
 		<tr>
 		<td colspan="2" class="notes">
-		<a href="'.$_SERVER['PHP_SELF'].'">Regresar al menú</a>
+		<a href="'.$_SERVER['PHP_SELF'].'">'.__('Regresar al menú').'</a>
 		</td>
 		</tr>
 		</tbody>

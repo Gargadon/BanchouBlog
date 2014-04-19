@@ -4,19 +4,19 @@ if(defined('dwogame'))
                echo '<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
-		<th>Configuración del blog</th>
+		<th>'.__('Configuración del blog').'</th>
 		</tr>';
 	if(isset($_POST['envia']))
 	{
 	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\', cat_id=\''.$_POST['category'].'\' WHERE id=\''.$_GET['entryid'].'\'');
 			echo '<tr>
-		<td>Los cambios se han realizado correctamente.</td>
+		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
 		<tr>
-		<td><a href="index.php?entryid='.$_GET['entryid'].'">Ver tema</a></td>
+		<td><a href="index.php?entryid='.$_GET['entryid'].'">'.__('Ver tema').'</a></td>
 		</tr>
 		<tr>
-		<td><a href="admin.php">Regresar al índice</a></td>
+		<td><a href="admin.php">'.__('Regresar al índice').'</a></td>
 		</tr>';
 	}
 	else
@@ -30,15 +30,15 @@ if(defined('dwogame'))
                 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
                 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css" />
 <form action="admin.php?action=editentry&entryid='.$_GET['entryid'].'" method="POST">
-		<strong>Editar entrada:
+		<strong>'.__('Editar entrada').':
 		</strong></td>
 		</tr>
 		<tr>
-		<td>Por: <strong><a href="profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a></strong>
+		<td>'.__('Por').': <strong><a href="profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a></strong>
 		</td>
 		</tr>
 		<tr>
-		<td>Tema: <input type="text" name="subject" value="'.$blog['subject'].'" />
+		<td>'.__('Tema').': <input type="text" name="subject" value="'.$blog['subject'].'" />
 		</td>
 		</tr>
 		<tr>
@@ -49,7 +49,7 @@ if(defined('dwogame'))
 		</script>';
 		$blog_cats1 = mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
 		$blog_cats = mysql_fetch_array($blog_cats1);
-echo '		Categoría: <select name="category"><option value="'.$blog['cat_id'].'">No cambiar ('.$blog_cats['name'].')</option>';
+echo '		'.__('Categoría').': <select name="category"><option value="'.$blog['cat_id'].'">'.__('No cambiar').' ('.$blog_cats['name'].')</option>';
 		unset($blog_cats1);
 		unset($blog_cats);
 		$blog_cats1 = mysql_query('SELECT * FROM blog_cats ORDER BY id ASC');

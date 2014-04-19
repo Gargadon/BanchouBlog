@@ -4,19 +4,19 @@ if(defined('dwogame'))
                echo '<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
-		<th>Editar categoría</th>
+		<th>'.__('Editar categoría').'</th>
 		</tr>';
 	if(isset($_POST['envia']))
 	{
 	mysql_query('UPDATE blog_cats SET name=\''.$_POST['nombre'].'\',description=\''.$_POST['descripcion'].'\' WHERE id=\''.$_GET['id'].'\'');
 			echo '<tr>
-		<td>Los cambios se han realizado correctamente.</td>
+		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
 		<tr>
-		<td><a href="index.php?id='.$_GET['id'].'">Ver tema</a></td>
+		<td><a href="index.php?id='.$_GET['id'].'">'.__('Ver tema').'</a></td>
 		</tr>
 		<tr>
-		<td><a href="admin.php">Regresar al índice</a></td>
+		<td><a href="admin.php">'.__('Regresar al índice').'</a></td>
 		</tr>';
 	}
 	else
@@ -27,15 +27,15 @@ if(defined('dwogame'))
 
 		<tr>
 		<td><form action="admin.php?action=editcat&id='.$_GET['id'].'" method="POST">
-		Tema: <input type="text" name="nombre" value="'.$blog['name'].'" />
+		'.__('Tema').': <input type="text" name="nombre" value="'.$blog['name'].'" />
 		</td>
 		</tr>
 		<tr>
 		<td>
-		Descripción extendida: <input type="text" name="descripcion" value="'.$blog['description'].'" />
+		'.__('Descripción extendida').': <input type="text" name="descripcion" value="'.$blog['description'].'" />
 		</td></tr>
 		<tr><td>
-		<input type="submit" class="button success" value="Guardar cambios" />
+		<input type="submit" class="button success" value="'.__('Guardar cambios').'" />
 		<input type="hidden" name="envia" value="yes" />
 		</form>
 		</td>

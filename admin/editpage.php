@@ -4,19 +4,19 @@ if(defined('dwogame'))
                echo '<table class="table large-12 small-12 columns">
 		<tbody>
 		<tr>
-		<th>Configuración del blog</th>
+		<th>'.__('Configuración del blog').'</th>
 		</tr>';
 	if(isset($_POST['envia']))
 	{
 	mysql_query('UPDATE blog_pages SET page=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\' WHERE id=\''.$_GET['id'].'\'');
 			echo '<tr>
-		<td>Los cambios se han realizado correctamente.</td>
+		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
 		<tr>
-		<td><a href="pages.php?id='.$_GET['id'].'">Ver página</a></td>
+		<td><a href="pages.php?id='.$_GET['id'].'">'.__('Ver página').'</a></td>
 		</tr>
 		<tr>
-		<td><a href="admin.php">Regresar al índice</a></td>
+		<td><a href="admin.php">'.__('Regresar al índice').'</a></td>
 		</tr>';
 	}
 	else
@@ -30,15 +30,15 @@ if(defined('dwogame'))
                 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
                 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css" />
 <form action="admin.php?action=editpage&id='.$_GET['id'].'" method="POST">
-		<strong>Editar página:
+		<strong>'.__('Editar página').':
 		</strong></td>
 		</tr>
 		<tr>
-		<td>Por: <strong><a href="profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a></strong>
+		<td>'.__('Por').': <strong><a href="profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a></strong>
 		</td>
 		</tr>
 		<tr>
-		<td>Tema: <input type="text" name="subject" value="'.$blog['subject'].'" />
+		<td>'.__('Tema').': <input type="text" name="subject" value="'.$blog['subject'].'" />
 		</td>
 		</tr>
 		<tr>
