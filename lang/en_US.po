@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GargaBlog 0.6.0\n"
-"POT-Creation-Date: 2014-04-19 13:28-0600\n"
-"PO-Revision-Date: 2014-04-19 13:38-0600\n"
+"POT-Creation-Date: 2014-04-19 14:17-0600\n"
+"PO-Revision-Date: 2014-04-19 14:18-0600\n"
 "Last-Translator: David Kantun <dkantun@gmail.com>\n"
 "Language-Team:  <dkantun@gmail.com>\n"
 "Language: en\n"
@@ -933,9 +933,9 @@ msgstr "This file will update your database for use GargaBlog 0.5.2."
 
 #: C:\Users\Gargadon\Documents\compile\gargablog/upgrade-from-0.5.x-to-0.6.0.php:7
 msgid ""
-"Este archivo actualizará su base de datos para utilizar la versión 0.6.0b1 "
-"de GargaBlog."
-msgstr "This file will update your database for use GargaBlog 0.6.0b1."
+"Este archivo actualizará su base de datos para utilizar la versión 0.6.0 de "
+"GargaBlog."
+msgstr "This file will update your database for use GargaBlog 0.6.0."
 
 #~ msgid "el"
 #~ msgstr "the day"
