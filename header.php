@@ -32,9 +32,12 @@ $islogged=0; // No somos usuarios registrados
 	// Sabiendo el idioma podremos cargar la traducción para él o ofrecerle la de por defecto.
 	switch( substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) )
 	{
+		case 'es':
+		$idioma = "es_ES";
+		break;
+		
 		default:
-			$idioma = 'en_US';
-			break;
+		$idioma = 'en_US';
 	}
 
 

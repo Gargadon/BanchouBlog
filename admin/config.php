@@ -63,7 +63,7 @@ if (!(isset($_GET['page'])))
 if($usuarios['group']==1)
 echo '<a href="admin.php?action=newentry">'.__('¿Por qué no escribes tu primer entrada?').'</a>';
 else
-echo .__('¿Por qué no escribes tu primer entrada?');
+echo __('¿Por qué no escribes tu primer entrada?');
  echo ' </div>
 
 ';
