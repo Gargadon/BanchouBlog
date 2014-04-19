@@ -14,7 +14,7 @@ if(isset($_POST['envia']))
 $entrada=$_POST['comentario'];
 mysql_query('UPDATE blog_comment SET entry=\''.$entrada.'\' WHERE id=\''.$comment['id'].'\'');
 echo '<tr><td>
-La entrada se ha actualizado correctamente.
+'.__('La entrada se ha actualizado correctamente.').'
 </td></tr>
 <tr>
 <td>

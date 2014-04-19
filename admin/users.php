@@ -19,11 +19,11 @@ if ($trimmed == "")
 		<table class="table table-bordered table-hover">
 		<tbody>
 		<tr>
-		<th colspan="2">Búsqueda de usuarios</th>
+		<th colspan="2">'.__('Búsqueda de usuarios').'</th>
 		</tr>
 		<tr>
 		<td>
-		Usuario:
+		'.__('Usuario').':
 		</td>
 		<td>
 		<input type="text" size="20" name="q" value="'.$search.'" />
@@ -32,7 +32,7 @@ if ($trimmed == "")
 		</tr>
 		<tr>
 		<td colspan="2">
-		<input type="submit" value="Buscar" />
+		<input type="submit" value="'.__('Buscar').'" />
 		</td>
 		</tr>
 		</tbody>
@@ -47,11 +47,11 @@ if ($trimmed == "")
 		<table class="table table-bordered table-hover">
 		<tbody>
 		<tr>
-		<th colspan="2">Búsqueda de usuarios</th>
+		<th colspan="2">'.__('Búsqueda de usuarios').'</th>
 		</tr>
 		<tr>
 		<td>
-		Usuario:
+		'.__('Usuario').':
 		</td>
 		<td>
 		<input type="text" size="20" name="q" value="'.$_GET['q'].'" />
@@ -59,7 +59,7 @@ if ($trimmed == "")
 		</tr>
 		<tr>
 		<td colspan="2">
-		<input type="submit" value="Buscar" />
+		<input type="submit" value="'.__('Buscar').'" />
 		</td>
 		</tr>
 		</tbody>
@@ -71,13 +71,13 @@ echo '<br /><br /><table class="table table-bordered table-hover">
 <tbody>
 <tr>';
 if($usuarios['group']==1)
-echo '<th colspan="5">Resultados</th></tr>';
+echo '<th colspan="5">'.__('Resultados').'</th></tr>';
 else
-echo '<th colspan="3">Resultados</th></tr>';
+echo '<th colspan="3">'.__('Resultados').'</th></tr>';
 // check for a search parameter
 if (!isset($search))
   {
-  echo '<tr><td colspan="4" style="text-align:left">No parece haber puesto una búsqueda válida.</td></tr>';
+  echo '<tr><td colspan="4" style="text-align:left">'.__('No parece haber puesto una búsqueda válida.').'</td></tr>';
   pie();
   exit;
   }
@@ -104,9 +104,9 @@ if (!isset($search))
 if ($numrows == 0)
   {
 if($usuarios['group']==1)
-echo '<tr><td colspan="5" style="text-align:left">Lo sentimos, su búsqueda no retornó ningún resultado.</td></tr>';
+echo '<tr><td colspan="5" style="text-align:left">'.__('Lo sentimos, su búsqueda no retornó ningún resultado.').'</td></tr>';
 else
-echo '<tr><td colspan="3" style="text-align:left">Lo sentimos, su búsqueda no retornó ningún resultado.</td></tr>';
+echo '<tr><td colspan="3" style="text-align:left">'.__('Lo sentimos, su búsqueda no retornó ningún resultado.').'</td></tr>';
  }
 
 // next determine if s has been passed to script, if not use 0
@@ -120,19 +120,19 @@ echo '<tr><td colspan="3" style="text-align:left">Lo sentimos, su búsqueda no r
 
 // display what the person searched for
 if($usuarios['group']==1)
-echo '<tr><td colspan="5" style="text-align:left">Su búsqueda fue: &quot;' . $search . '&quot;</td></tr>';
+echo '<tr><td colspan="5" style="text-align:left">'.__('Su búsqueda fue').': &quot;' . $search . '&quot;</td></tr>';
 else
-echo '<tr><td colspan="3" style="text-align:left">Su búsqueda fue: &quot;' . $search . '&quot;</td></tr>';
+echo '<tr><td colspan="3" style="text-align:left">'.__('Su búsqueda fue').': &quot;' . $search . '&quot;</td></tr>';
 
 // begin to show results set
 $count = 1 + $s ;
 
 // now you can display the results returned
-echo '<tr><td width="50%"><strong>Usuario</strong></td>
-<td><strong>Ver perfil</strong></td>
-<td><strong>Editar perfil</strong></td>';
+echo '<tr><td width="50%"><strong>'.__('Usuario').'</strong></td>
+<td><strong>'.__('Ver perfil').'</strong></td>
+<td><strong>'.__('Editar perfil').'</strong></td>';
 if($usuarios['group']==1)
-echo '<td><strong>Borrar usuario</strong></td>';
+echo '<td><strong>'.__('Borrar usuario').'</strong></td>';
 echo '</tr>';
   while ($row= mysql_fetch_array($result)) {
   $title = $row['usuario'];
@@ -182,13 +182,13 @@ $currPage = (($s/$limit) + 1);
   // not last page so give NEXT link
   $news=$s+$limit;
 
-  echo '&nbsp;<a href="'.$_SERVER['PHP_SELF'].'?action=users&amp;s='.$news.'&q='.$search.'">Próximos '.$limit.' &gt;&gt;</a>';
+  echo '&nbsp;<a href="'.$_SERVER['PHP_SELF'].'?action=users&amp;s='.$news.'&q='.$search.'">'.__('Próximos').' '.$limit.' &gt;&gt;</a>';
   }
 
 $a = $s + ($limit) ;
   if ($a > $numrows) { $a = $numrows ; }
   $b = $s + 1 ;
-  echo '<p>Mostrando resultados '.$b.' a '.$a.' de '.$numrows.'</p>';
+  echo '<p>'.__('Mostrando resultados').' '.$b.' '.__('a').' '.$a.' '.__('de').' '.$numrows.'</p>';
 
 
 }

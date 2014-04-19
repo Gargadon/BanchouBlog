@@ -27,11 +27,11 @@ echo '
  echo '
 
 <div data-alert class="alert-box alert">
-'.$texto['16'].' ';
+'.__('Esto está muy vacío.').' ';
 if($usuarios['group']==1)
-echo '<a href="admin.php?action=newentry">'.$texto['17'].'</a>';
+echo '<a href="admin.php?action=newentry">'.__('¿Por qué no escribes tu primer entrada?').'</a>';
 else
-echo ''.$texto['17'].'';
+echo ''.__('¿Por qué no escribes tu primer entrada?').'';
  echo ' </div>
 
 ';
@@ -69,7 +69,7 @@ echo ''.$texto['17'].'';
 	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
 	$categories=mysql_fetch_array($categories1);
  echo '<tr>
-		<td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
+		<td style="vertical-align:top;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="'.__('Avatar de').' '. $recprofile['usuario'] .'" title="'.__('Avatar de').' '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><th><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a>
@@ -77,9 +77,9 @@ echo ''.$texto['17'].'';
 		</tr>
 		<tr>
 		<td>
-		Por: <strong>';
+		'.__('Por').': <strong>';
 		echo '<a href="'.$config['pathto'].'profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a>';
-		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).' en la categoría <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
+		echo '</strong> '.__('el día').' '.date('F j, Y, H:i:s',$blog['date']).' '.__('en la categoría').' <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
 		</td>
 		</tr>
 		<tr>
@@ -88,7 +88,7 @@ echo ''.$texto['17'].'';
 		</td>
 		<tr>
 		<td>
-		<a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">Leer más</a> | <a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'#comments">Leer comentarios / Escribir comentario</a>
+		<a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.__('Leer más').'</a> | <a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'#comments">'.__('Leer comentarios').' / '.__('Escribir comentario').'</a>
 		</td>
 		</tr>
 		</tbody>
@@ -97,7 +97,7 @@ echo ''.$texto['17'].'';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">'.$texto['14'].' '.$_GET['page'].' '.$texto['15'].' '.$last.'</td></tr>';
+ echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">'.__('Mostrando página').' '.$_GET['page'].' '.__('de').' '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -108,7 +108,7 @@ echo ''.$texto['17'].'';
  else 
  {
 $previous = $_GET['page']-1;
-echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.$texto['20'].'</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-'.$texto['18'].'</a></td></tr>';
+echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.__('Primero').'</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-'.__('Anterior').'</a></td></tr>';
  } 
 
  //This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
@@ -118,7 +118,7 @@ echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.
 
  else {
  $next = $_GET['page']+1;
- echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$next.'">'.$texto['19'].' -></a> | <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$last.'">'.$texto['21'].' ->></a></td></tr>';
+ echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$next.'">'.__('Siguiente').' -></a> | <a href="'.$config['pathto'].'index.php?cat='.$cat.'&amp;page='.$last.'">'.__('Último').' ->></a></td></tr>';
  }
 
 }
@@ -147,11 +147,11 @@ else
  echo '
 
 <div data-alert class="alert-box alert">
-'.$texto['16'].' ';
+'.__('Esto está muy vacío.').' ';
 if($usuarios['group']==1)
-echo '<a href="admin.php?action=newentry">'.$texto['17'].'</a>';
+echo '<a href="admin.php?action=newentry">'.__('¿Por qué no escribes tu primer entrada?').'</a>';
 else
-echo ''.$texto['17'].'';
+echo __('¿Por qué no escribes tu primer entrada?');
  echo ' </div>
 
 ';
@@ -189,7 +189,7 @@ echo ''.$texto['17'].'';
 	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
 	$categories=mysql_fetch_array($categories1);
  echo '<tr>
-		<td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
+		<td style="vertical-align:top;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="'.__('Avatar de').' '. $recprofile['usuario'] .'" title="'.__('Avatar de').' '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><th><a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.$blog['subject'].'</a>
@@ -197,9 +197,9 @@ echo ''.$texto['17'].'';
 		</tr>
 		<tr>
 		<td>
-		Por: <strong>';
+		'.__('Por').': <strong>';
 		echo '<a href="'.$config['pathto'].'profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a>';
-		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).' en la categoría <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
+		echo '</strong> '.__('el día').' '.date('F j, Y, H:i:s',$blog['date']).' '.__('en la categoría').' <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
 		</td>
 		</tr>
 		<tr>
@@ -208,7 +208,7 @@ echo ''.$texto['17'].'';
 		</td>
 		<tr>
 		<td>
-		<a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">Leer más</a> | <a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'#comments">Leer comentarios / Escribir comentario</a>
+		<a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'">'.__('Leer más').'</a> | <a href="'.$config['pathto'].'index.php?entryid='.$blog['id'].'#comments">'.__('Leer comentarios').' / '.__('Escribir comentario').'</a>
 		</td>
 		</tr>
 		</tbody>
@@ -217,7 +217,7 @@ echo ''.$texto['17'].'';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">'.$texto['14'].' '.$_GET['page'].' '.$texto['15'].' '.$last.'</td></tr>';
+ echo '</table><table class="table small-12 large-12 columns"><tbody><tr><td colspan="2">'.__('Mostrando página').' '.$_GET['page'].' '.__('de').' '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -228,7 +228,7 @@ echo ''.$texto['17'].'';
  else 
  {
 $previous = $_GET['page']-1;
-echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.$texto['20'].'</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-'.$texto['18'].'</a></td></tr>';
+echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.__('Primero').'</a>  | <a href="'.$config['pathto'].'index.php?page='.$previous.'"> <-'.__('Anterior').'</a></td></tr>';
  } 
 
  //This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
@@ -238,7 +238,7 @@ echo '<tr><td colspan="2"><a href="'.$config['pathto'].'index.php?page=1"> <<-'.
 
  else {
  $next = $_GET['page']+1;
- echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?page='.$next.'">'.$texto['19'].' -></a> | <a href="'.$config['pathto'].'index.php?page='.$last.'">'.$texto['21'].' ->></a></td></tr>';
+ echo '<tr><td colspan="2"> <a href="'.$config['pathto'].'index.php?page='.$next.'">'.__('Siguiente').' -></a> | <a href="'.$config['pathto'].'index.php?page='.$last.'">'.__('Último').' ->></a></td></tr>';
  }
 
 }

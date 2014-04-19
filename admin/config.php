@@ -16,21 +16,21 @@ if ($usuarios['group']==1)
 		<table  class="table small-12 large-12 columns">
 		<tbody>
 		<tr>
-		<th>Configuración del blog</th>
+		<th>'.__('Configuración del blog').'</th>
 		</tr>
 		<tr>
 		<td>
-		Los cambios se han realizado correctamente.
+		'.__('Los cambios se han realizado correctamente.').'
 		</td>
 		</tr>
 		<tr>
 		<td>
-		<a href="index.php?entryid='.$searchentry['id'].'">Ver entrada</a>
+		<a href="index.php?entryid='.$searchentry['id'].'">'.__('Ver entrada').'</a>
 		</td>
 		</tr>
 		<tr>
 		<td>
-		<a href="'.$_SERVER['PHP_SELF'].'?id=blog">Regresar al menú</a>
+		<a href="'.$_SERVER['PHP_SELF'].'?id=blog">'.__('Regresar al índice').'</a>
 		</td>
 		</tr>
 		</tbody>
@@ -59,11 +59,11 @@ if (!(isset($_GET['page'])))
  echo '
 
 <div data-alert class="alert-box alert">
-Esto está muy vacío. ';
+'.__('Esto está muy vacío.').' ';
 if($usuarios['group']==1)
-echo '<a href="admin.php?action=newentry">¿Por qué no escribes tu primer entrada?</a>';
+echo '<a href="admin.php?action=newentry">'.__('¿Por qué no escribes tu primer entrada?').'</a>';
 else
-echo '¿Por qué no escribes tu primer entrada?';
+echo .__('¿Por qué no escribes tu primer entrada?');
  echo ' </div>
 
 ';
@@ -99,7 +99,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  	$recprofile1 = mysql_query('SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
 	$recprofile = mysql_fetch_array($recprofile1);
  echo '<tr>
-		<td width="80px"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&r=pg&d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td>
+		<td width="80px"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&r=pg&d=mm" alt="'.__('Avatar de').' '. $recprofile['usuario'] .'" title="'.__('Avatar de').' '. $recprofile['usuario'] .'" /></td><td>
 		<table class="table small-12 large-12 columns">
 		<tbody>
 		<tr><td>
@@ -108,11 +108,11 @@ echo '¿Por qué no escribes tu primer entrada?';
 		</tr>
 		<tr>
 		<td>
-		Por: <strong><a href="/profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a></strong> el '.date('F j, Y, H:i:s',$blog['date']).'.
+		'.__('Por').': <strong><a href="/profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a></strong> '.__('el día').' '.date('F j, Y, H:i:s',$blog['date']).'.
 		</td>
 		</tr>
 		<td>
-		<a href="admin.php?action=editentry&entryid='.$blog['id'].'">Editar entrada</a> | <a href="admin.php?action=deleteentry&entryid='.$blog['id'].'" onclick="return confirm(\'¿Está seguro de querrer borrar esta entrada?\');">Borrar entrada</a>
+		<a href="admin.php?action=editentry&entryid='.$blog['id'].'">'.__('Editar entrada').'</a> | <a href="admin.php?action=deleteentry&entryid='.$blog['id'].'" onclick="return confirm(\''.__('¿Está seguro de querrer borrar esta entrada?').'\');">'.__('Borrar entrada').'</a>
 		</td>
 		</tr>
 		</tbody>
@@ -121,7 +121,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  
  // This shows the user what page they are on, and the total number of pages
 
- echo '<tr><td colspan="2">Mostrando página '.$_GET['page'].' de '.$last.'</td></tr>';
+ echo '<tr><td colspan="2">'.__('Mostrando página').' '.$_GET['page'].' '.__('de').' '.$last.'</td></tr>';
 
  // First we check if we are on page one. If we are then we don't need a link to the previous page or the first page so we do nothing. If we aren't then we generate links to the first page, and to the previous page.
 
@@ -132,7 +132,7 @@ echo '¿Por qué no escribes tu primer entrada?';
  else 
  {
 $previous = $_GET['page']-1;
-echo '<tr><td colspan="2"><a href="admin.php?page=1"> <<-Primero</a>  | <a href="admin.php?page='.$previous.'"> <-Anterior</a></td></tr>';
+echo '<tr><td colspan="2"><a href="admin.php?page=1"> <<-'.__('Primero').'</a>  | <a href="admin.php?page='.$previous.'"> <-'.__('Anterior').'</a></td></tr>';
  } 
 
  //This does the same as above, only checking if we are on the last page, and then generating the Next and Last links
@@ -142,7 +142,7 @@ echo '<tr><td colspan="2"><a href="admin.php?page=1"> <<-Primero</a>  | <a href=
 
  else {
  $next = $_GET['page']+1;
- echo '<tr><td colspan="2"> <a href="admin.php?page='.$next.'">Siguiente -></a> | <a href="admin.php?page='.$last.'">Último ->></a></td></tr>';
+ echo '<tr><td colspan="2"> <a href="admin.php?page='.$next.'">'.__('Siguiente').' -></a> | <a href="admin.php?page='.$last.'">'.__('Último').' ->></a></td></tr>';
  } 
  }
  echo '</tbody></table>

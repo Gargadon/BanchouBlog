@@ -24,8 +24,8 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
 				if($row['confirmed'] == 0)
 				{
 				include("header.php");
-				echo '<p>Lo sentimos, su cuenta aun no ha sido activada.</p>
-				<p>Revise su bandeja de entrada de correo electrónico para activar su cuenta.</p>
+				echo '<p>'.__('Lo sentimos, su cuenta aun no ha sido activada.').'</p>
+				<p>'.__('Revise su bandeja de entrada de correo electrónico para activar su cuenta.').'</p>
 				';
 				}
 				else
@@ -37,16 +37,16 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
             			}
 		}else{
 		include("header.php");
-			echo 'Password incorrecto';
+			echo __('Password incorrecto');
 		}
 	}else{
 	include("header.php");
-		echo 'Usuario no existente en la base de datos';
+		echo __('Usuario no existente en la base de datos');
 	}
 	mysql_free_result($result);
 }else{
 include("header.php");
-	echo 'Debe especificar un usuario y password';
+	echo __('Debe especificar un usuario y password');
 }
 }
 else

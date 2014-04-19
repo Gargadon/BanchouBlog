@@ -9,16 +9,16 @@ if ($usuarios['group']==1)
 			echo '<table class="table small-12 large-12 columns">
 <tbody>
 <tr>
-<th>Configuración del blog</th>
+<th>'.__('Configuración del blog').'</th>
 </tr>
 <tr>
-		<td>Los cambios se han realizado correctamente.</td>
+		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
 		<tr>
-		<td><a href="admin.php?action=config2">Regresar a administración</a></td>
+		<td><a href="admin.php?action=config2">'.__('Regresar a administración').'</a></td>
 		</tr>
 		<tr>
-		<td><a href="index.php">Regresar al índice</a></td>
+		<td><a href="index.php">'.__('Regresar al índice').'</a></td>
 		</tr>
 		</tbody></table>';
 	}
@@ -31,25 +31,25 @@ echo '<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <table class="table small-12 large-12 columns">
 <tbody>
 <tr>
-<th colspan="2">Configuración del blog</th>
+<th colspan="2">'.__('Configuración del blog').'</th>
 </tr>
 <tr>
-<td>Nombre del blog: </td><td><input type="text" name="blogname" value="'.$config_blog['name'].'" /></td>
+<td>'.__('Nombre del blog').': </td><td><input type="text" name="blogname" value="'.$config_blog['name'].'" /></td>
 </tr>
 <tr>
-<td>Nombre de usuario de <a href="http://www.disqus.com/about/" target="_blank">Disqus</a>: </td><td><input type="text" name="disqusname" value="'.$config_blog['disqusname'].'" /></td>
+<td>'.__('Nombre de usuario de <a href="http://www.disqus.com/about/" target="_blank">Disqus</a>').': </td><td><input type="text" name="disqusname" value="'.$config_blog['disqusname'].'" /></td>
 </tr>
 <tr>
-<td>Dirección del blog: </td><td><input type="text" name="pathto" value="'.$config_blog['pathto'].'" /></td>
+<td>'.__('Dirección del blog').': </td><td><input type="text" name="pathto" value="'.$config_blog['pathto'].'" /></td>
 </tr>
 <tr>
-<td>Footer: </td><td><textarea id="editor1" name="footer">'.$config_blog['footer'].'</textarea></td>
+<td>'.__('Footer').': </td><td><textarea id="editor1" name="footer">'.$config_blog['footer'].'</textarea></td>
 </tr>
 <tr>
-<td>Zona horaria (<a href="http://php.net/manual/en/timezones.php" target="_blank">Más info</a>): </td><td><input type="text" name="zona" value="'.$config_blog['zona'].'" /></td>
+<td>'.__('Zona horaria').' (<a href="http://php.net/manual/en/timezones.php" target="_blank">'.__('Más info').'</a>): </td><td><input type="text" name="zona" value="'.$config_blog['zona'].'" /></td>
 </tr>
 <tr>
-<td colspan="2"><input type="submit" class="button success" value="Guardar cambios" /> <input type="reset" class="button secondary" value="Restablecer" /></td>
+<td colspan="2"><input type="submit" class="button success" value="'.__('Guardar cambios').'" /> <input type="reset" class="button secondary" value="'.__('Restablecer').'" /></td>
 </tr>
 </tbody>
 </table>

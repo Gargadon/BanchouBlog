@@ -11,7 +11,7 @@ include("header.php");
 	$recprofile = mysql_fetch_array($recprofile1);
 	if(empty($recprofile['usuario']))
 	{
-	echo $texto['22'];
+	echo __('El usuario no existe.');
 	}
 	else
 	{
@@ -21,35 +21,30 @@ include("header.php");
    echo '<table class="table table-bordered table-hover">
       <tbody>
       <tr>
-      <th colspan="2">'.$texto['23'].$recprofile['usuario'].'</th>
+      <th colspan="2">'.__('Perfil del usuario').' '.$recprofile['usuario'].'</th>
       </tr>
         <tr>
           <td colspan="2">';
 	// Aquí va la API de Gravatar, a 150x150
-	echo '<img style="display:block;margin-left:auto;margin-right:auto;" src="http://www.gravatar.com/avatar/'.$gravatar2.'?s=150&amp;r=pg&amp;d=mm" alt="'.$texto['24'].$recprofile['usuario'].'" title="'.$texto['24'].$recprofile['usuario'].'" />';
+	echo '<img style="display:block;margin-left:auto;margin-right:auto;" src="http://www.gravatar.com/avatar/'.$gravatar2.'?s=150&amp;r=pg&amp;d=mm" alt="'.__('Avatar de').' '. $recprofile['usuario'] .'" title="'.__('Avatar de').' '. $recprofile['usuario'] .'" />';
 	echo '</td>
         </tr>
         <tr>
-          <td>'.$texto['25'].':
+          <td>'.__('Nombre de usuario').':
           </td>
           <td>'. $recprofile['usuario'] .'
           </td>
         </tr>
         <tr>
-          <td>'.$texto['26'].':
+          <td>'.__('Rol').':
           </td>
           <td>'. $recgroup['nombre'] .'
-          </td>
-        </tr>
-        <tr>
-          <td>'.$texto['27'].':</td>
-          <td>'. $recprofile['fecha'] .'
           </td>
         </tr>';
       if ($usuarios['group']==1)
       {
          echo '<tr>
-          <td>'.$texto['28'].':</td>
+          <td>'.__('IP').':</td>
           <td>';
           if($recprofile['ip']=='')
           $recprofile['ip'] = '127.0.0.1';
@@ -57,7 +52,7 @@ include("header.php");
           echo '</td>
         </tr>
         <tr>
-          <td>'.$texto['29'].':</td>
+          <td>'.__('Nombre del servidor').':</td>
           <td>'.gethostbyaddr($recprofile['ip']).'
           </td>
         </tr>';  
@@ -65,13 +60,13 @@ include("header.php");
         elseif($recprofile['id']==$usuarios['id'])
         {
           echo '<tr>
-          <td>'.$texto['28'].':</td>
+          <td>'.__('IP').':</td>
           <td>'. $recprofile['ip'] .'
           </td>
         </tr>'; 
         }
 echo '        <tr>
-          <td>'.$texto['30'].':
+          <td>'.__('Acerca de mí').':
           </td>
           <td>'. nl2br(htmlspecialchars($recprofile['descripcion'])) .'
           </td>
@@ -81,7 +76,7 @@ echo '        <tr>
         {
         	echo '        <tr>
         <td colspan="2">
-        <a href="edit_profile.php?id='.$recprofile['id'].'">'.$texto['31'].'</a>
+        <a href="edit_profile.php?id='.$recprofile['id'].'">'.__('Editar perfil').'</a>
         </td>
         </tr>';
         }
@@ -95,53 +90,48 @@ echo '        <tr>
    echo '<table class="table table-bordered table-hover">
       <tbody>
       <tr>
-      <th colspan="2">'.$texto['32'].'</th>
+      <th colspan="2">'.__('Tu perfil').'</th>
       </tr>
         <tr>
           <td colspan="2">';
 	// Aquí va la API de Gravatar, a 150x150
-	echo '<img style="display:block;margin-left:auto;margin-right:auto;" src="http://www.gravatar.com/avatar/'.$gravatar.'?s=150&amp;r=pg&amp;d=mm" alt="'.$texto['24']. $usuarios['usuario'] .'" title="'.$texto['24']. $usuarios['usuario'] .'" />';
+	echo '<img style="display:block;margin-left:auto;margin-right:auto;" src="http://www.gravatar.com/avatar/'.$gravatar.'?s=150&amp;r=pg&amp;d=mm" alt="'.__('Avatar de').' '. $usuarios['usuario'] .'" title="'.__('Avatar de').' '. $usuarios['usuario'] .'" />';
 	echo '</td>
         </tr>
         <tr>
-          <td>'.$texto['25'].':
+          <td>'.__('Nombre de usuario').':
           </td>
           <td>'. $usuarios['usuario'] .'
           </td>
         </tr>
         <tr>
-          <td>'.$texto['26'].':
+          <td>'.__('Rol').':
           </td>
           <td>'. $grupo['nombre'] .'
           </td>
         </tr>
         <tr>
-          <td>'.$texto['27'].':</td>
-          <td>'. $usuarios['fecha'] .'
-          </td>
-        </tr>
-        <tr>
-          <td>'.$texto['28'].':</td>
+          <td>IP:</td>
           <td>'. $usuarios['ip'] .'
           </td>
         </tr>';
       if ($usuarios['group']==1)
       {
          echo '<tr>
-          <td>'.$texto['29'].':</td>
+          <td>'.__('Nombre del servidor').':</td>
           <td>'.gethostbyaddr($usuarios['ip']).'
           </td>
         </tr>';  
         }
            echo '<tr>
-          <td>'.$texto['30'].':
+          <td>'.__('Acerca de mí').':
           </td>
           <td>'. nl2br(htmlspecialchars($usuarios['descripcion'])) .'
           </td>
         </tr>
         <tr>
         <td colspan="2">
-        <a href="edit_profile.php">'.$texto['31'].'</a>
+        <a href="edit_profile.php">'.__('Editar perfil').'</a>
         </td>
         </tr>
       </tbody>

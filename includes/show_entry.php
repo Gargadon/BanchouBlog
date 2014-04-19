@@ -8,22 +8,22 @@ echo '
 	$categories1=mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
 	$categories=mysql_fetch_array($categories1);
 	if(empty($blog['id']))
-	echo '<tr><td>La entrada no existe</td></tr>';
+	echo '<tr><td>'.__('La entrada no existe.').'</td></tr>';
 	else
 		{
 	$recprofile1 = mysql_query('SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
 	$recprofile = mysql_fetch_array($recprofile1);
 	$comment1 = mysql_query('SELECT * FROM blog_comment WHERE id_entry=\''.$entryid.'\' ORDER BY `id` ASC');
-		echo '<tr><td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td style="vertical-align:top;">';
+		echo '<tr><td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="'.__('Avatar de').' '. $recprofile['usuario'] .'" title="'.__('Avatar de').' '. $recprofile['usuario'] .'" /></td><td style="vertical-align:top;">';
                 echo '<table class="table small-12 large-12 columns"><tbody><tr>
 		<th>'.$blog['subject'].'
 		</th>
 		</tr>
 		<tr>
 		<td>
-		Por: <strong>';
+		'.__('Por').': <strong>';
 		echo '<a href="'.$config['pathto'].'profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a>';
-		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).' en la categoría <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
+		echo '</strong> '.__('el día').' '.date('F j, Y, H:i:s',$blog['date']).' '.__('en la categoría').' <a href="index.php?cat='.$categories['id'].'">'.$categories['name'].'</a>.
 		</td>
 		</tr>
 		<tr>
@@ -45,14 +45,14 @@ echo '
 var options={ "publisher": "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
 var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
-		<a href="">Permalink</a> | ';
+		<a href="">'.__('Permalink').'</a> | ';
 		if($usuarios['group']==1)
-		echo '<a href="admin.php?id=blog&action=editentry&entryid='.$blog['id'].'">Editar entrada</a> | ';
-		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr>';
+		echo '<a href="admin.php?id=blog&action=editentry&entryid='.$blog['id'].'">'.__('Editar entrada').'</a> | ';
+		echo '<a href="#comments">'.__('Leer comentarios').' / '.__('Escribir comentario').'</a> | <a href="index.php">'.__('Regresar al índice').'</a></div></div></td></tr>';
 		echo '</tbody>
 		</table>
 		<br /></div>
-		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
+		<div class="large-12 columns"><h5 id="comments">'.__('Leer comentarios').'</h5></div>
 		    <div id="disqus_thread" class="large-12 columns"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

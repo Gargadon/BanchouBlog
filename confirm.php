@@ -10,14 +10,14 @@ include("header.php");
 		if($confirma['confirmtoken'] == $token)
 		{
 		mysql_query('UPDATE blog_usuarios SET confirmed=\'1\' WHERE email = \''.$email.'\'');
-echo '<div data-alert class="alert-box success">¡Felicidades! Ha confirmado correctamente su cuenta de correo.</div>';
+echo '<div data-alert class="alert-box success">'.__('¡Felicidades! Ha confirmado correctamente su cuenta de correo.').'</div>';
 		}
 		else
 		{
-		echo '<div data-alert class="alert-box alert">No se pudo confirmar su cuenta de correo.</div>';
+		echo '<div data-alert class="alert-box alert">'.__('No se pudo confirmar su cuenta de correo.').'</div>';
 		}
 		} else {
-echo '<div data-alert class="alert-box alert">Su cuenta de usuario ya ha sido confirmada con anterioridad.</div>';
+echo '<div data-alert class="alert-box alert">'.__('Su cuenta de usuario ya ha sido confirmada con anterioridad.').'</div>';
 		}
 	}
 include("footer.php");

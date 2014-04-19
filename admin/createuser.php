@@ -21,7 +21,7 @@ if (($islogged==1) && ($usuarios['group']==1))
 		$checkemail = mysql_query("SELECT email FROM blog_usuarios WHERE email='$email_nuevo'");
 		$email_exist = mysql_num_rows($checkemail);
 		if ($email_exist>0|$username_exist>0) {
-			echo "<p>El nombre de usuario o la cuenta de correo estan ya en uso.</p>";
+			echo "<p>".__('El nombre de usuario o la cuenta de correo estan ya en uso.')."</p>";
 			$crear_usuario=0;
 		}
 		if(isset($_POST['password_aleatorio']))
@@ -78,30 +78,30 @@ if (($islogged==1) && ($usuarios['group']==1))
 		}
 		else
 		{
-		echo '<p>Favor de avisar al usuario sobre sus datos de acceso.</p>';
+		echo '<p>'.__('Favor de avisar al usuario sobre sus datos de acceso.').'</p>';
 		}
 					$query = 'INSERT INTO blog_usuarios (usuario, `group`, password, email, fecha, confirmed) VALUES (\''.$usuario_nuevo.'\',\'1\',\''.$passwordenmd5.'\',\''.$email_nuevo.'\',\''.date("Y-m-d").'\',\'1\')';
 					mysql_query($query) or die(mysql_error());
 		}
 		else
 		{
-		echo "<p>El usuario no ha podido ser creado. Verifique los datos e intente de nuevo.</p>";
+		echo "<p>".__('El usuario no ha podido ser creado. Verifique los datos e intente de nuevo.')."</p>";
 		}
 	}
 	else
 	{
 		echo '<form action="admin.php?action=createuser" method="post">
 		<table class="table large-12 small-12 columns">
-		<tr><th colspan="2">Crear usuario</th></tr>
-		<tr><td>Nombre de usuario</td><td><input type="text" name="usuario_nuevo"></td></tr>
-		<tr><td>Correo electrónico</td><td><input type="text" name="email_nuevo"></td></tr>
-		<tr><td>Contraseña</td><td><input type="password" name="password_nuevo"></td></tr>
-		<tr><td>Repetir contraseña</td><td><input type="password" name="password2_nuevo"></td></tr>
-		<tr><td>Crear contraseña aleatoria<br/>
-		<small>Si es así, deje vacío los campos <em>Contraseña</em>
-		y <em>Repetir contraseña</em>.</td><td><input type="checkbox" name="password_aleatorio"></td></tr>
-		<tr><td>Notificar al usuario</td><td><input type="checkbox" name="notify_nuevo"></td></tr>
-		<tr><td><input type="submit" value="Crear usuario" class="button success"></td><td><input type="reset" value="Restablecer campos" class="button secondary"></td></tr>
+		<tr><th colspan="2">'.__('Crear usuario').'</th></tr>
+		<tr><td>'.__('Nombre de usuario').'</td><td><input type="text" name="usuario_nuevo"></td></tr>
+		<tr><td>'.__('Correo electrónico').'</td><td><input type="text" name="email_nuevo"></td></tr>
+		<tr><td>'.__('Contraseña').'</td><td><input type="password" name="password_nuevo"></td></tr>
+		<tr><td>'.__('Repetir contraseña').'</td><td><input type="password" name="password2_nuevo"></td></tr>
+		<tr><td>'.__('Crear contraseña aleatoria').'<br/>
+		<small>'.__('Si es así, deje vacío los campos <em>Contraseña</em>
+		y <em>Repetir contraseña</em>.').'</td><td><input type="checkbox" name="password_aleatorio"></td></tr>
+		<tr><td>'.__('Notificar al usuario').'</td><td><input type="checkbox" name="notify_nuevo"></td></tr>
+		<tr><td><input type="submit" value="'.__('Crear usuario').'" class="button success"></td><td><input type="reset" value="'.__('Restablecer campos').'" class="button secondary"></td></tr>
 		</table>
 		<input type="hidden" name="envia" value="yes">
 		</form>';

@@ -1,0 +1,758 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GargaBlog 0.6.0\n"
+"POT-Creation-Date: 2014-04-18 23:38-0600\n"
+"PO-Revision-Date: 2014-04-18 23:43-0600\n"
+"Last-Translator: David Kantun <dkantun@gmail.com>\n"
+"Language-Team:  <dkantun@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /home/gargadon/Source/gargablog-0.6.0\n"
+
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:9
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:24
+msgid "Ingresar"
+msgstr "Access"
+
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:13
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:14
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:26
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:54
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:131
+msgid "Usuario"
+msgstr "User"
+
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:17
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:18
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:28
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:90
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:98
+msgid "Contraseña"
+msgstr "Password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:27
+msgid "Olvidé mi contraseña"
+msgstr "Forgot my password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/footer.php:33
+msgid ""
+"No es posible registrarse en GargaBlog. Los usuarios los designa el\n"
+"    administrador. Contacta al administrador del blog para obtener una "
+"cuenta."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/confirm.php:13
+msgid "¡Felicidades! Ha confirmado correctamente su cuenta de correo."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/confirm.php:17
+msgid "No se pudo confirmar su cuenta de correo."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/confirm.php:20
+msgid "Su cuenta de usuario ya ha sido confirmada con anterioridad."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/install.php:86
+msgid "No se ha podido contactar a la base de datos."
+msgstr "Can't contact to the database."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install.php:95
+msgid "No se ha podido contactar a la tabla especificada."
+msgstr "Can't contact to the specified table."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install.php:96
+msgid ""
+"Revise el archivo base.php para verificar que los datos de conexión son "
+"correctos."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:14
+msgid "El usuario no existe."
+msgstr "The user doesn't exist."
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:24
+msgid "Perfil del usuario"
+msgstr "Profile of user"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:29
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:98
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:72
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:192
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:17
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:17
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:79
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:45
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:102
+msgid "Avatar de"
+msgstr "Avatar from"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:33
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:102
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:96
+msgid "Nombre de usuario"
+msgstr "Username"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:39
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:108
+msgid "Rol"
+msgstr "Rank"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:47
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:63
+msgid "IP"
+msgstr "IP"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:55
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:121
+msgid "Nombre del servidor"
+msgstr "Server name"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:69
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:127
+msgid "Acerca de mí"
+msgstr "About me"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:79
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:134
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:133
+msgid "Editar perfil"
+msgstr "Edit profile"
+
+#: /home/gargadon/Source/gargablog-0.6.0/profile.php:93
+msgid "Tu perfil"
+msgstr "Your profile"
+
+#: /home/gargadon/Source/gargablog-0.6.0/login.php:27
+msgid "Lo sentimos, su cuenta aun no ha sido activada."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/login.php:28
+msgid ""
+"Revise su bandeja de entrada de correo electrónico para activar su cuenta."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/login.php:40
+msgid "Password incorrecto"
+msgstr "Incorrect password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/login.php:44
+msgid "Usuario no existente en la base de datos"
+msgstr "User doesn't exist on database."
+
+#: /home/gargadon/Source/gargablog-0.6.0/login.php:49
+msgid "Debe especificar un usuario y password"
+msgstr "You must specify user and password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:13
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:61
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:5
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:12
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:55
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:75
+#: /home/gargadon/Source/gargablog-0.6.0/install/step1.php:5
+msgid "Instalación de GargaBlog"
+msgstr "GargaBlog Wizard Install"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:14
+msgid ""
+"No se ha podido continuar con el siguiente paso. Revisa los datos que has "
+"colocado y realiza el paso de nuevo."
+msgstr ""
+"It can't continue with next step. Check the fields and register your user "
+"again."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:17
+msgid "Tu usuario"
+msgstr "Your user"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:20
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:82
+msgid "Usuario administrador"
+msgstr "Admin's nick"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:36
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:98
+msgid "Repita contraseña"
+msgstr "Repeat password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:44
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:106
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:97
+msgid "Correo electrónico"
+msgstr "E-mail"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:91
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:24
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:42
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:113
+#: /home/gargadon/Source/gargablog-0.6.0/install/step1.php:11
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:121
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:241
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:145
+msgid "Siguiente"
+msgstr "Next"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:62
+msgid "Ahora nos toca configurar el blog."
+msgstr "Now it's time to setup your blog"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:65
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:16
+msgid "Tu blog"
+msgstr "Your blog"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:68
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:19
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:37
+msgid "Nombre del blog"
+msgstr "Blog name"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:76
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:27
+msgid ""
+"Dirección del blog<br/><small>Con <em>http</em> al principio y </em>/</em> "
+"al final</small>"
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:84
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:35
+msgid "Nombre corto de Disqus"
+msgstr "Disqus shortname"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step4.php:84
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:35
+msgid ""
+"El blog utiliza Disqus para los comentarios. Si no tiene cuenta en Disqus, "
+"créela y regrese a este paso."
+msgstr ""
+"GargaBlog uses Disqus for comments. If you don't have a Disqus account, sign "
+"up and return to this step."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:20
+msgid "Se ha instalado exitosamente CKEditor."
+msgstr "CKEditor was installed successfully."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:21
+msgid "Para continuar, oprima el botón \"Siguiente\" para instalar las tablas."
+msgstr "Press \"Next\" button to continue and install the database tables."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:29
+msgid "No se pudo descomprimir CKEditor."
+msgstr "CKEditor can't be uncompressed."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:30
+msgid ""
+"Por favor, habilite la extensión PHAR y ponga la variable <em>phar.readonly</"
+"em> en <em>0</em> en su archivo <strong>php.ini</strong>"
+msgstr ""
+"Please, enable the PHAR extension and set <em>0</em> your variable <em>phar."
+"readonly</em> in your <strong>php.ini</strong> file."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:31
+msgid ""
+"Si por alguna razón no puede modificar dicho archivo, consulte a su "
+"administrador del servidor."
+msgstr "If you can't modify that file, contact server's admin."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:32
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:45
+msgid ""
+"En caso contrario, todavía puede instalar CKEditor de forma manual, "
+"descargándolo"
+msgstr "Otherwise, you can install CKEditor manualy, downloading it"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:32
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:45
+msgid "aquí"
+msgstr "here"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:33
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:46
+msgid ""
+"Extraiga el .tar.gz y coloque la carpeta <em>ckeditor</em> en el directorio "
+"principal de GargaBlog."
+msgstr ""
+"Extract the .tar.gz and put the <em>ckeditor</em> folder in GargaBlog's main "
+"directory."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:38
+msgid "El archivo no se ha descargado correctamente, o está corrupto."
+msgstr "The file wasn't downloaded correctly, or maybe is corrupted."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:43
+msgid ""
+"El archivo no pudo ser descargado. Por favor revise que tenga los permisos "
+"correspondientes en el directorio de instalación."
+msgstr ""
+"The file can't be downloaded. Please, check permissions in the install "
+"directory."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step2.php:44
+msgid ""
+"Si no puede modificar los permisos del directorio, comuníquese con el "
+"administrador del servidor."
+msgstr "If you can't modify the directory permissions, contact server's admin."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:13
+msgid ""
+"No se ha podido configurar el blog. Revise los datos y repita el paso de "
+"nuevo."
+msgstr ""
+"It can't continue with next step. Check the fields and register your user "
+"again."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:56
+msgid "Ahora sigue el paso 4... Un momento, ¿y el paso 4?"
+msgstr "Now it's time fr the step 4... Wait a minute, where is the step 4?"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:57
+msgid ""
+"¿Lo ves? El instalador es tan sencillo que no se requieren más pasos. Tu "
+"blog ya está listo."
+msgstr ""
+"See? This installer it's so simple you don't need more steps. Your blog is "
+"ready right now."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:58
+msgid ""
+"Este paso va por tu propia cuenta. Ve al FTP de tu blog y borra los archivos "
+"<em>install.php</em> y el directorio <em>install</em>. Ya no los necesitarás."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:59
+msgid ""
+"No borrar estos archivos puede provocar una enorme brecha de seguridad en tu "
+"blog. Es importante que los borres."
+msgstr ""
+"If you don't delete this file, your blog can have a security hole. It's "
+"important you delete it."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step5.php:60
+msgid "Llévame a mi blog"
+msgstr "Take me to my blog"
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step3.php:76
+msgid ""
+"Se han instalado las tablas correspondientes. Es hora de registrar a tu "
+"usuario."
+msgstr "Database tables installed successfully. Now register your user."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step1.php:6
+msgid ""
+"Bienvenido a GargaBlog. Este instalador fue realizado para que su "
+"experiencia sea sencilla de instalar."
+msgstr ""
+"Welcome to GargaBlog. This wizard was made for a simple install experience."
+
+#: /home/gargadon/Source/gargablog-0.6.0/install/step1.php:7
+msgid ""
+"A partir de GargaBlog 0.4.7, CKEditor no viene incluido en el instalador. "
+"Pulse el botón \"Siguiente\"\n"
+"para descargarlo directamente al servidor."
+msgstr ""
+"Since GargaBlog 0.4.7, CKEditor is not included on the installer. Press the "
+"\"Next\" button to download\n"
+"directly from the server."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:30
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:150
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:62
+msgid "Esto está muy vacío."
+msgstr "This is so empty..."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:32
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:34
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:152
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:154
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:64
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:66
+msgid "¿Por qué no escribes tu primer entrada?"
+msgstr "Why don't you write your first entry?"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:80
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:200
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:24
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:24
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:111
+msgid "Por"
+msgstr "By"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:82
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:202
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:26
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:26
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:89
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:111
+msgid "el día"
+msgstr "date"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:82
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:202
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:26
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:89
+msgid "en la categoría"
+msgstr "in the category"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:91
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:211
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:98
+msgid "Leer más"
+msgstr "Show more"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:91
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:211
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:55
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:54
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:98
+msgid "Leer comentarios"
+msgstr "Read comments"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:91
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:211
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:98
+msgid "Escribir comentario"
+msgstr "Write comment"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:100
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:220
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:124
+msgid "Mostrando página"
+msgstr "Showing page"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:100
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:220
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:139
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:124
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:191
+msgid "de"
+msgstr "of"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:111
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:231
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:135
+msgid "Primero"
+msgstr "First"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:111
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:231
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:135
+msgid "Anterior"
+msgstr "Prev"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:121
+#: /home/gargadon/Source/gargablog-0.6.0/includes/index.php:241
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:145
+msgid "Último"
+msgstr "Last"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:11
+msgid "La entrada no existe."
+msgstr "The entry doesn't exist."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:48
+msgid "Permalink"
+msgstr "Permalink"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:50
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:115
+msgid "Editar entrada"
+msgstr "Edit entry"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_entry.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:51
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deleteentry.php:15
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletecat.php:16
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletepage.php:15
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:21
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:33
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:21
+msgid "Regresar al índice"
+msgstr "Return to index"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:11
+msgid "La página no existe."
+msgstr "The page doesn't exist."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:50
+msgid "Editar página"
+msgstr "Edit page"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/show_pages.php:77
+msgid "La página debe tener un ID válido."
+msgstr "The page must have a valid ID."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:17
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:28
+msgid "Búsqueda inválida."
+msgstr "Invalid search."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:24
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:74
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:76
+msgid "Resultados"
+msgstr "Results"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:54
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:107
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:109
+msgid "Lo sentimos, su búsqueda no retornó ningún resultado."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:67
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:123
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:125
+msgid "Su búsqueda fue"
+msgstr "Your search was"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:114
+msgid "Anteriores"
+msgstr "Prev"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:133
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:185
+msgid "Próximos"
+msgstr "Next"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/search.php:139
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:191
+msgid "Mostrando resultados"
+msgstr "Showing results"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/edit.php:17
+msgid "La entrada se ha actualizado correctamente."
+msgstr "Entry updated successfully."
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:19
+msgid "Administración"
+msgstr "Admin panel"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:21
+msgid "Configurar blog"
+msgstr "Setup blog"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:22
+msgid "Configurar categorías"
+msgstr "Setup categories"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:23
+msgid "Configurar páginas"
+msgstr "Setup pages"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:24
+msgid "Editar entradas"
+msgstr "Edit entries"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:25
+msgid "Nueva entrada"
+msgstr "New entry"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:26
+msgid "Crear usuarios"
+msgstr "Create users"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:27
+msgid "Modificar usuarios"
+msgstr "Setup users"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:29
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:86
+msgid "Categorías"
+msgstr "Categories"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:37
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:94
+msgid "Páginas"
+msgstr "Pages"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:59
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:115
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:35
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:62
+msgid "Buscar"
+msgstr "Search"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:65
+msgid "Logout"
+msgstr "Logout"
+
+#: /home/gargadon/Source/gargablog-0.6.0/includes/navbar.php:121
+msgid "Login"
+msgstr "Login"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:24
+msgid "El nombre de usuario o la cuenta de correo estan ya en uso."
+msgstr "Username or e-mail account already in use."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:81
+msgid "Favor de avisar al usuario sobre sus datos de acceso."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:88
+msgid ""
+"El usuario no ha podido ser creado. Verifique los datos e intente de nuevo."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:95
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:104
+msgid "Crear usuario"
+msgstr "Create user"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:99
+msgid "Repetir contraseña"
+msgstr "Repeat password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:100
+msgid "Crear contraseña aleatoria"
+msgstr "Create random password"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:101
+msgid ""
+"Si es así, deje vacío los campos <em>Contraseña</em>\n"
+"\t\ty <em>Repetir contraseña</em>."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:103
+msgid "Notificar al usuario"
+msgstr "Notify to user"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/createuser.php:104
+msgid "Restablecer campos"
+msgstr "Reset"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deleteentry.php:7
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletepage.php:7
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:12
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:34
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:19
+msgid "Configuración del blog"
+msgstr "Blog Setup"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deleteentry.php:12
+msgid "La entrada se ha borrado con éxito."
+msgstr "Entry deleted successfully."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deleteentry.php:20
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletepage.php:20
+msgid "No se especificó un tema."
+msgstr "Entry not specified."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletecat.php:7
+msgid "Borrar categorías"
+msgstr "Delete categories"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletecat.php:13
+msgid "La categoría se ha borrado con éxito."
+msgstr "Category deleted successfully."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletecat.php:21
+msgid "No se especificó una categoría."
+msgstr "Category not specified."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/deletepage.php:12
+msgid "La página se ha borrado con éxito."
+msgstr "Page deleted successfully."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:15
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:23
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:15
+msgid "Los cambios se han realizado correctamente."
+msgstr "Changes made successfully."
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:18
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:18
+msgid "Regresar a administración"
+msgstr "Return to admin panel"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:40
+msgid ""
+"Nombre de usuario de <a href=\"http://www.disqus.com/about/\" target=\"_blank"
+"\">Disqus</a>"
+msgstr ""
+"<a href=\"http://www.disqus.com/about/\" target=\"_blank\">Disqus</a> name "
+"user"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:43
+msgid "Dirección del blog"
+msgstr "Blog URL"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:46
+msgid "Footer"
+msgstr "Footer"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:49
+msgid "Zona horaria"
+msgstr "Time zone"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:49
+msgid "Más info"
+msgstr "More info"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:52
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:41
+msgid "Guardar cambios"
+msgstr "Save changes"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config_main.php:52
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:41
+msgid "Restablecer"
+msgstr "Reset"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:28
+msgid "Ver entrada"
+msgstr "Show entry"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:115
+msgid "¿Está seguro de querrer borrar esta entrada?"
+msgstr "Are you sure to delete this entry?"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/config.php:115
+msgid "Borrar entrada"
+msgstr "Delete entry"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:22
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:50
+msgid "Búsqueda de usuarios"
+msgstr "Search users"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:80
+msgid "No parece haber puesto una búsqueda válida."
+msgstr ""
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:132
+msgid "Ver perfil"
+msgstr "Viewr profile"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:135
+msgid "Borrar usuario"
+msgstr "Delete user"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/users.php:191
+msgid "a"
+msgstr "to"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:32
+msgid "Crear categorías"
+msgstr "Create categories"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:35
+msgid "Nombre de la categoría"
+msgstr "Category name"
+
+#: /home/gargadon/Source/gargablog-0.6.0/admin/categories.php:38
+msgid "Descripción"
+msgstr "Description"
+
+#~ msgid "el"
+#~ msgstr "the day"

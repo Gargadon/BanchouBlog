@@ -4,7 +4,6 @@ define('dwogame','1');
 $config1 = mysql_query('SELECT * FROM blog_config');
 $config = mysql_fetch_array($config1);
 date_default_timezone_set(''.$config['zona'].'');
-require('lang/es_la.php');
 // A continuación el login
 
 if (isset($_COOKIE['gargauser']) and isset($_COOKIE['gargapass']))
@@ -23,6 +22,55 @@ else
 $islogged=0; // No somos usuarios registrados
 }
 // Termina login
+
+	// Primero se han de incluir los ficheros del paquete php-gettext:
+	require_once( 'plugins/gettext/streams.php' );
+	require_once( 'plugins/gettext/gettext.php' );
+	
+
+	// Después debemos de obtener el idioma del navegador que esta usando el usuario:
+	// Sabiendo el idioma podremos cargar la traducción para él o ofrecerle la de por defecto.
+	switch( substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) )
+	{
+		default:
+			$idioma = 'en_US';
+			break;
+	}
+
+
+	// Después se carga el fichero de idioma:
+	if( file_exists('lang/'. $idioma .'.mo') )
+	{
+		$gettext_tables = new gettext_reader(
+				new CachedFileReader('lang/'. $idioma .'.mo')
+		);
+		$gettext_tables->load_tables();
+	}
+	
+	
+	// Disponemos de dos funciones para obtener la traducción de cada texto almacenada en el catalogo.
+	// La función __() recibe un texto y devuelve la traducción, o el texto original si no existe, por valor:
+	function __($texto)
+	{
+		global $gettext_tables;
+
+		if (is_null($gettext_tables))
+			return $texto;
+		else
+			return $gettext_tables->translate($texto);
+	}
+	
+	
+	// En el caso de la función _e() se recibe el texto y se imprime la traducción, o el original si no existe.
+	function _e($texto)
+	{
+		global $gettext_tables;
+
+		if (is_null($gettext_tables))
+			echo $texto;
+		else
+			echo $gettext_tables->translate($texto);
+	}
 
 echo '<!DOCTYPE html>
 <html class="no-js" lang="es-mx">

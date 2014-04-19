@@ -6,32 +6,32 @@ echo '</div>
 echo '<div id="loguear" class="reveal-modal" data-reveal>
  <form action="login.php" method="post">
   <fieldset>
-    <legend>Ingresa</legend>
+    <legend>'.__('Ingresar').'</legend>
     
         <div class="row">
       <div class="small-12 large-6 columns">
-        <label>Usuario</label>
-        <input type="text" placeholder="Usuario" name="blogu">
+        <label>'.__('Usuario').'</label>
+        <input type="text" placeholder="'.__('Usuario').'" name="blogu">
       </div>
       <div class="small-12 large-6 columns">
-        <label>Contraseña</label>
-        <input type="password" placeholder="Contraseña" name="blogp">
+        <label>'.__('Contraseña').'</label>
+        <input type="password" placeholder="'.__('Contraseña').'" name="blogp">
       </div>
     </div>
     
             <div class="row">
       <div class="small-12 large-6 columns">
-       <input type="submit" class="button success" value="Ingresar">
+       <input type="submit" class="button success" value="'.__('Ingresar').'">
       </div>
       <div class="small-12 large-6 columns">
-      <a href="forgot.php" class="button alert">Olvidé mi contraseña</a>
+      <a href="forgot.php" class="button alert">'.__('Olvidé mi contraseña').'</a>
       </div>
     </div>
     
     <div class="row">
     <div class="small-12 large-12 columns">
-    <p>No es posible registrarse en GargaBlog. Los usuarios los designa el
-    administrador. Contacta al administrador del blog para obtener una cuenta.
+    <p>'.__('No es posible registrarse en GargaBlog. Los usuarios los designa el
+    administrador. Contacta al administrador del blog para obtener una cuenta.').'
     </div>
     </div>
     

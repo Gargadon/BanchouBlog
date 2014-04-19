@@ -11,7 +11,7 @@ if ($islogged==1)
 	$recprofile = mysql_fetch_array($recprofile1);
 	if(empty($recprofile['usuario']))
 	{
-	echo $texto['22'];
+	echo 'El usuario no existe';
 	}
 	elseif($recprofile['id']==$usuarios['id'] || $usuarios['group']==1)
 	{
@@ -23,7 +23,7 @@ if ($islogged==1)
       <tbody>
       	<tr>
       	<th colspan="2">
-      	'.$texto['31'].'
+      	Editar tu perfil
       	</th>
       	</tr>
               <tr>
@@ -42,7 +42,7 @@ if ($islogged==1)
 		if($passwordenmd5!=d41d8cd98f00b204e9800998ecf8427e)
 			{
 			if($password1!=$password2) {
-				echo ''.$texto['43'].'
+				echo 'Las contraseñas no coinciden.
 					</td></tr></tbody>
 					</table>';
 				}
@@ -52,14 +52,14 @@ if ($islogged==1)
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\', usuario=\''.$username.'\', password=\''.$passwordenmd5.'\', descripcion=\''.$descripcion.'\', `group`=\''.$group.'\'  WHERE usuario=\''.$recprofile['usuario'].'\'');
 				session_destroy();
-				echo ''.$texto['44'].'
+				echo 'Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.
 					</td></tr></tbody>
 					</table>';
 				}
 				else
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\', password=\''.$passwordenmd5.'\', descripcion=\''.$descripcion.'\', `group`=\''.$group.'\' WHERE usuario=\''.$recprofile['usuario'].'\'');
-				echo ''.$texto['44'].'
+				echo 'Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.
 					</td></tr></tbody>
 					</table>';
 					}
@@ -71,14 +71,14 @@ if ($islogged==1)
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\', usuario=\''.$username.'\', descripcion=\''.$descripcion.'\', `group`=\''.$group.'\' WHERE usuario=\''.$recprofile['usuario'].'\'');
 				session_destroy();
-				echo ''.$texto['44'].'
+				echo 'Se ha realizado el cambio correctamente. Para mayor seguridad, el sistema lo desconectará de su sesión. Deberá volver a iniciar sesión con sus nuevos datos.
 					</td></tr></tbody>
 					</table>';
 				}
 				else
 				{
 				mysql_query('UPDATE blog_usuarios SET name=\''.$nombre.'\', surname=\''.$apellido.'\',descripcion=\''.$descripcion.'\', `group`=\''.$group.'\' WHERE usuario=\''.$recprofile['usuario'].'\'');
-				echo ''.$texto['45'].'
+				echo 'Se ha realizado el cambio correctamente.
 					</td></tr></tbody>
 					</table>';
 					}
@@ -86,46 +86,47 @@ if ($islogged==1)
 		}
 	else
 	{
-          echo '<div align="center">'.$texto['34'].'</div>
+          echo '<div align="center">Los campos deshabilitados no pueden editarse.</div>
                    <form METHOD="post" action="edit_profile.php?id='.$profid.'"> </td>
         </tr>
         <tr>
-          <td>'.$texto['25'].':
+          <td>Nombre de usuario:
           </td>
           <td><input type="text" name="usuario" value="'. $recprofile['usuario'] .'" />
           </td>
         </tr>
         <tr>
-          <td>'.$texto['33'].':
+          <td>Avatar:
           </td>
-          <td>'.$texto['35'].'
+          <td><p>El sistema usa Gravatar para mostrar tu avatar.</p>
+          <p>¿No usas Gravatar? Regístrate <a href="http://es.gravatar.com/site/signup/" target="_blank">aquí</a> con tu cuenta de correo.</p>
           </td>
         </tr>
         <tr>
-        <td>'.$texto['36'].':
+        <td>Nombre(s):
           </td>
           <td><input type="text" name="nombre" value="'.$recprofile['name'].'" />
           </td>
         </tr>
         <tr>
-        <td>'.$texto['37'].':</td>
-          <td><input type="text" name="'.$texto['37'].'" value="'.$recprofile['surname'].'" />
+        <td>Apellidos:</td>
+          <td><input type="text" name="apellidos" value="'.$recprofile['surname'].'" />
           </td>
         </tr>
         <tr>
-        <td>'.$texto['38'].':
+        <td>Contraseña (si no seas cambiarla deja este espacio en blanco):
           </td>
           <td><input type="password" name="password1" maxlength="10" />
           </td>
         </tr>
         <tr>
-          <td>'.$texto['39'].':
+          <td>Repetir contraseña (si deseas cambiar tu contraseña completa este campo):
           </td>
           <td><input type="password" name="password2" maxlength="10" />
           </td>
         </tr>
 	 <tr>
-          <td>'.$texto['40'].':
+          <td>Correo electrónico:
           </td>
           <td><input type="text" name="email" value="'. $recprofile['email'] .'" />
           </td>
@@ -133,7 +134,7 @@ if ($islogged==1)
         if(($usuarios['group']==1) && ($recprofile['id']!=$usuarios['id']))
          {
          echo '<tr>
-          <td>'.$texto['26'].':
+          <td>Rol:
           </td>
           <td><select name="grupo">
           <option value="'.$recprofile['group'].'" selected>No cambiar ('.$recgroup['nombre'].')</option>
@@ -148,29 +149,29 @@ if ($islogged==1)
         }
         else
         echo '  <tr>
-          <td>'.$texto['26'].':
+          <td>Rol:
           </td>
           <td><input type="text" name="grupo" value="'. $grupo['nombre'] .'" disabled /><input type="hidden" name="grupo" value="'.$recprofile['group'].'">
           </td>
         </tr>';
 echo '        <tr>
-          <td>'.$texto['27'].':</td>
+          <td>Fecha de registro:</td>
           <td><input type="text" name="fecha" value="'. $recprofile['fecha'] .'" disabled />
           </td>
         </tr>
         <tr>
-          <td>'.$texto['30'].':
+          <td>Acerca de mí:
           </td>
           <td><textarea name="descripcion">'. $recprofile['descripcion'] .'</textarea>
           </td>
         </tr>
         <tr>
-          <td colspan="2"><input type="submit" value="'.$texto['31'].'" />
+          <td colspan="2"><input type="submit" value="Editar datos" />
           </td>
         </tr>
         <tr>
          <td colspan="2">
-        <a href="profile.php">'.$texto['41'].'</a>
+        <a href="profile.php">Regresar al perfil</a>
          </td>
         </tr>
       </tbody>
@@ -181,7 +182,7 @@ echo '        <tr>
     }
     else
     {
-    echo '<p>'.$texto['42'].'</p>';
+    echo '<p>No tienes permiso de editar esta entrada.</p>';
     }
 }
 }

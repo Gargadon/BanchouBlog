@@ -12,8 +12,7 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_config` (
   `pathto` text NOT NULL,
   `disqusname` text NOT NULL,
   `footer` text NOT NULL,
-    `zona` text NOT NULL,
-    `lang` text NOT NULL
+    `zona` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8");
 mysql_query("CREATE TABLE IF NOT EXISTS `blog_entry` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -73,14 +72,14 @@ mysql_query("CREATE TABLE IF NOT EXISTS `blog_pages` (
 // Terminamos de instalar las tablas
 
 echo '<div class="small-12 large-12 columns">
-<h3>Instalación de GargaBlog</h3>
-<p>Se han instalado las tablas correspondientes. Es hora de registrar a tu usuario.</p>
+<h3>'.__('Instalación de GargaBlog').'</h3>
+<p>'.__('Se han instalado las tablas correspondientes. Es hora de registrar a tu usuario.').'</p>
 <form action="install.php?step=4" method="post">
   <fieldset>
       <legend>Tu usuario</legend>
       <div class="row">
       <div class="small-12 large-8 columns">
-      Usuario administrador
+      '.__('Usuario administrador').'
       </div>
       <div class="small-12 large-4 columns">
       <input type="text" name="user" />
@@ -88,7 +87,7 @@ echo '<div class="small-12 large-12 columns">
       </div>
 	<div class="row">
       <div class="small-12 large-8 columns">
-      Contraseña
+      '.__('Contraseña').'
       </div>
       <div class="small-12 large-4 columns">
       <input type="password" name="password1" />
@@ -96,7 +95,7 @@ echo '<div class="small-12 large-12 columns">
       </div>
       <div class="row">
       <div class="small-12 large-8 columns">
-      Repita contraseña
+      '.__('Repita contraseña').'
       </div>
       <div class="small-12 large-4 columns">
       <input type="password" name="password2" />
@@ -104,14 +103,14 @@ echo '<div class="small-12 large-12 columns">
       </div>
       <div class="row">
       <div class="small-12 large-8 columns">
-      Correo electrónico
+      '.__('Correo electrónico').'
       </div>
       <div class="small-12 large-4 columns">
       <input type="text" name="email" />
       </div>
       </div>
 <input type="hidden" name="instala" value="2" />
-<input type="submit" value="Siguiente" class="button secondary">
+<input type="submit" value="'.__('Siguiente').'" class="button secondary">
 </fieldset>
 </form>';
 }

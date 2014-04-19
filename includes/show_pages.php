@@ -8,22 +8,22 @@ if(isset($_GET['id']))
 	$blog1 = mysql_query('SELECT * FROM blog_pages WHERE id=\''.$entryid.'\'');
 	$blog = mysql_fetch_array($blog1);
 	if(empty($blog['id']))
-	echo '<tr><td>La página no existe</td></tr>';
+	echo '<tr><td>'.__('La página no existe.').'</td></tr>';
 	else
 		{
 	$recprofile1 = mysql_query('SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
 	$recprofile = mysql_fetch_array($recprofile1);
 	$comment1 = mysql_query('SELECT * FROM blog_comment WHERE id_entry=\''.$entryid.'\' ORDER BY `id` ASC');
-		echo '<tr><td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="Avatar de '. $recprofile['usuario'] .'" title="Avatar de '. $recprofile['usuario'] .'" /></td><td style="vertical-align:top;">';
+		echo '<tr><td style="vertical-align:top;width:80px;"><img src="http://www.gravatar.com/avatar/'.md5($recprofile['email']).'?s=80&amp;r=pg&amp;d=mm" alt="'.__('Avatar de').' '. $recprofile['usuario'] .'" title="'.__('Avatar de').' '. $recprofile['usuario'] .'" /></td><td style="vertical-align:top;">';
                 echo '<table class="table small-12 large-12 columns"><tbody><tr>
 		<th>'.$blog['subject'].'
 		</th>
 		</tr>
 		<tr>
 		<td>
-		Por: <strong>';
+		'.__('Por').': <strong>';
 		echo '<a href="'.$config['pathto'].'profile.php?id='.$blog['author'].'">'.$recprofile['usuario'].'</a>';
-		echo '</strong> el '.date('F j, Y, H:i:s',$blog['date']).'.
+		echo '</strong> '.__('el día').' '.date('F j, Y, H:i:s',$blog['date']).'.
 		</td>
 		</tr>
 		<tr>
@@ -47,11 +47,11 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
 		<a href="">Permalink</a> | ';
 		if($usuarios['group']==1)
-		echo '<a href="admin.php?action=editpage&id='.$blog['id'].'">Editar entrada</a> | ';
-		echo '<a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
+		echo '<a href="admin.php?action=editpage&id='.$blog['id'].'">'.__('Editar página').'</a> | ';
+		echo '<a href="#comments">'.__('Leer comentarios').' / '.__('Escribir comentario').'</a> | <a href="index.php">'.__('Regresar al índice').'</a></div></div></td></tr></tbody>
 		</table>
 		<br /><br /></div>
-		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
+		<div class="large-12 columns"><h5 id="comments">'.__('Leer comentarios').'</h5></div>
 		    <div id="disqus_thread" class="large-12 columns"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -74,7 +74,7 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 else
 	{
 	echo '
-<div data-alert class="alert-box alert">La página debe tener un ID válido.</div>
+<div data-alert class="alert-box alert">'.__('La página debe tener un ID válido.').'</div>
 
 ';
  }
