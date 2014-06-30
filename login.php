@@ -33,7 +33,8 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
            			 /* Cookie expires when browser closes */
             			setcookie("gargauser", $row["usuario"], time()+(10*365*24*60*60), $folder, $path);
            			setcookie("gargapass", md5($row["password"]), time()+(10*365*24*60*60), $folder, $path);
-            			header('Location: index.php');
+           			header('Location: index.php');
+           			include("header.php");
             			}
 		}else{
 		include("header.php");
