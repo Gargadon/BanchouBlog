@@ -95,7 +95,8 @@ if(isset($_GET['entryid']))
  ';
 include('includes/navbar.php');
 
-echo '<div class="row">
+echo '<br />
+<div class="row">
   <div class="large-12 columns">
   ';
   
