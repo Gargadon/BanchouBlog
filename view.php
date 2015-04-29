@@ -9,10 +9,12 @@ error_reporting(E_ALL ^ E_NOTICE);
 	
 // Create a title.
 $entryid = $_GET['id'];
-$blog1 = mysqli_query($con,'SELECT * FROM blog_pages WHERE id=\''.$entryid.'\'');
+$blog1 = mysqli_query($con,'SELECT * FROM blog_entry WHERE id=\''.$entryid.'\'');
 if(mysqli_num_rows($blog1) != 0)
 {
 	$blog = mysqli_fetch_array($blog1);
+	$categories1=mysqli_query($con,'SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
+	$categories=mysqli_fetch_array($categories1);
 	$name = $blog['subject'];
 
  //This is where you display your query results
@@ -31,7 +33,7 @@ $viewentries = array(
         'date' => date('F j, Y, H:i:s',$blog['date']),
         'cat_id' => $blog['cat_id'],
 	'category' => $categories['name'],
-	'entry_content' => $blog['page']
+	'entry_content' => $blog['entry']
     );
 // Assign values to the Savant instance.
 $tpl->title = $name;
@@ -40,6 +42,6 @@ $tpl->disqusname = $config['disqusname'];
 }
 // Display a template using the assigned values.
 $tpl->display('skins/'.$config['skin'].'/templates/navbar.tpl.php');
-$tpl->display('skins/'.$config['skin'].'/templates/pages.tpl.php');
+$tpl->display('skins/'.$config['skin'].'/templates/view.tpl.php');
 $tpl->display('skins/'.$config['skin'].'/templates/footer.tpl.php');
 ?>

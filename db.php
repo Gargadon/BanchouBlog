@@ -1,19 +1,24 @@
 <?php
 
 // No editar las siguientes líneas.
-mysql_connect(''.$dwo_server.'',''.$dwo_user.'',''.$dwo_pass.'')or die ('Ha fallado la conexión: '.mysql_error());
-mysql_select_db(''.$dwo_base.'')or die ('Error al seleccionar la Base de Datos: '.mysql_error());
-$checktable=mysql_query('SELECT * FROM blog_entry');
+$con=mysqli_connect(''.$dwo_server.'',''.$dwo_user.'',''.$dwo_pass.'')or die ('Ha fallado la conexión: '.mysqli_error());
+mysqli_select_db($con,''.$dwo_base.'')or die ('Error al seleccionar la Base de Datos: '.mysqli_error());
+$checktable=mysqli_query($con,'SELECT * FROM blog_entry');
 if(!$checktable)
 header('Location: install.php');
-mysql_query('SET NAMES \'utf8\' COLLATE \'utf8_unicode_ci\'');
+mysqli_query($con,'SET NAMES \'utf8\' COLLATE \'utf8_unicode_ci\'');
+$configuracion1 = mysqli_query($con,'SELECT * FROM blog_config');
+$config = mysqli_fetch_array($configuracion1);
+$usuarios1 = mysqli_query($con,'SELECT * FROM blog_usuarios WHERE usuario=\''.$_COOKIE['gargauser'].'\'');
+$usuarios = mysqli_fetch_array($usuarios1);
+$grupo1 = mysqli_query($con,'SELECT * FROM blog_grupo WHERE id=\''.$usuarios['group'].'\'');
+$grupo = mysqli_fetch_array($grupo1);
 
-$usuarios1 = mysql_query('SELECT * FROM blog_usuarios WHERE usuario=\''.$_COOKIE['gargauser'].'\'');
-$usuarios = mysql_fetch_array($usuarios1);
-$grupo1 = mysql_query('SELECT * FROM blog_grupo WHERE id=\''.$usuarios['group'].'\'');
-$grupo = mysql_fetch_array($grupo1);
-
-	if (!empty($_SERVER['HTTP_CLIENT_IP']))
+	if(!empty($_SERVER["HTTP_CF_CONNECTING_IP"]))
+	{
+		$myip=$_SERVER["HTTP_CF_CONNECTING_IP"];
+	}
+	elseif (!empty($_SERVER['HTTP_CLIENT_IP']))
 	{
 		$myip=$_SERVER['HTTP_CLIENT_IP'];
 	}
@@ -27,6 +32,6 @@ $grupo = mysql_fetch_array($grupo1);
 		$myip=$_SERVER['REMOTE_ADDR'];
 	}
 
-mysql_query('UPDATE blog_usuarios SET ip=\''.$myip.'\' where id=\''.$usuarios['id'].'\'');
+mysqli_query($con,'UPDATE blog_usuarios SET ip=\''.$myip.'\' where id=\''.$usuarios['id'].'\'');
 // echo $myip;
 ?>

@@ -1,29 +1,12 @@
 <?php
-if(defined('dwogame'))
-{
-echo '<table>
-		<tbody>
-		<tr>
-		<th>'.__('Configuración del blog').'</th></tr>';
 if(isset($_GET['id']))
 {
-mysql_query('DELETE FROM blog_pages WHERE id=\''.$_GET['id'].'\'');
-echo '<tr>
-		<td>'.__('La página se ha borrado con éxito.').'</td>
-		</tr>
-		<tr>
-		<td><a href="admin.php">'.__('Regresar al índice').'</a></td>
-		</tr>';
+mysqli_query($con,'DELETE FROM blog_pages WHERE id=\''.$_GET['id'].'\'');
+$tpl->deletepage = 1;
 }
 else
 {
-echo __('No se especificó un tema.');
+$tpl->deletepage = 0;
 }
-echo '</tbody>
-</table>';
-}
-else
-{
-header("HTTP/1.0 403 Forbidden");
-}
+$tpl->display('skins/'.$config['skin'].'/templates/admin/deletepage.tpl.php');
 ?>

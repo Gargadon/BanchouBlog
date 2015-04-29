@@ -7,7 +7,7 @@ echo '<table>
 		<th>'.__('Configuración del blog').'</th></tr>';
 if(isset($_GET['entryid']))
 {
-mysql_query('DELETE FROM blog_entry WHERE id=\''.$_GET['entryid'].'\'');
+mysqli_query($con,'DELETE FROM blog_entry WHERE id=\''.$_GET['entryid'].'\'');
 echo '<tr>
 		<td>'.__('La entrada se ha borrado con éxito.').'</td>
 		</tr>

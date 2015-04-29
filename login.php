@@ -3,12 +3,7 @@ if(isset($_POST['envia']))
 {
 require('base.php');
 require('db.php');
-function quitar($mensaje)
-{
-	$nopermitidos = array("'",'\\','<','>',"\"");
-	$mensaje = str_replace($nopermitidos, "", $mensaje);
-	return $mensaje;
-}
+
 if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
 {
 	// Puedes utilizar la funcion para eliminar algun caracter en especifico
@@ -17,15 +12,15 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
 	// o puedes convertir los a su entidad HTML aplicable con htmlentities
 	$usuario = strtolower(htmlentities($_POST['blogu'], ENT_QUOTES));
 	$password = md5($_POST['blogp']);
-	$result = mysql_query('SELECT * FROM blog_usuarios WHERE usuario=\''.$usuario.'\'');
-	if($row = mysql_fetch_array($result)){
+	$result = mysqli_query($con,'SELECT * FROM blog_usuarios WHERE usuario=\''.$usuario.'\'');
+	if($row = mysqli_fetch_array($result)){
 		if($row['password'] == $password){
 
 				if($row['confirmed'] == 0)
 				{
-				include("header.php");
-				echo '<p>'.__('Lo sentimos, su cuenta aun no ha sido activada.').'</p>
-				<p>'.__('Revise su bandeja de entrada de correo electrónico para activar su cuenta.').'</p>
+				
+				echo '<p>Lo sentimos, su cuenta aun no ha sido activada.</p>
+				<p>Revise su bandeja de entrada de correo electrónico para activar su cuenta.</p>
 				';
 				}
 				else
@@ -34,20 +29,20 @@ if(trim($_POST['blogu']) != "" && trim($_POST['blogp']) != "")
             			setcookie("gargauser", $row["usuario"], time()+(10*365*24*60*60), $folder, $path);
            			setcookie("gargapass", md5($row["password"]), time()+(10*365*24*60*60), $folder, $path);
            			header('Location: index.php');
-           			include("header.php");
+           			
             			}
 		}else{
-		include("header.php");
-			echo __('Password incorrecto');
+		
+			echo 'Password incorrecto';
 		}
 	}else{
-	include("header.php");
-		echo __('Usuario no existente en la base de datos');
+	
+		echo 'Usuario no existente en la base de datos';
 	}
-	mysql_free_result($result);
+	mysqli_free_result($result);
 }else{
-include("header.php");
-	echo __('Debe especificar un usuario y password');
+
+	echo 'Debe especificar un usuario y password';
 }
 }
 else
@@ -55,5 +50,4 @@ else
 	echo 'Hacker?';
 	die();
 }
-include('footer.php');
 ?>

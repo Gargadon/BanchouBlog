@@ -8,7 +8,7 @@ if(defined('dwogame'))
 		</tr>';
 	if(isset($_POST['envia']))
 	{
-	mysql_query('UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\', cat_id=\''.$_POST['category'].'\' WHERE id=\''.$_GET['entryid'].'\'');
+	mysqli_query($con,'UPDATE blog_entry SET entry=\''.$_POST['entrada'].'\',subject=\''.$_POST['subject'].'\', cat_id=\''.$_POST['category'].'\' WHERE id=\''.$_GET['entryid'].'\'');
 			echo '<tr>
 		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
@@ -21,10 +21,10 @@ if(defined('dwogame'))
 	}
 	else
 	{
-	$blog1 = mysql_query('SELECT * FROM blog_entry WHERE id=\''.$_GET['entryid'].'\'');
-	$blog = mysql_fetch_array($blog1);
-	$recprofile1 = mysql_query('SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
-	$recprofile = mysql_fetch_array($recprofile1);	
+	$blog1 = mysqli_query($con,'SELECT * FROM blog_entry WHERE id=\''.$_GET['entryid'].'\'');
+	$blog = mysqli_fetch_array($blog1);
+	$recprofile1 = mysqli_query($con,'SELECT usuario,email FROM blog_usuarios WHERE id=\''.$blog['author'].'\'');
+	$recprofile = mysqli_fetch_array($recprofile1);	
 		echo '<tr>
 		<td>       
                 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
@@ -47,13 +47,13 @@ if(defined('dwogame'))
 		<script type="text/javascript">
 			CKEDITOR.replace( \'editor1\' );
 		</script>';
-		$blog_cats1 = mysql_query('SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
-		$blog_cats = mysql_fetch_array($blog_cats1);
+		$blog_cats1 = mysqli_query($con,'SELECT * FROM blog_cats WHERE id=\''.$blog['cat_id'].'\'');
+		$blog_cats = mysqli_fetch_array($blog_cats1);
 echo '		'.__('Categoría').': <select name="category"><option value="'.$blog['cat_id'].'">'.__('No cambiar').' ('.$blog_cats['name'].')</option>';
 		unset($blog_cats1);
 		unset($blog_cats);
-		$blog_cats1 = mysql_query('SELECT * FROM blog_cats ORDER BY id ASC');
-		while($blog_cats = mysql_fetch_array($blog_cats1))
+		$blog_cats1 = mysqli_query($con,'SELECT * FROM blog_cats ORDER BY id ASC');
+		while($blog_cats = mysqli_fetch_array($blog_cats1))
 		{
 		echo '<option value="'.$blog_cats['id'].'">'.$blog_cats['name'].'</option>';
 		}

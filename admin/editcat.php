@@ -8,7 +8,7 @@ if(defined('dwogame'))
 		</tr>';
 	if(isset($_POST['envia']))
 	{
-	mysql_query('UPDATE blog_cats SET name=\''.$_POST['nombre'].'\',description=\''.$_POST['descripcion'].'\' WHERE id=\''.$_GET['id'].'\'');
+	mysqli_query($con,'UPDATE blog_cats SET name=\''.$_POST['nombre'].'\',description=\''.$_POST['descripcion'].'\' WHERE id=\''.$_GET['id'].'\'');
 			echo '<tr>
 		<td>'.__('Los cambios se han realizado correctamente.').'</td>
 		</tr>
@@ -21,8 +21,8 @@ if(defined('dwogame'))
 	}
 	else
 	{
-	$blog1 = mysql_query('SELECT * FROM blog_cats WHERE id=\''.$_GET['id'].'\'');
-	$blog = mysql_fetch_array($blog1);
+	$blog1 = mysqli_query($con,'SELECT * FROM blog_cats WHERE id=\''.$_GET['id'].'\'');
+	$blog = mysqli_fetch_array($blog1);
 		echo '
 
 		<tr>

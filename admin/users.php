@@ -96,8 +96,8 @@ if (!isset($search))
 
 
 
- $numresults = mysql_query($query);
- $numrows = mysql_num_rows($numresults);
+ $numresults = mysqli_query($con,$query);
+ $numrows = mysqli_num_rows($numresults);
 
 // If we have no results, offer a google search as an alternative
 
@@ -116,7 +116,7 @@ echo '<tr><td colspan="3" style="text-align:left">'.__('Lo sentimos, su búsqued
 
 // get results
   $query .= " limit $s,$limit";
-  $result = mysql_query($query) or die('Couldn\'t execute query');
+  $result = mysqli_query($con,$query) or die('Couldn\'t execute query');
 
 // display what the person searched for
 if($usuarios['group']==1)
@@ -134,7 +134,7 @@ echo '<tr><td width="50%"><strong>'.__('Usuario').'</strong></td>
 if($usuarios['group']==1)
 echo '<td><strong>'.__('Borrar usuario').'</strong></td>';
 echo '</tr>';
-  while ($row= mysql_fetch_array($result)) {
+  while ($row= mysqli_fetch_array($result)) {
   $title = $row['usuario'];
 if($contador%2==0)
 {

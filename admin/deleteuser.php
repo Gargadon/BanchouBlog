@@ -2,8 +2,8 @@
 if ($islogged==1 && $usuarios['group']==1)
 {
 	$u = $_GET['u'];
-	$recprofile1 = mysql_query('SELECT * FROM blog_usuarios WHERE id=\''.$u.'\'');
-	$recprofile = mysql_fetch_array($recprofile1);
+	$recprofile1 = mysqli_query($con,'SELECT * FROM blog_usuarios WHERE id=\''.$u.'\'');
+	$recprofile = mysqli_fetch_array($recprofile1);
 	//Proponemos condiciones
 	if($usuarios['id'] == $u)
 	{
@@ -17,9 +17,9 @@ if ($islogged==1 && $usuarios['group']==1)
 	{
 		if($_POST['envia']=='yes')
 		{	
-			mysql_query('DELETE FROM blog_usuarios WHERE id=\''.$u.'\'');
+			mysqli_query($con,'DELETE FROM blog_usuarios WHERE id=\''.$u.'\'');
 			if($_POST['deletepost']==1)
-			mysql_query('DELETE FROM blog_entry WHERE author=\''.$u.'\'');
+			mysqli_query($con,'DELETE FROM blog_entry WHERE author=\''.$u.'\'');
 			echo '<div class="row">
 				<div class="large-12 columns">'.__('El usuario ha sido borrado.').'</div>
 				<div class="large-6 columns"><a href="'.$config['pathto'].'">'.__('Regresar al índice').'</a></div>

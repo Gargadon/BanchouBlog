@@ -9,7 +9,16 @@ error_reporting(E_ALL ^ E_NOTICE);
 	
 // Create a title.
 $name = $config["name"]." - Página principal";
- $data = mysqli_query($con,"SELECT * FROM blog_entry") or die(mysqli_error()); 
+
+if(isset($_GET['id']))
+{
+$cat = $_GET['id'];
+}
+else
+{
+$tpl->showegg = 1;
+}
+ $data = mysqli_query($con,"SELECT * FROM blog_entry WHERE cat_id='".$cat."'") or die(mysqli_error()); 
  $rows = mysqli_num_rows($data); 
  //This is the number of results displayed per page 
  $page_rows = 5; 
@@ -29,7 +38,7 @@ $name = $config["name"]." - Página principal";
  } 
 
  //This sets the range to display in our query 
-$max = 'ORDER by `id` DESC limit ' .($_GET['page'] - 1) * $page_rows .',' .$page_rows; 
+$max = 'WHERE cat_id=\''.$cat.'\' ORDER by `id` DESC limit ' .($_GET['page'] - 1) * $page_rows .',' .$page_rows; 
  
   //This is your query again, the same one... the only difference is we add $max into it
 $data_p = mysqli_query($con,"SELECT * FROM blog_entry $max") or die(mysqli_error()); 
@@ -56,6 +65,7 @@ $viewentries[$contador] = array(
 $contador++;
 }
 // Assign values to the Savant instance.
+$tpl->cat = $cat;
 $tpl->title = $name;
 $tpl->entries = $viewentries;
 $tpl->page = $_GET['page'];
@@ -80,6 +90,6 @@ else
 
 // Display a template using the assigned values.
 $tpl->display('skins/'.$config['skin'].'/templates/navbar.tpl.php');
-$tpl->display('skins/'.$config['skin'].'/templates/index.tpl.php');
+$tpl->display('skins/'.$config['skin'].'/templates/cat.tpl.php');
 $tpl->display('skins/'.$config['skin'].'/templates/footer.tpl.php');
 ?>

@@ -16,10 +16,10 @@ if (($islogged==1) && ($usuarios['group']==1))
 		$crear_usuario=0;
 		}
 		//Comprobar correo y usuario
-		$checkuser = mysql_query("SELECT usuario FROM blog_usuarios WHERE usuario='$usuario_nuevo'");
-		$username_exist = mysql_num_rows($checkuser);
-		$checkemail = mysql_query("SELECT email FROM blog_usuarios WHERE email='$email_nuevo'");
-		$email_exist = mysql_num_rows($checkemail);
+		$checkuser = mysqli_query($con,"SELECT usuario FROM blog_usuarios WHERE usuario='$usuario_nuevo'");
+		$username_exist = mysqli_num_rows($checkuser);
+		$checkemail = mysqli_query($con,"SELECT email FROM blog_usuarios WHERE email='$email_nuevo'");
+		$email_exist = mysqli_num_rows($checkemail);
 		if ($email_exist>0|$username_exist>0) {
 			echo "<p>".__('El nombre de usuario o la cuenta de correo estan ya en uso.')."</p>";
 			$crear_usuario=0;
@@ -81,7 +81,7 @@ if (($islogged==1) && ($usuarios['group']==1))
 		echo '<p>'.__('Favor de avisar al usuario sobre sus datos de acceso.').'</p>';
 		}
 					$query = 'INSERT INTO blog_usuarios (usuario, `group`, password, email, fecha, confirmed) VALUES (\''.$usuario_nuevo.'\',\'1\',\''.$passwordenmd5.'\',\''.$email_nuevo.'\',\''.date("Y-m-d").'\',\'1\')';
-					mysql_query($query) or die(mysql_error());
+					mysqli_query($con,$query) or die(mysqli_error());
 		}
 		else
 		{
