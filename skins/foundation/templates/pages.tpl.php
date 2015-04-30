@@ -41,7 +41,11 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 var options={ "publisher": "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
 var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
-<a href="">Permalink</a> | <a href="#comments">Leer comentarios / Escribir comentario</a> | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
+<a href="">Permalink</a> | <a href="#comments">Leer comentarios / Escribir comentario</a> | 
+<?php if(($this->group)==1) : ?>
+<a href="admin.php?action=editpage&id=<?php echo $this->eprint($this->entries['entry_id']); ?>">Editar página</a>
+<?php endif; ?>
+ | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
 		</table>
 		<br /></div>
 		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
