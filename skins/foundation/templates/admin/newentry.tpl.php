@@ -8,7 +8,7 @@
 		<td>Los cambios se han realizado correctamente.</td>
 		</tr>
 		<tr>
-		<td><a href="index.php?entryid='.$searchentry['id'].'">Ver tema</a></td>
+		<td><a href="view.php?id=<?php echo ($this->eprint($this->entryid)); ?>">Ver tema</a></td>
 		</tr>
 		<tr>
 		<td><a href="admin.php">Regresar a la administración</a></td>

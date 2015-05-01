@@ -32,7 +32,7 @@
           <li><a href="admin.php?action=viewentries">Editar entradas</a></li>
           <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
 	 <li><a href="admin.php?action=createuser">Crear usuarios</a></li>
-          <li><a href="admin.php?action=users">Modificar usuarios</a></li>
+<!--           <li><a href="admin.php?action=users">Modificar usuarios</a></li> -->
           </ul>
 <?php endif; ?>
           <li class="has-dropdown"><a href="#">Categorías</a>

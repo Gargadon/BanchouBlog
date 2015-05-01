@@ -110,6 +110,7 @@ $name = $config["name"]." - Editar perfil";
 
         }
     }
+    $tpl->nousuario = 1;
 }
 $tpl->title = $name;
 $tpl->profile = $profile;

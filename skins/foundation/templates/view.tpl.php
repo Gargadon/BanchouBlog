@@ -43,9 +43,9 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
 <a href="">Permalink</a> | <a href="#comments">Leer comentarios / Escribir comentario</a> | 
 <?php if(($this->group)==1) : ?>
-<a href="admin.php?action=editentry&entryid=<?php echo $this->eprint($this->entries['entry_id']); ?>">Editar entrada</a>
+<a href="admin.php?action=editentry&entryid=<?php echo $this->eprint($this->entries['entry_id']); ?>">Editar entrada</a> | 
 <?php endif; ?>
- | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
+<a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
 		</table>
 		<br /></div>
 		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>

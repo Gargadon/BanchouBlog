@@ -111,5 +111,8 @@
 <?php endif; ?>
 <?php endif; ?>
 <?php else : ?>
+
+<?php endif; ?>
+<?php if ($this->nousuario == 1) : ?>
 No tienes permiso de estar en este sitio.
 <?php endif; ?>

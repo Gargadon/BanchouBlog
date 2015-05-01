@@ -33,6 +33,12 @@
 <td>Dirección del blog: </td><td><input type="text" name="pathto" value="<?php echo $this->eprint($this->editconfig['complete_url']); ?>" /></td>
 </tr>
 <tr>
+<td>Descripción: </td><td><input type="text" name="description" value="<?php echo $this->eprint($this->editconfig['description']); ?>" /></td>
+</tr>
+<tr>
+<td>Skin: </td><td><input type="text" name="skin" value="<?php echo $this->eprint($this->editconfig['skin']); ?>" /></td>
+</tr>
+<tr>
 <td>Footer: </td><td><textarea id="editor1" name="footer"><?php echo $this->editconfig['footer']; ?></textarea></td>
 </tr>
 <tr>

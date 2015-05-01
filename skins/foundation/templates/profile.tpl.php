@@ -45,6 +45,13 @@
         </tr>
       </tbody>
     </table></div>
+    <?php if(($this->perfil['usuario'] == $_COOKIE['gargauser'])) : ?>
+        <a href="edit_profile.php?id=<?php echo $_GET['id']; ?>">Editar perfil</a>
+    <br />
+    <?php elseif ($this->group == 1) : ?>
+    <a href="edit_profile.php?id=<?php echo $_GET['id']; ?>">Editar perfil</a>
+    <br />
+    <?php endif; ?>
 <?php endif; ?>
 <?php else: ?>
 <div data-alert class="alert-box alert">No tienes permisos para ver este perfil.</div>

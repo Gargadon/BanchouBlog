@@ -1,8 +1,7 @@
 <?php
-if (($islogged==1) && ($usuarios['group']==1))
-{
 	if(isset($_POST['envia']))
 	{
+	$tpl->envia = 'yes';
 		$usuario_nuevo=$_POST['usuario_nuevo'];
 		$email_nuevo=$_POST['email_nuevo'];
 		$password_nuevo=$_POST['password_nuevo'];
@@ -21,7 +20,7 @@ if (($islogged==1) && ($usuarios['group']==1))
 		$checkemail = mysqli_query($con,"SELECT email FROM blog_usuarios WHERE email='$email_nuevo'");
 		$email_exist = mysqli_num_rows($checkemail);
 		if ($email_exist>0|$username_exist>0) {
-			echo "<p>".__('El nombre de usuario o la cuenta de correo estan ya en uso.')."</p>";
+			$tpl->password = 1;
 			$crear_usuario=0;
 		}
 		if(isset($_POST['password_aleatorio']))
@@ -46,9 +45,12 @@ if (($islogged==1) && ($usuarios['group']==1))
 		}
 		if($crear_usuario==1)
 		{
-		echo '<p>El usuario <em>'.$usuario_nuevo.'</em> se ha creado con la contraseña <em>'.$password_nuevo.'</em>.</p>';
+		$tpl->crear = 1;
+		$tpl->usuario_nuevo = $usuario_nuevo;
+		$tpl->password_nuevo = $password_nuevo;
 		if(isset($_POST['notify_nuevo']))
 		{
+		$tpl->notify = 1;
 			$to = $email_nuevo;
 			$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 			$cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
@@ -78,38 +80,17 @@ if (($islogged==1) && ($usuarios['group']==1))
 		}
 		else
 		{
-		echo '<p>'.__('Favor de avisar al usuario sobre sus datos de acceso.').'</p>';
+		
 		}
 					$query = 'INSERT INTO blog_usuarios (usuario, `group`, password, email, fecha, confirmed) VALUES (\''.$usuario_nuevo.'\',\'1\',\''.$passwordenmd5.'\',\''.$email_nuevo.'\',\''.date("Y-m-d").'\',\'1\')';
 					mysqli_query($con,$query) or die(mysqli_error());
 		}
 		else
 		{
-		echo "<p>".__('El usuario no ha podido ser creado. Verifique los datos e intente de nuevo.')."</p>";
+		$tpl->crear = 0;
+		
 		}
 	}
-	else
-	{
-		echo '<form action="admin.php?action=createuser" method="post">
-		<table class="table large-12 small-12 columns">
-		<tr><th colspan="2">'.__('Crear usuario').'</th></tr>
-		<tr><td>'.__('Nombre de usuario').'</td><td><input type="text" name="usuario_nuevo"></td></tr>
-		<tr><td>'.__('Correo electrónico').'</td><td><input type="text" name="email_nuevo"></td></tr>
-		<tr><td>'.__('Contraseña').'</td><td><input type="password" name="password_nuevo"></td></tr>
-		<tr><td>'.__('Repetir contraseña').'</td><td><input type="password" name="password2_nuevo"></td></tr>
-		<tr><td>'.__('Crear contraseña aleatoria').'<br/>
-		<small>'.__('Si es así, deje vacío los campos <em>Contraseña</em>
-		y <em>Repetir contraseña</em>.').'</td><td><input type="checkbox" name="password_aleatorio"></td></tr>
-		<tr><td>'.__('Notificar al usuario').'</td><td><input type="checkbox" name="notify_nuevo"></td></tr>
-		<tr><td><input type="submit" value="'.__('Crear usuario').'" class="button success"></td><td><input type="reset" value="'.__('Restablecer campos').'" class="button secondary"></td></tr>
-		</table>
-		<input type="hidden" name="envia" value="yes">
-		</form>';
-	}
+$tpl->display('skins/'.$config['skin'].'/templates/admin/createuser.tpl.php');
 
-}
-else
-{
-	header("HTTP/1.0 403 Forbidden");
-}
 ?>

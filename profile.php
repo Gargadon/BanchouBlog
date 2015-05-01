@@ -50,7 +50,7 @@ else
 	{
 	$tpl->usuario = 0;
 	}
-	
+
 // Assign values to the Savant instance.
 $tpl->title = $name;
 $tpl->perfil = $viewprofile;
