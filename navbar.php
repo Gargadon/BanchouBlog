@@ -2,6 +2,7 @@
 $tpl->blogname = $config['name']; //Obtenemos el nombre del blog
 $tpl->version = $config['version']; //obtenemos los datos de la versión del blog
 $tpl->software = $config['software']; //obtenemos los datos del software
+$tpl->favicon = $config['favicon']; //Obtenemos el favicon
 $tpl->footer = $config['footer']; //obtenemos los datos del footer
 $tpl->logged = $islogged; //Obtenemos si el usuario está logueado
 $tpl->skin = 'skins/'.$config['skin'];

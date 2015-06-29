@@ -39,6 +39,9 @@
 <td>Skin: </td><td><input type="text" name="skin" value="<?php echo $this->eprint($this->editconfig['skin']); ?>" /></td>
 </tr>
 <tr>
+<td>Favicon: </td><td><input type="text" name="skin" value="<?php echo $this->eprint($this->editconfig['favicon']); ?>" /></td>
+</tr>
+<tr>
 <td>Footer: </td><td><textarea id="editor1" name="footer"><?php echo $this->editconfig['footer']; ?></textarea></td>
 </tr>
 <tr>

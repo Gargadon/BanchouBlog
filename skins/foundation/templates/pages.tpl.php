@@ -6,32 +6,21 @@
 var options={ "publisher": "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
 var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
-<table class="table small-12 large-12 columns">
-<tbody>
     <?php if (!empty($this->entries)): ?>
-<tr>
-		<td style="vertical-align:top;"><img src="<?php echo $this->eprint($this->entries['avatar']); ?>" alt="Avatar de <?php echo $this->eprint($this->entries['author']); ?>" title="Avatar de <?php echo $this->eprint($this->entries['author']); ?>" /></td><td>
-		<table class="table small-12 large-12 columns">
-		<tbody>
-		<tr><th><a href="view.php?id=<?php echo $this->eprint($this->entries['entry_id']); ?>"><?php echo $this->eprint($this->entries['title']); ?></a>
-		</th>
-		</tr>
-		<tr>
-		<td>
-		Por: <strong>
-		<a href="profile.php?id=<?php echo $this->eprint($this->entries['author_id']); ?>"><?php echo $this->eprint($this->entries['author']); ?></a>
-		</strong> el día <?php echo $this->eprint($this->entries['date']); ?>.
-		</td>
-		</tr>
-		<tr>
-		<td>
-		<?php echo $this->entries['entry_content']; ?>
-		</td>
-		</tr>
-		</tbody>
-		</table></td></tr>
- 		</table>
-				<div class="row">
+<div class="row">
+<div class="large-12 columns">
+<img src="<?php echo $this->eprint($this->entries['avatar']); ?>" alt="Avatar de <?php echo $this->eprint($this->entries['author']); ?>" title="Avatar de <?php echo $this->eprint($this->entries['author']); ?>" style="float:left;margin:10px;" /><div class="panel">
+<a href="view.php?id=<?php echo $this->eprint($this->entries['entry_id']); ?>"><h4><?php echo $this->eprint($this->entries['title']); ?></h4></a>
+<h6 class="subheader">Por: <a href="profile.php?id=<?php echo $this->eprint($this->entries['author_id']); ?>"><?php echo $this->eprint($this->entries['author']); ?></a> el día <?php echo $this->eprint($this->entries['date']); ?></h6>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="large-12 columns">
+<?php echo $this->entries['entry_content']; ?>
+</div>
+</div>
+<div class="row">
 <div class="large-12 columns">
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
@@ -41,13 +30,18 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 var options={ "publisher": "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
 var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
-<a href="">Permalink</a> | <a href="#comments">Leer comentarios / Escribir comentario</a> | 
+<ul class="breadcrumbs">
+<li><a href="">Permalink</a></li>
+<li><a href="#comments">Leer comentarios</a></li>
+<li><a href="#comments">Escribir comentario</a></li>
 <?php if(($this->group)==1) : ?>
-<a href="admin.php?action=editpage&id=<?php echo $this->eprint($this->entries['entry_id']); ?>">Editar página</a>
+<li><a href="admin.php?action=editpage&id=<?php echo $this->eprint($this->entries['entry_id']); ?>">Editar página</a></li>
 <?php endif; ?>
- | <a href="index.php">Regresar al índice</a></div></div></td></tr></tbody>
-		</table>
-		<br /></div>
+<li><a href="index.php">Regresar al índice</a></li>
+</ul>
+</div></div>
+<div class="row">
+		<div class="large-12 columns">
 		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
 		    <div id="disqus_thread" class="large-12 columns"></div>
     <script type="text/javascript">

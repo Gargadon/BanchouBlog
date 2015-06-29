@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="skins/foundation/css/foundation.css" />
   <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.php" />
   <script src="skins/foundation/js/vendor/custom.modernizr.js"></script>
-    <LINK REL="SHORTCUT ICON" HREF="favicon.ico" />
+    <link rel="shortcut icon" href="<?php echo $this->eprint($this->favicon); ?>">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo $this->eprint($this->favicon); ?>">
     <title><?php echo $this->eprint($this->title); ?> (Powered by <?php echo $this->eprint($this->software); ?> version <?php echo $this->eprint($this->version); ?>)</title>
 </head>
 <body>

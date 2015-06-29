@@ -1,32 +1,28 @@
-<table class="table small-12 large-12 columns">
-<tbody>
     <?php if (is_array($this->entries)): ?>
     <?php foreach ($this->entries as $key => $val): ?>
-<tr>
-		<td style="vertical-align:top;"><img src="<?php echo $this->eprint($val['avatar']); ?>" alt="Avatar de <?php echo $this->eprint($val['author']); ?>" title="Avatar de <?php echo $this->eprint($val['author']); ?>" /></td><td>
-		<table class="table small-12 large-12 columns">
-		<tbody>
-		<tr><th><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>"><?php echo $this->eprint($val['title']); ?></a>
-		</th>
-		</tr>
-		<tr>
-		<td>
-		Por: <strong>
-		<a href="profile.php?id=<?php echo $this->eprint($val['author_id']); ?>"><?php echo $this->eprint($val['author']); ?></a>
-		</strong> el día <?php echo $this->eprint($val['date']); ?> en la categoría <a href="cat.php?id=<?php echo $this->eprint($val['cat_id']); ?>"><?php echo $this->eprint($val['category']); ?></a>.
-		</td>
-		</tr>
-		<tr>
-		<td>
-		<?php echo $val['entry_content']; ?>
-		</td>
-		<tr>
-		<td>
-		<a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>">Leer más</a> | <a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>#comments">Leer comentarios / Escribir comentario</a>
-		</td>
-		</tr>
-		</tbody>
-		</table></td></tr>
+<div class="row">
+<div class="large-12 columns">
+<img src="<?php echo $this->eprint($val['avatar']); ?>" alt="Avatar de <?php echo $this->eprint($val['author']); ?>" title="Avatar de <?php echo $this->eprint($val['author']); ?>" style="float:left;margin:10px;" />
+<div class="panel">
+<a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>"><h4><?php echo $this->eprint($val['title']); ?></h4></a>
+<h6 class="subheader">Por: <a href="profile.php?id=<?php echo $this->eprint($val['author_id']); ?>"><?php echo $this->eprint($val['author']); ?></a> el día <?php echo $this->eprint($val['date']); ?> en la categoría <a href="cat.php?id=<?php echo $this->eprint($val['cat_id']); ?>"><?php echo $this->eprint($val['category']); ?></a></h6>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="large-12 columns">
+<?php echo $val['entry_content']; ?>
+</div>
+</div>
+<div class="row">
+<div class="large-12 columns">
+<ul class="breadcrumbs">
+<li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>">Leer más</a></li>
+<li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>#comments">Leer comentarios</a></li>
+<li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>#comments">Escribir comentario</a></li>
+</ul>
+</div>
+</div>
                   <?php endforeach; ?>
         <?php else: ?>
             
@@ -34,7 +30,6 @@
             
         <?php endif; ?>
  
-</table>
 <table class="table small-12 large-12 columns"><tbody><tr><td>Mostrando página <?php echo $this->eprint($this->page); ?> de <?php echo $this->eprint($this->lastpage); ?></td></tr>
 <tr><td>
 <?php if($this->page != 1) : ?>
