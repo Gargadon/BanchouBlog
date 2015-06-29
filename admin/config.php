@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['envia']))
 	{
-	mysqli_query($con,'UPDATE blog_config SET name=\''.$_POST['blogname'].'\', pathto=\''.$_POST['pathto'].'\', disqusname=\''.$_POST['disqusname'].'\', footer=\''.$_POST['footer'].'\', zona=\''.$_POST['zona'].'\', skin=\''.$_POST['skin'].'\', favicon=\''.$_POST['favicon'].'\', description=\''.$_POST['description'].'\'');
+	mysqli_query($con,'UPDATE blog_config SET name=\''.$_POST['blogname'].'\', pathto=\''.$_POST['pathto'].'\', disqusname=\''.$_POST['disqusname'].'\', footer=\''.$_POST['footer'].'\', zona=\''.$_POST['zona'].'\', skin=\''.$_POST['skin'].'\', favicon=\''.$_POST['favicon'].'\', keywords=\''.$_POST['keywords'].'\', description=\''.$_POST['description'].'\'');
 	$tpl->envia ='yes';
 	}
 	else
@@ -16,7 +16,8 @@ if(isset($_POST['envia']))
 	'footer' => $config_blog['footer'],
 	'skin' => $config_blog['skin'],
 	'favicon' => $config_blog['favicon'],
-	'description' => $config_blog['description']
+	'description' => $config_blog['description'],
+	'keywords' => $config_blog['keywords']
 	);
 	$tpl->editconfig = $editconfig;
 	}

@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="<?php echo $this->eprint($this->favicon); ?>">
     <link rel="apple-touch-icon-precomposed" href="<?php echo $this->eprint($this->favicon); ?>">
     <title><?php echo $this->eprint($this->title); ?> (Powered by <?php echo $this->eprint($this->software); ?> version <?php echo $this->eprint($this->version); ?>)</title>
+<meta name="description" content="<?php echo $this->eprint($this->description); ?>" />
+<meta name="keywords" content="<?php echo $this->eprint($this->keywords); ?>" />
 </head>
 <body>
   <nav class="top-bar" data-topbar>
