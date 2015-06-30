@@ -38,7 +38,7 @@
 			'filebrowserImageUploadUrl': 'ckeditor/plugins/imgupload/imgupload.php'
 			});
 		</script>
-		Categoría: <select name="category"><option value="<?php echo $this->eprint($this->editentry['cat_id']); ?>'">No cambiar (<?php echo $this->eprint($this->editentry['cat_name']); ?>)</option>
+		Categoría: <select name="category"><option value="<?php echo $this->eprint($this->editentry['cat_id']); ?>">No cambiar (<?php echo $this->eprint($this->editentry['cat_name']); ?>)</option>
 		<?php for($i=1; $i<=($this->contador); $i++) { ?>
 		<option value="<?php echo $this->eprint($this->cat_id[$i]); ?>"><?php echo $this->eprint($this->cat_name[$i]); ?></option>
 		<?php } ?>)
