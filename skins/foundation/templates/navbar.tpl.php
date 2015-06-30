@@ -45,7 +45,7 @@
 <li><a href="cat.php?id=<?php echo $this->eprint($val['id']); ?>"><?php echo $this->eprint($val['name']); ?></a></li>
     <?php endforeach; ?>
     <?php else: ?>
-    <li>No hay categorías</a></li>
+    <li><a href="#">No hay categorías</a></li>
         <?php endif; ?>
 </ul></li><li class="has-dropdown"><a href="#">Páginas</a>
         <ul class="dropdown">
@@ -54,7 +54,7 @@
 <li><a href="pages.php?id=<?php echo $this->eprint($val['id']); ?>"><?php echo $this->eprint($val['name']); ?></a></li>
     <?php endforeach; ?>
     <?php else: ?>
-    <li>No hay páginas</a></li>
+    <li><a href="#">No hay páginas</a></li>
         <?php endif; ?>
 </ul></li>
 <?php if(($this->logged)==1):  ?>
