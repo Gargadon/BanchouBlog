@@ -1,11 +1,6 @@
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
-<script type="text/javascript">stLight.options({publisher: "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<script>
-var options={ "publisher": "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
-var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-</script>
+<script type="text/javascript">stLight.options({publisher: "74b5929a-6039-40c5-a85f-5349d1108d66", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <?php if (!empty($this->entries)): ?>
 <div class="row">
 <div class="large-12 columns">
@@ -17,19 +12,11 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </div>
 <div class="row">
 <div class="large-12 columns">
-<?php echo $this->entries['entry_content']; ?>
+<p><?php echo $this->entries['entry_content']; ?></p>
 </div>
 </div>
 <div class="row">
-<div class="large-12 columns">
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
-<script type="text/javascript">stLight.options({publisher: "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<script>
-var options={ "publisher": "ur-7e6c322b-dba2-5740-1c15-f3b2de936596", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
-var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-</script>
+<div class="large-8 columns">
 <ul class="breadcrumbs">
   <li><a href="">Permalink</a></li>
   <li><a href="#comments">Leer comentarios</a></li>
@@ -39,7 +26,17 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 	<?php endif; ?>
   <li><a href="index.php">Regresar al índice</a></li>
 </ul>
-</div></div>
+</div>
+<div class="large-4 columns">
+<span class='st_sharethis_large' displayText='ShareThis'></span>
+<span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_tumblr_large' displayText='Tumblr'></span>
+<span class='st_reddit_large' displayText='Reddit'></span>
+<span class='st_whatsapp_large' displayText='WhatsApp'></span>
+<span class='st_email_large' displayText='Email'></span>
+</div>
+</div>
 <div class="row">
 		<div class="large-12 columns">
 <a id="comments"></a>

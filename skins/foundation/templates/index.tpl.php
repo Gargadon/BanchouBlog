@@ -11,7 +11,7 @@
 </div>
 <div class="row">
 <div class="large-12 columns">
-<?php echo $val['entry_content']; ?>
+<p><?php echo $val['entry_content']; ?></p>
 </div>
 </div>
 <div class="row">

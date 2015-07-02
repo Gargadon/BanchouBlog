@@ -45,7 +45,7 @@ echo '<div class="small-12 large-12 columns">
 	else
 	{
 	mysqli_query($con,"INSERT INTO `blog_config` (`name`, `version`, `skin`, `software`, `description`, `pathto`, `disqusname`, `footer`, `zona`) VALUES
-('".$blogname."', '1.0.0', 'foundation', 'BanchouBlog', 'Nuevo blog', '".$path."', '".$disqusname."', '<p>BanchouBlog is a simple blog written in PHP.</p>\r\n<p>&#169; BanchouBlog.us</p>', 'America/Merida')");
+('".$blogname."', '1.1.1', 'foundation', 'BanchouBlog', 'Nuevo blog', '".$path."', '".$disqusname."', '<p>BanchouBlog is a simple blog written in PHP.</p>\r\n<p>&#169; BanchouBlog.us</p>', 'America/Merida')");
 mysqli_query($con,"INSERT INTO `blog_grupo` (`id`, `nombre`) VALUES
 (0, 'Usuario'),
 (1, 'Administrador')");

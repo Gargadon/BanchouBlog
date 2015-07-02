@@ -3010,8 +3010,9 @@ ol,
 dl {
   font-size: 0.8rem;
   line-height: 1.6;
+  margin-left:1.25rem;
   margin-bottom: 1.25rem;
-  list-style-position: outside;
+  list-style-position: inside;
   font-family: inherit; }
 
 ul {
