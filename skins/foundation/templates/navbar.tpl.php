@@ -71,7 +71,7 @@
         <form action="search.php" method="get">
           <div class="row collapse">
             <div class="small-8 columns">
-              <input type="text" name="q">
+              <input type="text" style="height: 2.025rem;" name="q">
             </div>
             <div class="small-4 columns">
               <input type="submit" class="alert button" value="Buscar" />
