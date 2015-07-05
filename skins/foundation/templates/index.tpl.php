@@ -19,7 +19,7 @@
 <ul class="breadcrumbs">
 <li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>">Leer más</a></li>
 <li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>#comments">Leer comentarios</a></li>
-<li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>#comments">Escribir comentario</a></li>
+<li><a href="view.php?id=<?php echo $this->eprint($val['entry_id']); ?>#write-comment">Escribir comentario</a></li>
 </ul>
 </div>
 </div>

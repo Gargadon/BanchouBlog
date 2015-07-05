@@ -30,22 +30,14 @@ echo '<div class="small-12 large-12 columns">
       <input type="text" name="path" />
       </div>
       </div>
-      <div class="row">
-      <div class="small-12 large-8 columns">
-      Nombre corto de Disqus<br/><small>El blog utiliza Disqus para los comentarios. Si no tiene cuenta en Disqus, créela y regrese a este paso.</small>
-      </div>
-      <div class="small-12 large-4 columns">
-      <input type="text" name="disqusname" />
-      </div>
-      </div>
 <input type="hidden" name="instala" value="2" />
 <input type="submit" value="Siguiente" class="button secondary">
 </fieldset>
 </form>';
 	else
 	{
-	mysqli_query($con,"INSERT INTO `blog_config` (`name`, `version`, `skin`, `software`, `description`, `pathto`, `disqusname`, `footer`, `zona`) VALUES
-('".$blogname."', '1.1.1', 'foundation', 'BanchouBlog', 'Nuevo blog', '".$path."', '".$disqusname."', '<p>BanchouBlog is a simple blog written in PHP.</p>\r\n<p>&#169; BanchouBlog.us</p>', 'America/Merida')");
+	mysqli_query($con,"INSERT INTO `blog_config` (`name`, `version`, `skin`, `software`, `description`, `pathto`, `footer`, `zona`) VALUES
+('".$blogname."', '1.1.1', 'foundation', 'BanchouBlog', 'Nuevo blog', '".$path."', '<p>BanchouBlog is a simple blog written in PHP.</p>\r\n<p>&#169; BanchouBlog.us</p>', 'America/Merida')");
 mysqli_query($con,"INSERT INTO `blog_grupo` (`id`, `nombre`) VALUES
 (0, 'Usuario'),
 (1, 'Administrador')");

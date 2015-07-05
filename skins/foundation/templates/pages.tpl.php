@@ -37,23 +37,6 @@
 <span class='st_email_large' displayText='Email'></span>
 </div>
 </div>
-<div class="row">
-		<div class="large-12 columns">
-		<div class="large-12 columns"><h5 id="comments">Leer comentarios</h5></div>
-		    <div id="disqus_thread" class="large-12 columns"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        <?php echo "var disqus_shortname = '".$this->disqusname."'"; ?>; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
         <?php else: ?>
             

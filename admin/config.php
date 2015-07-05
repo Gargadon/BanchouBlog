@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['envia']))
 	{
-	mysqli_query($con,'UPDATE blog_config SET name=\''.$_POST['blogname'].'\', pathto=\''.$_POST['pathto'].'\', disqusname=\''.$_POST['disqusname'].'\', footer=\''.$_POST['footer'].'\', zona=\''.$_POST['zona'].'\', skin=\''.$_POST['skin'].'\', favicon=\''.$_POST['favicon'].'\', keywords=\''.$_POST['keywords'].'\', description=\''.$_POST['description'].'\'');
+	mysqli_query($con,'UPDATE blog_config SET name=\''.$_POST['blogname'].'\', pathto=\''.$_POST['pathto'].'\', footer=\''.$_POST['footer'].'\', zona=\''.$_POST['zona'].'\', skin=\''.$_POST['skin'].'\', favicon=\''.$_POST['favicon'].'\', keywords=\''.$_POST['keywords'].'\', description=\''.$_POST['description'].'\'');
 	$tpl->envia ='yes';
 	}
 	else
@@ -10,7 +10,6 @@ if(isset($_POST['envia']))
 	$config_blog = mysqli_fetch_array($config_blog1);
 	$editconfig = array(
 	'name' => $config_blog['name'],
-	'disqusname' => $config_blog['disqusname'],
 	'complete_url' => $config_blog['pathto'],
 	'timezone' => $config_blog['zona'],
 	'footer' => $config_blog['footer'],

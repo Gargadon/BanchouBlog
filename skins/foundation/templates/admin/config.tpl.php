@@ -27,9 +27,6 @@
 <td>Nombre del blog: </td><td><input type="text" name="blogname" value="<?php echo $this->eprint($this->editconfig['name']); ?>" /></td>
 </tr>
 <tr>
-<td>Nombre de usuario de <a href="http://www.disqus.com/about/" target="_blank">Disqus</a>: </td><td><input type="text" name="disqusname" value="<?php echo $this->eprint($this->editconfig['disqusname']); ?>" /></td>
-</tr>
-<tr>
 <td>Dirección del blog: </td><td><input type="text" name="pathto" value="<?php echo $this->eprint($this->editconfig['complete_url']); ?>" /></td>
 </tr>
 <tr>

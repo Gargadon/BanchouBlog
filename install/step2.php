@@ -57,6 +57,18 @@ mysqli_query($con,"CREATE TABLE IF NOT EXISTS `blog_pages` (
   `page` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8");
+mysqli_query($con,"CREATE TABLE IF NOT EXISTS `blog_comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `type` text NOT NULL,
+  `is_guest` int(11) NOT NULL,
+  `guest_name` text NOT NULL,
+  `guest_email` text NOT NULL,
+  `author_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8");
 
 // Terminamos de instalar las tablas
 

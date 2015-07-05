@@ -79,14 +79,6 @@ echo '<div class="small-12 large-12 columns">
       <input type="text" name="path" />
       </div>
       </div>
-      <div class="row">
-      <div class="small-12 large-8 columns">
-      Nombre corto de Disqus<br/><small>El blog utiliza Disqus para los comentarios. Si no tiene cuenta en Disqus, créela y regrese a este paso.</small>
-      </div>
-      <div class="small-12 large-4 columns">
-      <input type="text" name="disqusname" />
-      </div>
-      </div>
 <input type="hidden" name="instala" value="2" />
 <input type="submit" value="Siguiente" class="button secondary">
 </fieldset>
