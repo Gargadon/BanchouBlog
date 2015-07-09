@@ -12,9 +12,9 @@
 			  <div class="medium-1 columns"><img src="<?php echo $this->eprint($val['avatar']); ?>" alt="Avatar de <?php echo $this->eprint($val['author']); ?>" title="Avatar de <?php echo $this->eprint($val['author']); ?>" style="float:left; margin-left:10px; margin-right:10px; margin-top:35px;" /></div>
 			  <div class="medium-11 columns">
 			<?php if ($val['author_id'] == 0): ?>
-			<h6 class="subheader">Por: <?php echo $this->eprint($val['author']); ?></a> el día <?php echo $this->eprint($val['date']); ?></h6>
+			<h6 class="subheader">Por: <?php echo $this->eprint($val['author']); ?></a> <a href="#comment-<?php echo $this->eprint($val['comment_id']); ?>">el día <?php echo $this->eprint($val['date']); ?></a></h6>
 			<?php else : ?>
-			<h6 class="subheader">Por: <a href="profile.php?id=<?php echo $this->eprint($val['author_id']); ?>"><?php echo $this->eprint($val['author']); ?></a> el día <?php echo $this->eprint($val['date']); ?></h6>
+			<h6 class="subheader">Por: <a href="profile.php?id=<?php echo $this->eprint($val['author_id']); ?>"><?php echo $this->eprint($val['author']); ?></a> el día <a href="#comment-<?php echo $this->eprint($val['comment_id']); ?>"><?php echo $this->eprint($val['date']); ?></a></h6>
 			<?php endif; ?>
 			<div data-alert class="alert-box panel callout radius" style="color:#000000;">
 			<?php echo $this->eprint($val['comment_content']); ?>
