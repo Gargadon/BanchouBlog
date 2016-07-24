@@ -13,7 +13,7 @@ Este proyecto usa partes de los siguientes proyectos:
 
 -CKEditor (WYSIWYG Editor) - <https://raw.github.com/ckeditor/ckeditor-releases/stable/standard/LICENSE.md>
 
--reCaptcha (Anti-spam Filter) BSD License - <https://github.com/google/recaptcha>
+-reCaptcha (Anti-spam Filter) BSD License - <https://github.com/google/recaptcha/blob/master/LICENSE>
 
 BanchouBlog está licenciado bajo GPLv2. Una copia de esta licencia se incluye en el repositorio.
 
