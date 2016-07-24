@@ -39,6 +39,10 @@
 <input type="text" name="email" placeholder="Correo electrónico (requerido)">
 <textarea name="comentario" placeholder="Deja tu comentario" style="height:200px"></textarea>
 <?php endif; ?>
+<?php if ($this->recaptcha == 1): ?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="g-recaptcha" data-sitekey="<?php echo $this->recaptcha_key; ?>"></div>
+<?php endif; ?>
 <input type="submit" value="Enviar comentario" class="button success">
 </div>
 </div>

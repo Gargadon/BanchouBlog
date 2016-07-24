@@ -7,6 +7,9 @@ $tpl->description = $config['description']; //Obtenemos la descripción
 $tpl->keywords = $config['keywords']; //Obtenemos los keywords
 $tpl->footer = $config['footer']; //obtenemos los datos del footer
 $tpl->logged = $islogged; //Obtenemos si el usuario está logueado
+$tpl->recaptcha = $config['recaptcha_activated']; //Esta habilitado Recaptcha?
+$tpl->recaptcha_key = $config['recaptcha_key']; //Clave publica de recaptcha
+$tpl->recaptcha_secret = $config['recaptcha_secret']; //Clave privada de recaptcha
 $tpl->skin = 'skins/'.$config['skin'];
 if($islogged == 1)
 {

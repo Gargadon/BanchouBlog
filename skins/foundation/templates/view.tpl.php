@@ -1,5 +1,5 @@
 <script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "74b5929a-6039-40c5-a85f-5349d1108d66", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <?php if (!empty($this->entries)): ?>
 <div class="row">

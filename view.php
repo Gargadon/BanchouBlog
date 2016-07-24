@@ -6,7 +6,10 @@ error_reporting(E_ALL ^ E_NOTICE);
 	require("Savant3.php");
 	$tpl = new Savant3();
 	include("navbar.php");
-	
+	if($config['recaptcha_activated'] == "1")
+	{
+		require_once "recaptcha-master/src/autoload.php";
+	}
 // Create a title.
 $entryid = $_GET['id'];
 $blog1 = mysqli_query($con,'SELECT * FROM blog_entry WHERE id=\''.$entryid.'\'');
@@ -37,25 +40,68 @@ $viewentries = array(
     );
     //Postea el comentario antes de mostrar todos los comentarios
     
-if(isset($_POST['logueado']))
+if($config['recaptcha_activated']=="1")
 {
-if($_POST['logueado']==1)
+	if(isset($_POST['logueado']))
 	{
-	$author = $usuarios['id'];
-	$fecha = time();
-	$comentario = $_POST['comentario'];
-	if(trim($comentario) != false)
-	mysqli_query($con,'INSERT blog_comments (entry_id, date, type, is_guest, author_id, comment) VALUES (\''.$entryid.'\',\''.$fecha.'\',\'entry\',\'0\',\''.$author.'\',\''.$_POST['comentario'].'\')');
-	}
+		if(isset($_POST['g-recaptcha-response']))
+		{
+			$recaptcha = new \ReCaptcha\ReCaptcha($config['recaptcha_secret']);
+			$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+			if ($resp->isSuccess())
+				{
+					if($_POST['logueado']==1)
+						{
+						$author = $usuarios['id'];
+						$fecha = time();
+						$comentario = $_POST['comentario'];
+						if(trim($comentario) != false)
+						mysqli_query($con,'INSERT blog_comments (entry_id, date, type, is_guest, author_id, comment) VALUES (\''.$entryid.'\',\''.$fecha.'\',\'entry\',\'0\',\''.$author.'\',\''.$_POST['comentario'].'\')');
+						}
 
-elseif($_POST['logueado']==0)
+					elseif($_POST['logueado']==0)
+						{
+						$author = $_POST['nickname'];
+						$email_author = $_POST['email'];
+						$fecha = time();
+						$comentario = $_POST['comentario'];
+						if((trim($author) != false) || (trim($email_author) != false) || (trim($comentario) != false))
+						mysqli_query($con,'INSERT blog_comments (entry_id, date, type, is_guest, guest_name, guest_email, comment) VALUES (\''.$entryid.'\',\''.$fecha.'\',\'entry\',\'1\',\''.$author.'\',\''.$email_author.'\',\''.$_POST['comentario'].'\')');
+						}	
+				}
+			else
+				{
+					
+				}
+		}
+		else
+		{
+			
+		}
+	}
+}
+else
+{
+	if(isset($_POST['logueado']))
 	{
-	$author = $_POST['nickname'];
-	$email_author = $_POST['email'];
-	$fecha = time();
-	$comentario = $_POST['comentario'];
-	if((trim($author) != false) || (trim($email_author) != false) || (trim($comentario) != false))
-	mysqli_query($con,'INSERT blog_comments (entry_id, date, type, is_guest, guest_name, guest_email, comment) VALUES (\''.$entryid.'\',\''.$fecha.'\',\'entry\',\'1\',\''.$author.'\',\''.$email_author.'\',\''.$_POST['comentario'].'\')');
+	if($_POST['logueado']==1)
+		{
+		$author = $usuarios['id'];
+		$fecha = time();
+		$comentario = $_POST['comentario'];
+		if(trim($comentario) != false)
+		mysqli_query($con,'INSERT blog_comments (entry_id, date, type, is_guest, author_id, comment) VALUES (\''.$entryid.'\',\''.$fecha.'\',\'entry\',\'0\',\''.$author.'\',\''.$_POST['comentario'].'\')');
+		}
+
+	elseif($_POST['logueado']==0)
+		{
+		$author = $_POST['nickname'];
+		$email_author = $_POST['email'];
+		$fecha = time();
+		$comentario = $_POST['comentario'];
+		if((trim($author) != false) || (trim($email_author) != false) || (trim($comentario) != false))
+		mysqli_query($con,'INSERT blog_comments (entry_id, date, type, is_guest, guest_name, guest_email, comment) VALUES (\''.$entryid.'\',\''.$fecha.'\',\'entry\',\'1\',\''.$author.'\',\''.$email_author.'\',\''.$_POST['comentario'].'\')');
+		}
 	}
 }
     
