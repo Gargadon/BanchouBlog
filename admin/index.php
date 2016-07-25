@@ -21,6 +21,10 @@ if ($usuarios['group']==1)
 			include('includes/neko.php');
 			break;
 
+			case 'recaptcha':
+			include('admin/recaptcha.php');
+			break;
+			
 			case 'categories':
 			include('admin/categories.php');
 			break;

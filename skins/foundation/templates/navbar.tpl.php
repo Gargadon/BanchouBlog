@@ -30,11 +30,12 @@
 <li class="has-dropdown"><a href="#">Administración</a>
         <ul class="dropdown">
         <li><a href="admin.php?action=config">Configurar blog</a></li>
+		<li><a href="admin.php?action=reCAPTCHA">reCAPTCHA</a></li>
         <li><a href="admin.php?action=categories">Configurar categorías</a></li>
         <li><a href="admin.php?action=pages">Configurar páginas</a></li>
-          <li><a href="admin.php?action=viewentries">Editar entradas</a></li>
-          <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
-	 <li><a href="admin.php?action=createuser">Crear usuarios</a></li>
+        <li><a href="admin.php?action=viewentries">Editar entradas</a></li>
+        <li><a href="admin.php?action=newentry">Nueva entrada</a></li>
+		<li><a href="admin.php?action=createuser">Crear usuarios</a></li>
 <!--           <li><a href="admin.php?action=users">Modificar usuarios</a></li> -->
           </ul>
 <?php endif; ?>
@@ -71,7 +72,7 @@
         <form action="search.php" method="get">
           <div class="row collapse">
             <div class="small-8 columns">
-              <input type="text" style="height: 2.025rem;" name="q">
+              <input type="text" name="q">
             </div>
             <div class="small-4 columns">
               <input type="submit" class="alert button" value="Buscar" />

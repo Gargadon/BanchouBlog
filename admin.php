@@ -37,6 +37,10 @@ if ($usuarios['group']==1)
 			case 'categories':
 			include('admin/categories.php');
 			break;
+
+			case 'recaptcha':
+			include('admin/recaptcha.php');
+			break;
 			
 			case 'pages':
 			include('admin/new_pages.php');

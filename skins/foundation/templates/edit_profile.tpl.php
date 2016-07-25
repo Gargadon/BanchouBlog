@@ -95,7 +95,7 @@
           </td>
         </tr>
         <tr>
-          <td colspan="2"><input type="submit" value="Editar datos" />
+          <td colspan="2"><input type="submit" class="button success" value="Editar datos" />
           </td>
         </tr>
         <tr>
