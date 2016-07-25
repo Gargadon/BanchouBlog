@@ -6,8 +6,7 @@ if($instala==2)
 {
 $blogname=$_POST['blogname'];
 $path=$_POST['path'];
-$disqusname=$_POST['disqusname'];
-	if(empty($blogname) || empty($path) || empty($disqusname))
+	if(empty($blogname) || empty($path))
 echo '<div class="small-12 large-12 columns">
 <h3>Instalación de BanchouBlog</h3>
 <p>No se ha podido configurar el blog. Revise los datos y repita el paso de nuevo.</p>
@@ -37,7 +36,7 @@ echo '<div class="small-12 large-12 columns">
 	else
 	{
 	mysqli_query($con,"INSERT INTO `blog_config` (`name`, `version`, `skin`, `software`, `description`, `pathto`, `footer`, `zona`) VALUES
-('".$blogname."', '1.3.1', 'foundation', 'BanchouBlog', 'Nuevo blog', '".$path."', '<p>BanchouBlog is a simple blog written in PHP.</p>\r\n<p>&#169; BanchouBlog.us</p>', 'America/Merida')");
+('".$blogname."', '1.3.2', 'foundation', 'BanchouBlog', 'Nuevo blog', '".$path."', '<p>BanchouBlog is a simple blog written in PHP.</p>\r\n<p>&#169; BanchouBlog.us</p>', 'America/Merida')");
 mysqli_query($con,"INSERT INTO `blog_grupo` (`id`, `nombre`) VALUES
 (0, 'Usuario'),
 (1, 'Administrador')");

@@ -9,7 +9,6 @@ mysqli_query($con,"CREATE TABLE IF NOT EXISTS `blog_config` (
   `skin` text NOT NULL,
   `description` text NOT NULL,
   `pathto` text NOT NULL,
-  `disqusname` text NOT NULL,
   `footer` text NOT NULL,
     `zona` text NOT NULL,
 	`recaptcha_activated` int(11) NOT NULL,
