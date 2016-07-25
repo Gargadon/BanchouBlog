@@ -11,7 +11,10 @@ mysqli_query($con,"CREATE TABLE IF NOT EXISTS `blog_config` (
   `pathto` text NOT NULL,
   `disqusname` text NOT NULL,
   `footer` text NOT NULL,
-    `zona` text NOT NULL
+    `zona` text NOT NULL,
+	`recaptcha_activated` int(11) NOT NULL,
+	`recaptcha_key` text NOT NULL,
+	`recaptcha_secret` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8");
 mysqli_query($con,"CREATE TABLE IF NOT EXISTS `blog_entry` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
