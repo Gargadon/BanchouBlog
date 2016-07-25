@@ -30,7 +30,7 @@
 <li class="has-dropdown"><a href="#">Administración</a>
         <ul class="dropdown">
         <li><a href="admin.php?action=config">Configurar blog</a></li>
-		<li><a href="admin.php?action=reCAPTCHA">reCAPTCHA</a></li>
+		<li><a href="admin.php?action=recaptcha">reCAPTCHA</a></li>
         <li><a href="admin.php?action=categories">Configurar categorías</a></li>
         <li><a href="admin.php?action=pages">Configurar páginas</a></li>
         <li><a href="admin.php?action=viewentries">Editar entradas</a></li>
